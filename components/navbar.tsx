@@ -1,29 +1,31 @@
 "use client";
 
 import { MagnifyingGlassIcon, Cross1Icon } from "@radix-ui/react-icons";
+import Image from "next/image";
 import React, { useState } from "react";
-
-export function LandingPageNavbar() {
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+export function Navbar() {
   return (
-    <nav className="flex gap-4 bg-white py-6 max-w-7xl mx-auto">
-      {/* logo */}
-      <img src="./logo.svg" alt="logo" />
-
-      {/* searchbar and navitems */}
-      <div className="flex justify-between flex-1 items-center">
-        <div className="flex flex-row gap-2 items-center px-3 py-2 bg-gray-100 border border-gray-300 rounded-md w-5/12">
-          <MagnifyingGlassIcon className="scale-125" />
-          <input
-            type="text"
-            className="outline-none focus:outline-none bg-transparent w-full"
-            placeholder="Search here..."
-          />
+    <nav className="shadow-md h-24 flex justify-center items-center">
+      <div className="container px-16 grid grid-cols-4">
+        <div className="col-span-3 gap-8 flex items-center">
+          <Image src="/logo.svg" alt="icon" width={280} height={280} />
+          <div className="w-[28rem] bg-[#F0F2F5] flex items-center border border-gray-300 rounded-md transition-colors px-3 py-1 placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring ">
+            <input className="w-full focus:outline-none bg-transparent shadow-none border-none" placeholder="Search here..." />
+            <MagnifyingGlassIcon />
+          </div>
         </div>
-        <ul className="flex flex-row gap-8">
-          <li>Kelas</li>
-          <li>Tentang Kami</li>
-          <li>Login</li>
+        <ul className="col-span-1 flex justify-end gap-8 items-center">
+          <li className="font-semibold">Kelas</li>
+          <li className="font-semibold">Tentang Kami</li>
+          <li className="h-12 w-20">
+            <Button className="h-full w-full">Login</Button>
+          </li>
+
         </ul>
+        {/* <div className="flex justify-between items-center">
+          </div> */}
       </div>
     </nav>
   );
