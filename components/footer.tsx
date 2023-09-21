@@ -8,7 +8,7 @@ export function Footer() {
       <footer className="py-6">
          <div className="container md:px-20">
             <hr />
-            <div className="my-6 flex flex-col lg:justify-between">
+            <div className="my-6 flex flex-col lg:flex-row lg:justify-between">
                <Image src="/logo.svg" alt="icon" width={250} height={250} />
                <div className="flex flex-col gap-6 lg:flex-row">
                   <ul className="w-64 grid gap-2 text-muted-foreground">
