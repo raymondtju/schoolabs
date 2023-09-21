@@ -8,7 +8,7 @@ import { Button } from "./ui/button";
 export function Navbar() {
   return (
     <nav className="shadow-md h-24 flex justify-center items-center">
-      <div className="container px-16 grid grid-cols-4">
+      <div className="container md:px-20 grid grid-cols-4">
         <div className="col-span-3 gap-8 flex items-center">
           <Image src="/logo.svg" alt="icon" width={280} height={280} />
           <div className="w-[28rem] bg-[#F0F2F5] flex items-center border border-gray-300 rounded-md transition-colors px-3 py-1 placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring ">

@@ -8,6 +8,9 @@ module.exports = {
     './src/**/*.{ts,tsx}',
 	],
   theme: {
+    fontFamily: {
+      'sans': ['Plus Jakarta Sans', "sans-serif"]
+    },
     container: {
       center: true,
       padding: "3rem",
@@ -17,13 +20,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
+        border: "#4B4EFC",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#4B4EFC",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {

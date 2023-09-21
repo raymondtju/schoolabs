@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,7 +19,7 @@ html, body {
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
  
-    --primary: 239, 97%, 64%, 1;
+    --primary: #4B4EFC;
     --primary-foreground: 0 0% 98%;
  
     --secondary: 240 4.8% 95.9%;

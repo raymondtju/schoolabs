@@ -6,7 +6,7 @@ import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from "./icon/f
 export function Footer() {
    return (
       <footer className="">
-         <div className="container px-16">
+         <div className="container md:px-20">
             <hr />
             <div className="my-6 flex justify-between">
                <Image src="/logo.svg" alt="icon" width={250} height={250} />
