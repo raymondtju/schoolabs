@@ -6,14 +6,14 @@ export const metadata: Metadata = {
    description: "Melangkah Menuju Karir Barumu Bersama",
 }
 
-export default function RootLayout({
+export default function AuthLayout({
    children,
 }: {
    children: React.ReactNode;
 }) {
    return (
       <>
-         <main className="bg-[#F0F2F5] py-12 min-h-screen">
+         <main className="bg-[#F0F2F5] py-9 min-h-screen">
             <div className="container flex flex-col items-center">
                <Image className="py-12 mix-blend-darken" src="/logo.svg" alt="icon" width={200} height={200} />
                {children}
