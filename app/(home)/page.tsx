@@ -1,4 +1,3 @@
-
 import StarsIcon from "@/components/icon/stars-icon";
 import { BottomIcon, ButtonIconLeft, ButtonIconRight, RightIcon } from "@/components/icon/testimoni-icon";
 import { EllipseIcon} from "@/components/icon/usp-icon";
@@ -35,7 +34,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <Image className="hidden lg:block absolute z-10 right-0 top-0" width={650} height={650} src="/images/hero-landing.webp" alt="hero-image" />
+          <Image quality={100} className="hidden lg:block absolute z-10 right-0 top-0" width={650} height={650} src="/images/hero-landing.webp" alt="hero-image" />
         </div>
       </section>
       <section className="my-28">
@@ -110,21 +109,21 @@ export default function Home() {
           <div className="mt-8 flex flex-col md:flex-row gap-4 justify-around items-center">
 
             <div className="group rounded-[2.5rem] border border-transparent hover:border-primary relative overflow-hidden grid grid-cols-1">
-              <Image className="col-start-1 col-end-3 row-start-1" src="/images/uiux.webp" alt="UI/UX Designer" width={500} height={500} />
+              <Image quality={100} className="col-start-1 col-end-3 row-start-1" src="/images/uiux.webp" alt="UI/UX Designer" width={500} height={500} />
               <h1 className="relative mb-8 flex items-center flex-col-reverse col-start-1 row-start-1 text-[#F5F5FF] font-bold text-3xl">UI/UX DESIGNER</h1>
-              <div className="lg:max-h-64 h-full px-8 py-6 absolute transition-transform group-hover:translate-y-0 translate-y-full lg:translate-y-[200%] lg:group-hover:translate-y-full text-primary bg-[#FFFFFF] grid gap-4">
+              <div className="lg:max-h-[20rem] h-full px-8 py-6 absolute transition-transform group-hover:translate-y-0 translate-y-full lg:translate-y-[200%] lg:group-hover:translate-y-[60%] text-primary bg-[#FFFFFF] grid gap-4">
                 <h5 className="font-bold text-base sm:text-xl">BELUM MEMILIKI PENGALAMAN DI DUNIA DESAIN?</h5>
-                <p className="text-sm">Mulai dengan mempelajari dasar dari UI/UX Design. Ambil kelas dasar visual dan skill UI Design dengan menggunakan tools yang sesuai dengan standar industri desain seperti Figma, Sketch dan Adobe XD.</p>
+                <p className="text-base">Mulai dengan mempelajari dasar dari UI/UX Design. Ambil kelas dasar visual dan skill UI Design dengan menggunakan tools yang sesuai dengan standar industri desain seperti Figma, Sketch dan Adobe XD.</p>
                 <Button className="m-auto w-48">Mulai Belajar</Button>
               </div>
 
             </div>
             <div className="group rounded-[2.5rem] border border-transparent hover:border-primary relative overflow-hidden grid grid-cols-1">
-              <Image className="col-start-1 col-end-3 row-start-1" src="/images/programmer.webp" alt="UI/UX Designer" width={500} height={500} />
+              <Image quality={100} className="col-start-1 col-end-3 row-start-1" src="/images/programmer.webp" alt="UI/UX Designer" width={500} height={500} />
               <h1 className="relative mb-8 flex items-center flex-col-reverse col-start-1 row-start-1 text-[#F5F5FF] font-bold text-3xl">PROGRAMMER</h1>
-              <div className="lg:max-h-64 h-full px-8 py-6 absolute transition-transform group-hover:translate-y-0 translate-y-full lg:translate-y-[200%] lg:group-hover:translate-y-full text-primary bg-[#FFFFFF] grid gap-4">
+              <div className="lg:max-h-[20rem] h-full px-8 py-6 absolute transition-transform group-hover:translate-y-0 translate-y-full lg:translate-y-[200%] lg:group-hover:translate-y-[60%] text-primary bg-[#FFFFFF] grid gap-4">
                 <h5 className="font-bold text-base sm:text-xl">BELUM MEMILIKI PENGALAMAN DI DUNIA PROGRAMMING?</h5>
-                <p className="text-sm">Kelas di SchooLabs tersedia bagi yang belum memiliki kemampuan programming (dasar) hingga yang sudah profesional. Temukan berbagai pilihan kursus yang dirancang untuk berbagai tingkat pengalaman di SchooLabs</p>
+                <p className="text-base">Kelas di SchooLabs tersedia bagi yang belum memiliki kemampuan programming (dasar) hingga yang sudah profesional. Temukan berbagai pilihan kursus yang dirancang untuk berbagai tingkat pengalaman di SchooLabs</p>
                 <Button className="m-auto w-48">Mulai Belajar</Button>
               </div>
             </div>
@@ -189,7 +188,10 @@ export default function Home() {
               </Button>
             </div>
             <div className="max-w-[64rem] max-h-[24rem] h-full flex bg-[#F3FBFF] rounded-3xl">
-              <Image className="rounded-l-3xl" src="/testimoni-image/ux.png" alt="testimoni budi" width={350} height={350} />
+              <div className="relative overflow-hidden max-w-md w-[90rem]">
+                <Image fill objectFit="cover" quality={100} className="rounded-l-3xl w-full" src="/testimoni-image/ux.png" alt="testimoni budi"  />
+
+              </div>
               <div className="px-6 py-8 grid">
                 <svg className="ml-auto" xmlns="http://www.w3.org/2000/svg" width="64" height="49" viewBox="0 0 64 49" fill="none">
                   <path d="M30.1137 0V14.5516C30.1137 18.6835 29.3053 22.9053 27.6884 27.2168C26.1165 31.4835 24.0056 35.5256 21.3558 39.3432C18.706 43.1158 15.8091 46.327 12.6653 48.9768L0 41.4989C2.24561 37.9509 4.22175 34.021 5.92842 29.7095C7.68 25.3979 8.55579 20.3902 8.55579 14.6863V0H30.1137ZM64 0V14.5516C64 18.6835 63.1916 22.9053 61.5747 27.2168C60.0028 31.4835 57.8919 35.5256 55.2421 39.3432C52.5923 43.1158 49.673 46.327 46.4842 48.9768L33.8189 41.4989C36.1095 37.9509 38.1081 34.021 39.8147 29.7095C41.5663 25.3979 42.4421 20.3902 42.4421 14.6863V0H64Z" fill="#4B4EFC" />
@@ -230,7 +232,7 @@ export default function Home() {
       <section className="bg-[#F5F5FF]">
         <div className="relative container lg:px-20 py-20">
           <div className="z-10 relative flex flex-col lg:flex-row">
-            <Image src="/images/cta-hero.webp" alt="Call to Action" width={450} height={450} />
+            <Image quality={100} src="/images/cta-hero.webp" alt="Call to Action" width={450} height={450} />
             <div className="flex flex-col justify-center gap-4">
               <h1 className="mt-4 text-4xl font-bold">Masih Belum Tahu Apa Minat Karirmu?</h1>
               <p className="text-base text-muted">Tidak usah khawatir, education counselor kami siap untuk berbincang denganmu kapanpun kamu butuhkan. Kami dengan senang hati menjawab pertanyaanmu, memberikan panduan mengenai proses pendaftaran, dan membantu kamu mengejar impianmu. Diskusi melalui Whatsapp, dan kami akan dengan senang hati membantu perjalanan pendidikanmu.</p>
