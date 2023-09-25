@@ -81,3 +81,9 @@ html, body {
   }
 }
 
+.about-hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%), url("/about-image/hero.webp");
+}
