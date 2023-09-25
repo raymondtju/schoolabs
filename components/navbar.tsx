@@ -1,26 +1,31 @@
 "use client";
 
-import { MagnifyingGlassIcon, Cross1Icon } from "@radix-ui/react-icons";
+import { Cross1Icon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import React, { useEffect, useState, useRef } from "react";
 import { Button } from "./ui/button";
 import { CountDown } from "@/lib/countdown";
 import Link from "next/link";
+import { Search } from "lucide-react";
 export function Navbar() {
 
   return (
-    <nav className="bg-[#FFF] shadow-md h-24 flex justify-center items-center" >
-      <div className="container md:px-20 grid grid-cols-4">
-        <div className="col-span-3 gap-8 flex items-center">
-          <Image src="/logo.svg" alt="icon" width={280} height={280} />
-          <div className="w-[28rem] bg-[#F0F2F5] flex items-center border border-gray-300 rounded-md transition-colors px-3 py-1 placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring ">
-            <input className="w-full focus:outline-none bg-transparent shadow-none border-none" placeholder="Search here..." />
-            <MagnifyingGlassIcon />
+    <nav className="bg-[#FFF] shadow h-24 flex justify-center items-center" >
+      <div className="container md:px-20 flex items-center justify-between">
+        <div className="col-span-3 flex space-x-12 items-center">
+          <Link href="/">
+            <Image quality={100} src="/logo.svg" alt="icon" width={176} height={32} />
+          </Link>
+          <div className="w-[28rem] bg-[#F0F2F5] flex space-x-2 items-center border border-gray-300 rounded-md transition-colors px-3 py-1 placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring ">
+            <Search size={18}/>
+            <input className="text-sm h-7 w-full focus:outline-none bg-transparent shadow-none border-none" placeholder="Search here..." />
           </div>
         </div>
         <ul className="col-span-1 flex justify-end gap-8 items-center">
-          <li className="font-semibold">Kelas</li>
-          <li className="font-semibold">Tentang Kami</li>
+          <li className="text-base font-semibold">Kelas</li>
+          <li className="text-base font-semibold">
+            <Link href="/about-us">Tentang Kami</Link>
+          </li>
           <li className="h-12 w-20">
             <Link href="/login">
               <Button className="h-full w-full">Login</Button>

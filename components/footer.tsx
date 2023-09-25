@@ -5,11 +5,11 @@ import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from "./icon/f
 
 export function Footer() {
    return (
-      <footer className="py-6">
+      <footer className="mt-12">
          <div className="container md:px-20">
             <hr />
             <div className="my-6 flex flex-col lg:flex-row lg:justify-between">
-               <Image src="/logo.svg" alt="icon" width={250} height={250} />
+               <Image quality={100} src="/logo.svg" alt="icon" width={250} height={250} />
                <div className="flex flex-col gap-6 lg:flex-row">
                   <ul className="w-64 grid gap-2 text-muted-foreground">
                      <li>Tentang Kami</li>
