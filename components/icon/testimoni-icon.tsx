@@ -1,12 +1,12 @@
-function RightIcon({ ...props }: React.ComponentPropsWithoutRef<'svg'>) {
+function RightIcon({ stroke = "#E1E1FE",...props }: React.ComponentPropsWithoutRef<'svg'>) {
    return (
       <>
          <svg {...props} width="349" height="342" viewBox="0 0 349 342" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M69.4141 -62.6607C68.5386 -11.6998 105.24 89.8003 259.05 88.1133C412.86 86.4264 439.406 256.109 433.452 341.161" stroke="#E1E1FE" strokeOpacity="0.5" strokeWidth="3" />
-            <path d="M46.7969 -62.6607C45.9214 -11.6998 82.6229 89.8003 236.433 88.1133C390.243 86.4264 416.789 256.109 410.835 341.161" stroke="#E1E1FE" strokeOpacity="0.5" strokeWidth="3" />
-            <path d="M22.4288 -63.7151C21.5533 -12.7542 58.2548 88.7458 212.065 87.0589C365.875 85.3719 392.42 255.054 386.467 340.106" stroke="#E1E1FE" strokeOpacity="0.5" strokeWidth="3" />
-            <path d="M2.46796 -63.7151C1.59245 -12.7542 38.2939 88.7458 192.104 87.0589C345.914 85.3719 372.46 255.054 366.506 340.106" stroke="#E1E1FE" strokeOpacity="0.5" strokeWidth="3" />
-            <path d="M89.468 -62.7149C88.5924 -11.754 125.294 89.7461 279.104 88.0591C432.914 86.3722 459.46 256.054 453.506 341.106" stroke="#E1E1FE" strokeOpacity="0.5" strokeWidth="3" />
+            <path d="M69.4141 -62.6607C68.5386 -11.6998 105.24 89.8003 259.05 88.1133C412.86 86.4264 439.406 256.109 433.452 341.161" stroke={stroke} strokeOpacity="1" strokeWidth="3" />
+            <path d="M46.7969 -62.6607C45.9214 -11.6998 82.6229 89.8003 236.433 88.1133C390.243 86.4264 416.789 256.109 410.835 341.161" stroke={stroke} strokeOpacity="1" strokeWidth="3" />
+            <path d="M22.4288 -63.7151C21.5533 -12.7542 58.2548 88.7458 212.065 87.0589C365.875 85.3719 392.42 255.054 386.467 340.106" stroke={stroke} strokeOpacity="1" strokeWidth="3" />
+            <path d="M2.46796 -63.7151C1.59245 -12.7542 38.2939 88.7458 192.104 87.0589C345.914 85.3719 372.46 255.054 366.506 340.106" stroke={stroke} strokeOpacity="1" strokeWidth="3" />
+            <path d="M89.468 -62.7149C88.5924 -11.754 125.294 89.7461 279.104 88.0591C432.914 86.3722 459.46 256.054 453.506 341.106" stroke={stroke} strokeOpacity="1" strokeWidth="3" />
          </svg>
       </>
    )
@@ -19,11 +19,11 @@ interface BottomIconProps extends React.SVGProps<SVGSVGElement> {
    viewBox?: string;
 }
 
-function BottomIcon({ width = 474, height = 588, viewBox = "0 0 474 588", ...props }: BottomIconProps) {
+function BottomIcon({ strokeOpacity = "0.3", width = 474, height = 588, viewBox = "0 0 474 588", ...props }: BottomIconProps) {
    return (
       <>
          <svg {...props} width={width} height={height} viewBox={viewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1.64466" y="452.296" width="332.843" height="332.843" rx="57" transform="rotate(-45 1.64466 452.296)" stroke="#E1E1FE" strokeOpacity="0.3" strokeWidth="50" />
+            <rect x="1.64466" y="452.296" width="332.843" height="332.843" rx="57" transform="rotate(-45 1.64466 452.296)" stroke="#E1E1FE" strokeOpacity={strokeOpacity} strokeWidth="50" />
             <rect x="1.64466" y="237" width="332.843" height="332.843" rx="57" transform="rotate(-45 1.64466 237)" stroke="#E1E1FE" strokeOpacity="0.3" strokeWidth="50" />
          </svg>
       </>
