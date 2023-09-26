@@ -10,7 +10,7 @@ import {
 
 export function Footer() {
   return (
-    <footer className="mt-12 pb-6">
+    <footer className="mt-12 pb-6 ">
       <div className="container md:px-20">
         <hr />
         <div className="my-6 flex flex-col lg:flex-row lg:justify-between">
