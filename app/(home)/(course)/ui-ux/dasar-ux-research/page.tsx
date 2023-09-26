@@ -236,8 +236,6 @@ function DasarUxResearchPage() {
 
   return (
     <main className="relative">
-      <Navbar />
-
       <section className="bg-gradient-to-b from-[#3571A7] to-[#4A8CC8] text-white">
         <div className="container py-14 md:px-20">
           <div className="max-w-2xl space-y-4">
@@ -391,8 +389,6 @@ function DasarUxResearchPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }
