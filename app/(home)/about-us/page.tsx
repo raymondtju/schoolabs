@@ -80,19 +80,19 @@ export default function AboutUs() {
             </div>
          </section>
          <section className="my-28">
-            <div className="container lg:px-20 grid grid-cols-2 justify-items-center">
+            <div className="container lg:px-20 grid grid-cols-2">
                <div className="max-w-[26rem] flex flex-col space-y-6">
                   <h3 className="text-2xl">Visi Schoolabs</h3>
                   <div className="flex flex-col space-y-4">
                      <h5 className="text-4xl text-primary font-bold"> Belajar Dengan Praktik Terbaik</h5>
-                     <p className="text-lg">Kami mengintegrasikan proyek dunia nyata dan studi kasus ke dalam kurikulum kami, memastikan Anda mendapatkan pengalaman praktis.</p>
+                     <p className="text-lg text-medium">Kami mengintegrasikan proyek dunia nyata dan studi kasus ke dalam kurikulum kami, memastikan Anda mendapatkan pengalaman praktis.</p>
                   </div>
                </div>
                <div className="max-w-[26rem] flex flex-col space-y-6">
                   <h3 className="text-2xl">Misi Schoolabs</h3>
                   <div className="flex flex-col space-y-4">
                      <h5 className="text-4xl text-primary font-bold">Dukungan Tim Berpengalaman</h5>
-                     <p className="text-lg">Kami mengintegrasikan proyek dunia nyata dan studi kasus ke dalam kurikulum kami, memastikan Anda mendapatkan pengalaman praktis.</p>
+                     <p className="text-lg text-medium">Kami mengintegrasikan proyek dunia nyata dan studi kasus ke dalam kurikulum kami, memastikan Anda mendapatkan pengalaman praktis.</p>
                   </div>
                </div>
             </div>
@@ -110,14 +110,14 @@ export default function AboutUs() {
                </defs>
             </svg>
 
-            <div className="z-10 relative container lg:px-20 py-10 grid place-content-center">
-               <div className="flex items-center justify-center">
+            <div className="z-10 relative container lg:px-20 py-10">
+               <div className="flex gap-4 items-center justify-between">
                   <div className="max-w-xl flex flex-col gap-10">
                      <h3 className="text-4xl font-bold">Gabunglah dengan Kami dan Mulai Bangun Masa Depan Anda</h3>
                      <p className="text-lg">Kami berkomitmen untuk membantu Anda mencapai impian Anda dalam dunia pengembangan dan desain. Bergabunglah dengan kami hari ini dan mulailah perjalanan menuju kesuksesan Anda.</p>
                      <Button className="px-6 h-12 w-fit">Daftar Sekarang</Button>
                   </div>
-                  <Image quality={100} width={450} height={450} src="/about-image/cta-hero.webp" alt="Join Us"/>
+                  <Image quality={100} width={400} height={400} src="/about-image/cta-hero.webp" alt="Join Us"/>
                </div>
             </div>
             <RightIcon stroke="#F5F5FF" className="absolute right-0 top-0"/>
