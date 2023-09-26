@@ -365,7 +365,7 @@ function DasarUxResearchPage() {
           </div>
         </div>
 
-        <div className="sticky top-6 -mt-72 block h-full max-h-[calc(100vh-9rem)]">
+        <div className="sticky top-28 -mt-72 block h-full max-h-[calc(100vh-9rem)]">
           <div className="max-w-sm space-y-4 rounded-[20px] border bg-white p-4">
             <img
               src="/cards-image/dasar-ux.png"
