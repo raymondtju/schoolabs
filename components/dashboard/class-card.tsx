@@ -18,7 +18,7 @@ function ClassCard({
 }) {
   return (
     <div className={cn("shrink-0", className)}>
-      <div className="w-[300px] overflow-hidden rounded-2xl">
+      <div className="w-[300px] overflow-hidden rounded-2xl border bg-white">
         <img src={"/cards-image/dasar-ux.png"} alt="dasar-ux" />
         <div className="space-y-4 px-4 py-6">
           <h5 className="text-2xl font-bold text-gray-900">{title}</h5>
