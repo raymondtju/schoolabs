@@ -47,11 +47,34 @@ const ForumMenuList: ForumMenuType[] = [
   },
 ];
 
+const DasarUXResearchList = [
+  {
+    name: "Pengenalan UX Research",
+    path: "/dashboard/class/dasar-ux-research/pengenalan-ux-research",
+    icon: Home,
+    complete: false,
+    progress: {
+      current: 3,
+      max: 5,
+    },
+  },
+  {
+    name: "Metode Penelitian UX",
+    path: "/dashboard/class/dasar-ux-research/metode-penelitian-ux",
+    icon: Book,
+    complete: false,
+    progress: {
+      current: 3,
+      max: 5,
+    },
+  },
+];
+
 function DashboardSidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="fixed top-0 z-[60] col-span-2 h-screen space-y-3 border-r pt-5">
+    <div className="fixed top-0 z-[60] h-screen w-full max-w-[250px] space-y-3 border-r pt-5">
       <Image
         quality={100}
         src="/logo.svg"
@@ -61,51 +84,72 @@ function DashboardSidebar() {
         className="px-6 py-2"
       />
 
-      <div className="space-y-5 px-2">
-        <ul className="space-y-1">
-          {DashboardMenuList.map((item, i) => {
-            return (
-              <Link
-                href={item.path}
-                className={cn(
-                  "flex cursor-pointer items-center gap-3 px-4 py-3 font-medium text-[#344054]",
-                  pathname === item.path
-                    ? "rounded-lg bg-[#f5f5ff] font-semibold "
-                    : "",
-                )}
-                key={i}
-              >
-                {/* TO-DO: ICONS */}
-                <item.icon
-                  stroke={pathname === item.path ? "#4B4EFC" : "#344054"}
-                />
-                <span className="text-sm">{item.name}</span>
-              </Link>
-            );
-          })}
-        </ul>
-        <hr className="border-[#F0F2F5]" />
+      {pathname.startsWith("/dashboard/class") ? (
         <div className="">
-          <h6 className="px-4 text-sm font-medium text-[#98A2B3]">Forum</h6>
-          <ul>
-            {ForumMenuList.map((item, i) => {
+          <h6 className="px-4 text-sm font-medium text-[#98A2B3]">
+            Materi kelas
+          </h6>
+          <ul className=" ">
+            {DasarUXResearchList.map((item, i) => {
               return (
-                <Link
-                  href={item.path}
-                  className="flex items-center gap-3 px-4 py-3"
-                  key={i}
-                >
+                <Link href={item.path} className="flex gap-3 px-4 py-3" key={i}>
                   <item.icon />
-                  <span className="text-sm">{item.name}</span>
-                  <span className="ml-auto rounded-full bg-[#F0F2F5] px-2 py-1 text-xs font-medium">
-                    {item.notif}
+                  <span className="">{item.name}</span>
+                  <span className="ml-auto h-fit rounded-full bg-[#F0F2F5] px-2 py-1 text-xs font-medium">
+                    {item.progress.current}/{item.progress.max}
                   </span>
                 </Link>
               );
             })}
           </ul>
         </div>
-      </div>
+      ) : (
+        <div className="space-y-5 px-2">
+          <ul className="space-y-1">
+            {DashboardMenuList.map((item, i) => {
+              return (
+                <Link
+                  href={item.path}
+                  className={cn(
+                    "flex cursor-pointer items-center gap-3 px-4 py-3 font-medium text-[#344054]",
+                    pathname === item.path
+                      ? "rounded-lg bg-[#f5f5ff] font-semibold "
+                      : "",
+                  )}
+                  key={i}
+                >
+                  {/* TO-DO: ICONS */}
+                  <item.icon
+                    stroke={pathname === item.path ? "#4B4EFC" : "#344054"}
+                  />
+                  <span className="text-sm">{item.name}</span>
+                </Link>
+              );
+            })}
+          </ul>
+          <hr className="border-[#F0F2F5]" />
+          <div className="">
+            <h6 className="px-4 text-sm font-medium text-[#98A2B3]">Forum</h6>
+            <ul>
+              {ForumMenuList.map((item, i) => {
+                return (
+                  <Link
+                    href={item.path}
+                    className="flex items-center gap-3 px-4 py-3"
+                    key={i}
+                  >
+                    <item.icon />
+                    <span className="text-sm">{item.name}</span>
+                    <span className="ml-auto rounded-full bg-[#F0F2F5] px-2 py-1 text-xs font-medium">
+                      {item.notif}
+                    </span>
+                  </Link>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
