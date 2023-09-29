@@ -6,49 +6,49 @@ import Image from "next/image";
 export default function AboutUs() {
    return (
       <>
-         <section className="-mb-14  about-hero h-[30rem] overflow-hidden rounded-b-[2.5rem] flex items-center">
-            <div className="mb-20 container lg:px-20 text-white flex flex-col space-y-4">
-               <h1 className="text-base font-semibold">Tentang SchooLabs</h1>
-               <div className="flex justify-between">
-                  <h1 className="max-w-lg text-5xl font-bold">Kami memiliki misi memberdayakan siswa di dunia IT</h1>
-                  <p className="ml-auto max-w-[25rem] text-base font-medium">Kami adalah tim yang berdedikasi untuk membantu Anda mencapai potensi terbaik Anda dalam dunia pengembangan dan desain. Dengan pengalaman bertahun-tahun dalam industri ini, kami telah menyadari pentingnya pendidikan yang berkualitas dan berfokus pada praktik terbaik.</p>
+         <section className="-mb-8 md:-mb-14 md:pb-4 about-hero h-[30rem] overflow-hidden rounded-b-3xl md:rounded-b-[2.5rem] flex flex-col justify-center items-center">
+            <div className="md:mb-20 py-8 container lg:px-20 text-white gap-4 flex flex-col space-y-4">
+               <h1 className="text-base font-semibold text-center md:text-left">Tentang SchooLabs</h1>
+               <div className="flex flex-col md:flex-row gap-4 justify-between">
+                  <h1 className="max-w-lg text-4xl md:text-5xl font-bold">Kami memiliki misi memberdayakan siswa di dunia IT</h1>
+                  <p className="md:ml-auto max-w-[25rem] text-base font-medium">Kami adalah tim yang berdedikasi untuk membantu Anda mencapai potensi terbaik Anda dalam dunia pengembangan dan desain. Dengan pengalaman bertahun-tahun dalam industri ini, kami telah menyadari pentingnya pendidikan yang berkualitas dan berfokus pada praktik terbaik.</p>
                </div>
             </div>
          </section>
          <section className="mb-28">
             <div className="container lg:px-20">
-               <div className="bg-[#FFF] grid mb-7 rounded-3xl shadow-2xl px-20 pt-10 pb-20">
+               <div className="bg-[#FFF] grid mb-7 rounded-3xl shadow-2xl px-4 pb-4 md:px-20 pt-8 md:pt-10  md:pb-20">
                   <hr className="mx-auto h-[8px] w-56 rounded-full bg-primary"/>
                   <div className="my-10 flex flex-col items-center justify-center space-y-4">
-                     <h1 className="text-4xl font-bold">Mengapa Memilih Kami?</h1>
-                     <p className="text-lg">Kami tahu ada banyak pilihan kursus di luar sana, tetapi kami unggul dalam beberapa hal:</p>
+                     <h1 className="text-3xl md:text-4xl font-bold text-center">Mengapa Memilih Kami?</h1>
+                     <p className="text-base md:text-lg text-center">Kami tahu ada banyak pilihan kursus di luar sana, tetapi kami unggul dalam beberapa hal:</p>
                   </div>
-                  <div className="grid gap-10 grid-cols-2">
+                  <div className="grid gap-10 grid-cols-1 md:grid-cols-2">
                      <div className="rounded-2xl bg-[#F5F5FF] flex flex-col space-y-6 px-8 py-10">
                         <BadgeCheckIcon />
                         <div className="grid gap-4">
-                           <h3 className="text-3xl font-semibold">Kualitas Terbaik</h3>
+                           <h3 className="text-2xl md:text-3xl font-semibold">Kualitas Terbaik</h3>
                            <p className="text-base">Kualitas adalah prioritas kami. Kami memastikan bahwa Anda mendapatkan pendidikan terbaik yang mungkin.</p>
                         </div>
                      </div>
                      <div className="rounded-2xl bg-[#FBEAE9] flex flex-col space-y-6 px-8 py-10">
                         <BriefcaseIcon />
                         <div className="grid gap-4">
-                           <h3 className="text-3xl font-semibold">Kesempatan Kerja</h3>
+                           <h3 className="text-2xl md:text-3xl font-semibold">Kesempatan Kerja</h3>
                            <p className="text-base">Bekerja sama dengan perusahaan terkemuka, kami membantu siswa kami mengejar karier yang sukses.</p>
                         </div>
                      </div>
                      <div className="rounded-2xl bg-[#E7F6EC] flex flex-col space-y-6 px-8 py-10">
                         <GraduatingCapIcon />
                         <div className="grid gap-4">
-                           <h3 className="text-3xl font-semibold">Kurikulum yang Relevan</h3>
+                           <h3 className="text-2xl md:text-3xl font-semibold">Kurikulum yang Relevan</h3>
                            <p className="text-base">Kurikulum yang selalu diperbarui sesuai standar industri, agar peserta didik siap untuk dunia IT yang terus berubah.</p>
                         </div>
                      </div>
                      <div className="rounded-2xl bg-[#F3FBFF] flex flex-col space-y-6 px-8 py-10">
                         <ShuffleIcon />
                         <div className="grid gap-4">
-                           <h3 className="text-3xl font-semibold">Fleksibelitas Belajar</h3>
+                           <h3 className="text-2xl md:text-3xl font-semibold">Fleksibelitas Belajar</h3>
                            <p className="text-base">Menawarkan berbagai pilihan kursus dan materi yang bersifat lifetime sehingga dapat diakses kapan saja dan dimana saja.</p>
                         </div>
                      </div>
@@ -60,44 +60,44 @@ export default function AboutUs() {
          </section>
          <section className="my-28">
             <div className="container lg:px-20">
-               <h1 className="text-center text-4xl font-bold">Apa yang Kami Tawarkan</h1>
+               <h1 className="text-center text-3xl md:text-4xl font-bold">Apa yang Kami Tawarkan</h1>
                <div className="mt-10 grid gap-8">
-                  <div className="p-14 shadow-xl rounded-2xl flex gap-8">
+                  <div className="p-8 lg:p-14 shadow-xl rounded-2xl flex flex-col md:flex-row gap-8">
                      <Image quality={100} src="/about-image/hero-UIX.svg" alt="UI/UX Designer" width={500} height={500} />
                      <div className="flex flex-col gap-4">
-                        <h3 className="text-4xl font-semibold">UI/UX Designer</h3>
-                        <p className="text-lg">Tertarik untuk menjadi UI/UX designer? Gabunglah dengan kursus UI/UX design kami untuk mengasah keterampilan desain antarmuka pengguna (UI) dan pengalaman pengguna (UX) Anda. Instruktur berpengalaman kami akan membimbing Anda melalui proyek digital praktis dan membantu Anda mempersiapkan portofolio yang memikat untuk karir di dunia desain.</p>
+                        <h3 className="text-3xl md:text-4xl font-semibold">UI/UX Designer</h3>
+                        <p className="text-base md:text-lg">Tertarik untuk menjadi UI/UX designer? Gabunglah dengan kursus UI/UX design kami untuk mengasah keterampilan desain antarmuka pengguna (UI) dan pengalaman pengguna (UX) Anda. Instruktur berpengalaman kami akan membimbing Anda melalui proyek digital praktis dan membantu Anda mempersiapkan portofolio yang memikat untuk karir di dunia desain.</p>
                      </div>
                   </div>
-                  <div className="p-14 shadow-xl rounded-2xl flex flex-row-reverse gap-8">
+                  <div className="p-8 lg:p-14 shadow-xl rounded-2xl flex flex-col md:flex-row-reverse gap-8">
                      <Image quality={100} src="/about-image/hero-dev.svg" alt="Developer" width={500} height={500} />
                      <div className="flex flex-col gap-4">
-                        <h3 className="text-4xl font-semibold">Developer</h3>
-                        <p className="text-lg">Dalam rangka mendukung pemula hingga tingkat lanjut, kami menawarkan beragam kursus pengembangan web, aplikasi, dan perangkat lunak yang dipandu oleh para mentor yang ahli dan berpengalaman diindustri. Anda ingin memulai karir baru atau meningkatkan keterampilan, kursus-kursus kami membuka peluang untuk kesuksesan Anda di dunia teknologi yang selalu berubah.</p>
+                        <h3 className="text-3xl md:text-4xl font-semibold">Developer</h3>
+                        <p className="text-base md:text-lg">Dalam rangka mendukung pemula hingga tingkat lanjut, kami menawarkan beragam kursus pengembangan web, aplikasi, dan perangkat lunak yang dipandu oleh para mentor yang ahli dan berpengalaman diindustri. Anda ingin memulai karir baru atau meningkatkan keterampilan, kursus-kursus kami membuka peluang untuk kesuksesan Anda di dunia teknologi yang selalu berubah.</p>
                      </div>
                   </div>
                </div>
             </div>
          </section>
          <section className="my-28">
-            <div className="container lg:px-20 grid grid-cols-2 justify-items-center">
-               <div className="max-w-[26rem] flex flex-col space-y-6">
-                  <h3 className="text-2xl">Visi Schoolabs</h3>
+            <div className="container lg:px-20 grid justify-items-center md:justify-items-start gap-8 md:gap-0 md:grid-cols-2">
+               <div className="max-w-[26rem] flex flex-col space-y-3 md:space-y-6">
+                  <h3 className="text-2xl text-center md:text-left">Visi Schoolabs</h3>
                   <div className="flex flex-col space-y-4">
-                     <h5 className="text-4xl text-primary font-bold"> Belajar Dengan Praktik Terbaik</h5>
-                     <p className="text-lg">Kami mengintegrasikan proyek dunia nyata dan studi kasus ke dalam kurikulum kami, memastikan Anda mendapatkan pengalaman praktis.</p>
+                     <h5 className="text-3xl md:text-4xl text-primary text-center md:text-left font-bold"> Belajar Dengan Praktik Terbaik</h5>
+                     <p className="text-base md:text-lg font-medium">Kami mengintegrasikan proyek dunia nyata dan studi kasus ke dalam kurikulum kami, memastikan Anda mendapatkan pengalaman praktis.</p>
                   </div>
                </div>
-               <div className="max-w-[26rem] flex flex-col space-y-6">
-                  <h3 className="text-2xl">Misi Schoolabs</h3>
+               <div className="max-w-[26rem] flex flex-col space-y-3 md:space-y-6">
+                  <h3 className="text-2xl text-center md:text-left">Misi Schoolabs</h3>
                   <div className="flex flex-col space-y-4">
-                     <h5 className="text-4xl text-primary font-bold">Dukungan Tim Berpengalaman</h5>
-                     <p className="text-lg">Kami mengintegrasikan proyek dunia nyata dan studi kasus ke dalam kurikulum kami, memastikan Anda mendapatkan pengalaman praktis.</p>
+                     <h5 className="text-3xl md:text-4xl text-primary text-center md:text-left font-bold">Dukungan Tim Berpengalaman</h5>
+                     <p className="text-base md:text-lg font-medium">Kami mengintegrasikan proyek dunia nyata dan studi kasus ke dalam kurikulum kami, memastikan Anda mendapatkan pengalaman praktis.</p>
                   </div>
                </div>
             </div>
          </section>
-         <section className="relative bg-[#E1E1FE]">
+         <section className="relative overflow-hidden bg-[#E1E1FE]">
             <svg className="absolute bottom-0 left-5" width="500" height="252" viewBox="0 0 500 252" fill="none" xmlns="http://www.w3.org/2000/svg">
                <g opacity="0.5" clipPath="url(#clip0_1015_9519)">
                   <path d="M494.311 176.135L349.984 319.355C346.339 322.97 341.397 325 336.244 325C331.091 325 326.149 322.97 322.504 319.355L280.736 277.908C277.094 274.291 275.048 269.387 275.048 264.273C275.048 259.159 277.094 254.255 280.736 250.638L355.816 176.135C359.458 172.518 361.504 167.614 361.504 162.5C361.504 157.386 359.458 152.482 355.816 148.865L280.736 74.3618C277.094 70.7448 275.048 65.8405 275.048 60.727C275.048 55.6134 277.094 50.7091 280.736 47.0921L322.504 5.64512C326.149 2.03048 331.091 0 336.244 0C341.397 0 346.339 2.03048 349.984 5.64512L494.311 148.865C497.954 152.482 500 157.386 500 162.5C500 167.614 497.954 172.518 494.311 176.135Z" fill="#F5F5FF" />
@@ -110,14 +110,14 @@ export default function AboutUs() {
                </defs>
             </svg>
 
-            <div className="z-10 relative container lg:px-20 py-10 grid place-content-center">
-               <div className="flex items-center justify-center">
+            <div className="z-10 relative container lg:px-20 py-10">
+               <div className="flex flex-col-reverse md:flex-row gap-4 items-center justify-between">
                   <div className="max-w-xl flex flex-col gap-10">
-                     <h3 className="text-4xl font-bold">Gabunglah dengan Kami dan Mulai Bangun Masa Depan Anda</h3>
-                     <p className="text-lg">Kami berkomitmen untuk membantu Anda mencapai impian Anda dalam dunia pengembangan dan desain. Bergabunglah dengan kami hari ini dan mulailah perjalanan menuju kesuksesan Anda.</p>
+                     <h3 className="text-3xl md:text-4xl font-bold">Gabunglah dengan Kami dan Mulai Bangun Masa Depan Anda</h3>
+                     <p className="text-base md:text-lg">Kami berkomitmen untuk membantu Anda mencapai impian Anda dalam dunia pengembangan dan desain. Bergabunglah dengan kami hari ini dan mulailah perjalanan menuju kesuksesan Anda.</p>
                      <Button className="px-6 h-12 w-fit">Daftar Sekarang</Button>
                   </div>
-                  <Image quality={100} width={450} height={450} src="/about-image/cta-hero.webp" alt="Join Us"/>
+                  <Image quality={100} width={400} height={400} src="/about-image/cta-hero.webp" alt="Join Us"/>
                </div>
             </div>
             <RightIcon stroke="#F5F5FF" className="absolute right-0 top-0"/>

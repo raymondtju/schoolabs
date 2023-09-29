@@ -39,11 +39,11 @@ export default function Login() {
    const [showForm, setShowForm] = useState(false)
    return (
       <>
-         <div className="md:max-w-lg w-full border rounded-3xl bg-[#FFF] p-8">
+         <div className="md:max-w-lg w-full border rounded-3xl bg-[#FFF] p-4">
             <div className="grid justify-items-center">
                <div className="flex flex-col gap-2">
-                  <h3 className="text-4xl font-bold text-center">Masuk akun</h3>
-                  <p className="text-base">Lanjutkan proses belajar dan raih impianmu</p>
+                  <h3 className="text-3xl md:text-4xl font-bold text-center">Masuk akun</h3>
+                  <p className="text-base text-center">Lanjutkan proses belajar dan raih impianmu</p>
                </div>
                <div className="w-full grid">
                   <p className="my-6 text-sm text-center">Belum punya akun?

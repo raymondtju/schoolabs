@@ -1,11 +1,10 @@
 import StarsIcon from "@/components/icon/stars-icon";
 import {
   BottomIcon,
-  ButtonIconLeft,
-  ButtonIconRight,
   RightIcon,
 } from "@/components/icon/testimoni-icon";
 import { EllipseIcon } from "@/components/icon/usp-icon";
+import TestimoniCards from "@/components/testimoni-cards";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,11 +12,9 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { USPCards } from "@/types/data";
 import Image from "next/image";
 import Link from "next/link";
-
 export default function Home() {
   return (
     <>
@@ -28,13 +25,14 @@ export default function Home() {
               Melangkah Menuju Karir Barumu Bersama
               <span className="text-primary"> SCHOOLABS</span>
             </h1>
-            <p className="max-w-xl text-lg text-[#475367]">
+            <p className="max-w-xl text-base md:text-lg text-[#475367]">
               Schoolabs membantu kamu meraih karir yang kamu inginkan di
               industri teknologi sebagai UI//UX Designer dan Developer.
             </p>
             <div className="grid space-y-8">
-              <div className="flex gap-4">
+              <div className="flex flex-col md:flex-row gap-4">
                 <Image
+                  className="object-contain"
                   width={200}
                   height={5}
                   src="/images/avatar-group.png"
@@ -42,14 +40,23 @@ export default function Home() {
                 />
                 <span className="inline-flex items-center gap-3">
                   <StarsIcon />
-                  <p className="text-sm">4.9/5.0 dari 500+ reviews</p>
+                  <p className="text-sm font-medium">4.9/5.0 dari 500+ reviews</p>
                 </span>
               </div>
+              <div className="flex gap-3">
+
+              <Button asChild variant={"outline"} className="font-semibold text-[#4B4EFC] hover:text-[#4B4EFC]/90 border-[#4B4EFC] h-10 w-fit px-6 py-4 shadow-current">
+                <Link href="#">
+                  Lihat Kelas
+                </Link>
+
+              </Button>
+              <Button asChild className="font-semibold h-10 w-fit px-6 py-4 shadow-current hover:bg-primary/90">
               <Link href="/login">
-                <Button className="h-10 w-fit px-6 py-4 shadow-current hover:bg-primary/90">
                   Daftar Sekarang
-                </Button>
               </Link>
+                </Button>
+              </div>
             </div>
           </div>
           <Image
@@ -89,7 +96,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative my-28 bg-[#9B9DFD]">
+      <section className="relative my-28 bg-[#9B9DFD] overflow-hidden">
         <div className="container relative z-10 py-20 lg:px-20">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-1">
             <div className="flex flex-wrap gap-8 lg:justify-start">
@@ -97,7 +104,7 @@ export default function Home() {
                 <>
                   <div
                     key={index}
-                    className="flex max-w-[26rem] flex-col gap-4 rounded-3xl bg-[#F3FBFF] px-8 py-6 shadow-lg lg:flex-row"
+                    className="flex lg:max-w-[26rem] flex-col gap-4 rounded-3xl bg-[#F3FBFF] px-8 py-6 shadow-lg lg:flex-row"
                   >
                     <div className="h-fit w-fit rounded-md bg-primary p-2">
                       <card.icon />
@@ -119,7 +126,7 @@ export default function Home() {
                 <>
                   <div
                     key={index}
-                    className="flex max-w-[26rem] flex-col gap-4  rounded-3xl bg-[#F3FBFF] px-8 py-6 shadow-lg lg:flex-row"
+                    className="flex lg:max-w-[26rem] flex-col gap-4  rounded-3xl bg-[#F3FBFF] px-8 py-6 shadow-lg lg:flex-row"
                   >
                     <div className="h-fit w-fit rounded-md bg-primary p-2">
                       <card.icon />
@@ -143,7 +150,7 @@ export default function Home() {
       </section>
       <section className="my-28">
         <div className="container lg:px-20">
-          <h1 className="text-center text-4xl font-bold">
+          <h1 className="text-center text-3xl md:text-4xl font-bold">
             Pilih Jalur Karirmu!
           </h1>
           <div className="mt-8 flex flex-col items-center justify-around gap-4 md:flex-row">
@@ -202,7 +209,7 @@ export default function Home() {
       </section>
       <section className="my-28">
         <div className="container grid lg:px-20">
-          <h1 className="text-center text-4xl font-bold">
+          <h1 className="text-center text-3xl md:text-4xl font-bold">
             Bingung Mau Belajar yang Mana?
             <span className="text-primary">
               {" "}
@@ -214,6 +221,7 @@ export default function Home() {
               <Card className="border-none shadow-md" key={i}>
                 <CardHeader className="p-0">
                   <Image
+                    className="w-full"
                     src="/cards-image/dasarux.webp"
                     alt="Course dasar ux"
                     width={350}
@@ -285,73 +293,14 @@ export default function Home() {
           </Button>
         </div>
       </section>
-      <section className="relative my-28 bg-[#9B9DFD]">
+      <section className="relative overflow-hidden my-28 bg-[#9B9DFD]">
         <BottomIcon className="absolute bottom-0 left-20" />
-        <div className="container relative z-10 grid place-content-center py-32 lg:px-20">
-          <h1 className="text-center text-4xl font-bold text-[#FFF]">
+        <div className="container relative z-10  py-32 lg:px-20">
+          <h1 className="text-center text-3xl md:text-4xl font-bold text-[#FFF]">
             Kesan Peserta yang Belajar Bersama Kami
           </h1>
-          <div className="mt-6 px-10 py-6">
-            <div className="my-4 mr-4 flex justify-end gap-8">
-              <Button
-                size={"icon"}
-                className="h-10 w-10 rounded-full bg-[#F5F5FF] pt-[0.4rem] hover:bg-[#F5F5FF]/90"
-              >
-                <ButtonIconLeft />
-              </Button>
-              <Button
-                size={"icon"}
-                className="h-10 w-10 rounded-full bg-[#F5F5FF] pt-[0.4rem] hover:bg-[#F5F5FF]/90"
-              >
-                <ButtonIconRight />
-              </Button>
-            </div>
-            <div className="flex h-full max-h-[24rem] max-w-[64rem] rounded-3xl bg-[#F3FBFF]">
-              <div className="relative w-[90rem] max-w-md overflow-hidden">
-                <Image
-                  fill
-                  objectFit="cover"
-                  quality={100}
-                  className="w-full rounded-l-3xl"
-                  src="/testimoni-image/ux.png"
-                  alt="testimoni budi"
-                />
-              </div>
-              <div className="grid px-6 py-8">
-                <svg
-                  className="ml-auto"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="64"
-                  height="49"
-                  viewBox="0 0 64 49"
-                  fill="none"
-                >
-                  <path
-                    d="M30.1137 0V14.5516C30.1137 18.6835 29.3053 22.9053 27.6884 27.2168C26.1165 31.4835 24.0056 35.5256 21.3558 39.3432C18.706 43.1158 15.8091 46.327 12.6653 48.9768L0 41.4989C2.24561 37.9509 4.22175 34.021 5.92842 29.7095C7.68 25.3979 8.55579 20.3902 8.55579 14.6863V0H30.1137ZM64 0V14.5516C64 18.6835 63.1916 22.9053 61.5747 27.2168C60.0028 31.4835 57.8919 35.5256 55.2421 39.3432C52.5923 43.1158 49.673 46.327 46.4842 48.9768L33.8189 41.4989C36.1095 37.9509 38.1081 34.021 39.8147 29.7095C41.5663 25.3979 42.4421 20.3902 42.4421 14.6863V0H64Z"
-                    fill="#4B4EFC"
-                  />
-                </svg>
-                <div className="grid pb-6">
-                  <h1 className="text-2xl font-bold">Raply Masyukur</h1>
-                  <p className="text-xl">Siswa UI/UX Design Mastery</p>
-                </div>
-                <p className="text-base text-muted">
-                  “Saya khusus mendedikasikan waktu saya untuk belajar dasar
-                  UI/UX. Di SchooLabs belajarnya step by step, dan sudah
-                  tersusun dengan rapi jadi lebih mudah untuk membuat
-                  perencanaan pembelajaran. Kalau ada materi yang membuat
-                  bingung atau susah dimengerti kita langsung bisa konsultasi
-                  dengan para mentor yang sangat berpengalaman”
-                </p>
-                <Separator className="mt-2" orientation="horizontal" />
-              </div>
-            </div>
-            <div className="mt-4 flex justify-center gap-2">
-              <span className="h-[1.2rem] w-[1.2rem] rounded-full bg-primary" />
-              <span className="h-[1.2rem] w-[1.2rem] rounded-full bg-[#F3FBFF]" />
-              <span className="h-[1.2rem] w-[1.2rem] rounded-full bg-[#F3FBFF]" />
-              <span className="h-[1.2rem] w-[1.2rem] rounded-full bg-[#F3FBFF]" />
-            </div>
+          <div className="mt-6 py-6">
+            <TestimoniCards/>
           </div>
         </div>
         <RightIcon className="absolute right-0 top-0" />
@@ -412,7 +361,7 @@ export default function Home() {
               height={450}
             />
             <div className="flex flex-col justify-center gap-4">
-              <h1 className="mt-4 text-4xl font-bold">
+              <h1 className="mt-4 text-3xl md:text-4xl font-bold">
                 Masih Belum Tahu Apa Minat Karirmu?
               </h1>
               <p className="text-base text-muted">
