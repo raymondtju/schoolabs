@@ -43,11 +43,20 @@ export default function Home() {
                   <p className="text-sm font-medium">4.9/5.0 dari 500+ reviews</p>
                 </span>
               </div>
+              <div className="flex gap-3">
+
+              <Button asChild variant={"outline"} className="font-semibold text-[#4B4EFC] hover:text-[#4B4EFC]/90 border-[#4B4EFC] h-10 w-fit px-6 py-4 shadow-current">
+                <Link href="#">
+                  Lihat Kelas
+                </Link>
+
+              </Button>
+              <Button asChild className="font-semibold h-10 w-fit px-6 py-4 shadow-current hover:bg-primary/90">
               <Link href="/login">
-                <Button className="h-10 w-fit px-6 py-4 shadow-current hover:bg-primary/90">
                   Daftar Sekarang
-                </Button>
               </Link>
+                </Button>
+              </div>
             </div>
           </div>
           <Image

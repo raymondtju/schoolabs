@@ -5,25 +5,54 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { Book, Home, LucideIcon } from "lucide-react";
+import { GroupChatsIcon, SingleChatIcon } from "../icon/dashboard-icon";
 
-const DashboardMenuList = [
+type DashboardMenuType = {
+  name: string,
+  path: string,
+  icon: LucideIcon
+};
+
+type ForumMenuType = {
+  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>,
+  notif: number
+} & Pick<DashboardMenuType, "name" | "path">;
+
+const DashboardMenuList: DashboardMenuType[] = [
   {
     name: "Home",
     path: "/dashboard",
-    icon: undefined,
+    icon: Home  
   },
   {
     name: "Kelas saya",
     path: "/dashboard/kelas-saya",
-    icon: undefined,
+    icon: Book 
   },
 ];
+
+const ForumMenuList: ForumMenuType[] = [
+  {
+    name: "Diskusi Topik Hangat",
+    path: "/dashboard",
+    icon: GroupChatsIcon,
+    notif: 2
+
+  },
+  {
+    name: "Chat",
+    path: "/dashboard/kelas-saya",
+    icon: SingleChatIcon,
+    notif: 16
+  }
+]
 
 function DashboardSidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="h-screen space-y-3 border-r pt-5">
+    <div className="col-span-2 fixed top-0 h-screen space-y-3 border-r pt-5">
       <Image
         quality={100}
         src="/logo.svg"
@@ -34,13 +63,13 @@ function DashboardSidebar() {
       />
 
       <div className="space-y-5 px-2">
-        <ul className="space-y-1 ">
+        <ul className="space-y-1">
           {DashboardMenuList.map((item, i) => {
             return (
               <Link
                 href={item.path}
                 className={cn(
-                  "flex cursor-pointer items-center gap-3 px-4 py-3",
+                  "flex cursor-pointer font-medium items-center gap-3 px-4 py-3 text-[#344054]",
                   pathname === item.path
                     ? "rounded-lg bg-[#f5f5ff] font-semibold "
                     : "",
@@ -48,23 +77,26 @@ function DashboardSidebar() {
                 key={i}
               >
                 {/* TO-DO: ICONS */}
-                <span>{item.name}</span>
+                <item.icon stroke={pathname === item.path ? "#4B4EFC" : "#344054"}/>
+                <span className="text-sm">{item.name}</span>
               </Link>
             );
           })}
         </ul>
+        <hr className="border-[#F0F2F5]"/>
         <div className="">
-          <h6 className="px-4">Forum </h6>
+          <h6 className="px-4 text-sm font-medium text-[#98A2B3]">Forum</h6>
           <ul>
-            {DashboardMenuList.map((item, i) => {
+            {ForumMenuList.map((item, i) => {
               return (
                 <Link
                   href={item.path}
                   className="flex items-center gap-3 px-4 py-3"
                   key={i}
                 >
-                  {/* TO-DO: ICONS */}
-                  <span>{item.name}</span>
+                  <item.icon/>
+                  <span className="text-sm">{item.name}</span>
+                  <span className="ml-auto bg-[#F0F2F5] text-xs font-medium rounded-full px-2 py-1">{item.notif}</span>
                 </Link>
               );
             })}

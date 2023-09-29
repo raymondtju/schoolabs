@@ -132,7 +132,7 @@ export function PromotionFlyer() {
           <div className="container relative flex flex-col gap-2 lg:flex-row lg:items-center justify-between text-[#F5F5FF] lg:px-20">
             <div className="flex max-w-3xl items-center justify-center gap-4">
               <Image
-                className="hidden"
+                className="hidden md:block"
                 src="/images/megaphone.webp"
                 alt="Megaphone"
                 width={100}

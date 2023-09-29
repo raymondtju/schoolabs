@@ -96,7 +96,7 @@ export default function TestimoniCards() {
                      </div>
                      <div className="grid px-6 py-8">
                         <svg
-                           className="h-full ml-auto"
+                           className="w-12 md:w-20 h-full ml-auto"
                            xmlns="http://www.w3.org/2000/svg"
                            width="64"
                            height="49"

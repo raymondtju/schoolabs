@@ -13,3 +13,10 @@ export type TestimoniCardTypes = {
    role: string,
    text: string
 }
+
+export type CourseCardTypes = {
+   title: string,
+   description: string,
+   status: "Complete" | number
+
+}

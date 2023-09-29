@@ -6,10 +6,10 @@ import Image from "next/image";
 export default function AboutUs() {
    return (
       <>
-         <section className="-mb-8 md:-mb-14 about-hero h-[30rem] overflow-hidden rounded-b-3xl md:rounded-b-[2.5rem] flex flex-col items-center">
+         <section className="-mb-8 md:-mb-14 md:pb-4 about-hero h-[30rem] overflow-hidden rounded-b-3xl md:rounded-b-[2.5rem] flex flex-col justify-center items-center">
             <div className="md:mb-20 py-8 container lg:px-20 text-white gap-4 flex flex-col space-y-4">
                <h1 className="text-base font-semibold text-center md:text-left">Tentang SchooLabs</h1>
-               <div className="flex flex-col gap-4 justify-between">
+               <div className="flex flex-col md:flex-row gap-4 justify-between">
                   <h1 className="max-w-lg text-4xl md:text-5xl font-bold">Kami memiliki misi memberdayakan siswa di dunia IT</h1>
                   <p className="md:ml-auto max-w-[25rem] text-base font-medium">Kami adalah tim yang berdedikasi untuk membantu Anda mencapai potensi terbaik Anda dalam dunia pengembangan dan desain. Dengan pengalaman bertahun-tahun dalam industri ini, kami telah menyadari pentingnya pendidikan yang berkualitas dan berfokus pada praktik terbaik.</p>
                </div>
@@ -23,7 +23,7 @@ export default function AboutUs() {
                      <h1 className="text-3xl md:text-4xl font-bold text-center">Mengapa Memilih Kami?</h1>
                      <p className="text-base md:text-lg text-center">Kami tahu ada banyak pilihan kursus di luar sana, tetapi kami unggul dalam beberapa hal:</p>
                   </div>
-                  <div className="grid gap-10 grid-cols-1 mg:grid-cols-2">
+                  <div className="grid gap-10 grid-cols-1 md:grid-cols-2">
                      <div className="rounded-2xl bg-[#F5F5FF] flex flex-col space-y-6 px-8 py-10">
                         <BadgeCheckIcon />
                         <div className="grid gap-4">
@@ -80,7 +80,7 @@ export default function AboutUs() {
             </div>
          </section>
          <section className="my-28">
-            <div className="container lg:px-20 grid gap-8 md:gap-0 md:grid-cols-2">
+            <div className="container lg:px-20 grid justify-items-center md:justify-items-start gap-8 md:gap-0 md:grid-cols-2">
                <div className="max-w-[26rem] flex flex-col space-y-3 md:space-y-6">
                   <h3 className="text-2xl text-center md:text-left">Visi Schoolabs</h3>
                   <div className="flex flex-col space-y-4">

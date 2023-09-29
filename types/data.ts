@@ -1,4 +1,4 @@
-import { TestimoniCardTypes, USPCardTypes } from "./type";
+import { CourseCardTypes, TestimoniCardTypes, USPCardTypes } from "./type";
 import { BadgeIcon, ClockIcon, SuitcaseIcon, SupportIcon } from "@/components/icon/usp-icon";
 
 export const USPCards: USPCardTypes[] = [
@@ -49,4 +49,27 @@ export const CardsTestimoni: TestimoniCardTypes[] = [
       role: "Siswa Javascript Mastery",
       text: '“Saya khusus mendedikasikan waktu saya untuk belajar dasar UI/UX. Di SchooLabs belajarnya step by step, dan sudah tersusun dengan rapi jadi lebih mudah untuk membuat perencanaan pembelajaran. Kalau ada materi yang membuat bingung atau susah dimengerti kita langsung bisa konsultasi dengan para mentor yang sangat berpengalaman”'
    }
+]
+
+export const CourseCards: CourseCardTypes[] = [
+   { 
+      title:"Dasar UX Research",
+      description: "Supporting or descriptive text for the card goes here like a pro.",
+      status: 70
+   },
+   { 
+      title:"Advance Prototyping Figma",
+      description: "Supporting or descriptive text for the card goes here like a pro.",
+      status: 20
+   },
+   { 
+      title:"Wireframing",
+      description: "Supporting or descriptive text for the card goes here like a pro.",
+      status: "Complete"
+   },
+   { 
+      title:"Dasar UX Research",
+      description: "Supporting or descriptive text for the card goes here like a pro.",
+      status: "Complete"
+   },
 ]
