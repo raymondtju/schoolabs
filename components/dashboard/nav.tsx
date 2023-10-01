@@ -31,7 +31,7 @@ function DashbaordNav() {
           <DropdownMenuContent align="end">
             <DropdownMenuItem>Dashboard</DropdownMenuItem>
             <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuSeparator></DropdownMenuSeparator>
+            <DropdownMenuSeparator className="bg-gray-200"></DropdownMenuSeparator>
             <DropdownMenuItem>Loogut</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

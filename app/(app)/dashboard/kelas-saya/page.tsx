@@ -13,7 +13,7 @@ import React, { useState } from "react";
 
 function KelasSayaPage() {
   return (
-    <>
+    <div className="bg-[#F9FAFB] px-8 py-8">
       <div className="grid space-y-5">
         <h1 className="text-4xl font-bold">Kelas Saya</h1>
         <div className="flex gap-3">
@@ -62,7 +62,7 @@ function KelasSayaPage() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

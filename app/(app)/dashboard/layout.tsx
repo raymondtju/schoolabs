@@ -16,13 +16,7 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
       <div className="col-span-2 pl-[15.6rem]">
         <DashboardNav />
 
-        {pathname.startsWith("/dashboard/class") && (
-          <div className="sticky top-0 z-50 flex justify-between border-b bg-white px-8 py-5">
-            <h4 className="text-xl font-semibold">Kelas Dasar UX Research</h4>
-            <Button>Lanjutkan belajar</Button>
-          </div>
-        )}
-        <div className="bg-[#F9FAFB] px-8 py-8">{children}</div>
+        {children}
       </div>
     </main>
   );

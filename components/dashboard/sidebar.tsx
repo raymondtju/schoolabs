@@ -35,13 +35,13 @@ const DashboardMenuList: DashboardMenuType[] = [
 const ForumMenuList: ForumMenuType[] = [
   {
     name: "Diskusi Topik Hangat",
-    path: "/dashboard",
+    path: "/dashboard/forum/hot-discussion",
     icon: GroupChatsIcon,
     notif: 2,
   },
   {
     name: "Chat",
-    path: "/dashboard/kelas-saya",
+    path: "/dashboard/forum/chat",
     icon: SingleChatIcon,
     notif: 16,
   },
@@ -111,7 +111,7 @@ function DashboardSidebar() {
                 <Link
                   href={item.path}
                   className={cn(
-                    "flex cursor-pointer items-center gap-3 px-4 py-3 font-medium text-[#344054]",
+                    "flex items-center gap-3 px-4 py-3 font-medium text-[#344054]",
                     pathname === item.path
                       ? "rounded-lg bg-[#f5f5ff] font-semibold "
                       : "",
@@ -135,10 +135,17 @@ function DashboardSidebar() {
                 return (
                   <Link
                     href={item.path}
-                    className="flex items-center gap-3 px-4 py-3"
+                    className={cn(
+                      "flex items-center gap-3 px-4 py-3 font-medium text-[#344054]",
+                      pathname === item.path
+                        ? "rounded-lg bg-[#f5f5ff] font-semibold "
+                        : "",
+                    )}
                     key={i}
                   >
-                    <item.icon />
+                    <item.icon
+                      stroke={pathname === item.path ? "#4B4EFC" : "#344054"}
+                    />
                     <span className="text-sm">{item.name}</span>
                     <span className="ml-auto rounded-full bg-[#F0F2F5] px-2 py-1 text-xs font-medium">
                       {item.notif}
