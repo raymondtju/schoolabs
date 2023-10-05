@@ -18,7 +18,7 @@ function CourseNav() {
    const router = useRouter();
    return (
       <>
-         <div className="shadow-sm sticky top-0 z-50 flex justify-between border-b b px-8 py-5">g-white
+         <div className="shadow-sm sticky top-0 z-50 flex justify-between border-b bg-white px-8 py-5">
             <div className="flex items-center gap-4">
                <button onClick={() => router.back()}>
                   <ChevronLeftCircle size={22} />
