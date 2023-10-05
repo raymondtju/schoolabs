@@ -1,3 +1,4 @@
+import Avatar from "@/components/dashboard/avatar";
 import { Separator } from "@/components/ui/separator";
 import React from "react";
 
@@ -14,7 +15,7 @@ function ChatPage() {
 
         {Array.from({ length: 3 }).map((_item, i) => (
           <div className="grid grid-cols-[40px_auto] gap-3 py-2" key={i}>
-            <div className="h-10 w-10 rounded-full bg-gray-200"></div>
+            <Avatar image="/images/forumAvatar.png" alt="avatar"/>
             <div className="space-y-2">
               <div className="flex items-center">
                 <h4 className="font-medium">Aspira Yuriza</h4>
@@ -48,7 +49,7 @@ function ChatPage() {
 
         {Array.from({ length: 3 }).map((_item, i) => (
           <div className="grid grid-cols-[40px_auto] gap-3 py-2" key={i}>
-            <div className="h-10 w-10 rounded-full bg-gray-200"></div>
+            <Avatar image="/images/forumAvatar.png" alt="avatar" />
             <div className="space-y-2">
               <div className="flex items-center">
                 <h4 className="font-medium">Aspira Yuriza</h4>

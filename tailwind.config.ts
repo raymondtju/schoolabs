@@ -9,7 +9,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ["Plus Jakarta Sans", "sans-serif"],
+      PJS: ["Plus Jakarta Sans", "sans-serif"],
+      Inter: ["Inter", "sans-serif"]
     },
     container: {
       center: true,

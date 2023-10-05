@@ -5,30 +5,31 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Book, Home, LucideIcon } from "lucide-react";
-import { GroupChatsIcon, SingleChatIcon } from "../icon/dashboard-icon";
+import { Trophy, Link as Chain } from "lucide-react";
+import { ClassIcon, GroupChatsIcon, HomeIcon, SingleChatIcon } from "../icon/dashboard-icon";
+import { SubjectNavigation } from "@/types/data";
 
 type DashboardMenuType = {
   name: string;
   path: string;
-  icon: LucideIcon;
+  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
 };
 
 type ForumMenuType = {
   icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   notif: number;
-} & Pick<DashboardMenuType, "name" | "path">;
+} & DashboardMenuType
 
 const DashboardMenuList: DashboardMenuType[] = [
   {
     name: "Home",
     path: "/dashboard",
-    icon: Home,
+    icon: HomeIcon,
   },
   {
     name: "Kelas saya",
     path: "/dashboard/kelas-saya",
-    icon: Book,
+    icon: ClassIcon,
   },
 ];
 
@@ -47,34 +48,12 @@ const ForumMenuList: ForumMenuType[] = [
   },
 ];
 
-const DasarUXResearchList = [
-  {
-    name: "Pengenalan UX Research",
-    path: "/dashboard/class/dasar-ux-research/pengenalan-ux-research",
-    icon: Home,
-    complete: false,
-    progress: {
-      current: 3,
-      max: 5,
-    },
-  },
-  {
-    name: "Metode Penelitian UX",
-    path: "/dashboard/class/dasar-ux-research/metode-penelitian-ux",
-    icon: Book,
-    complete: false,
-    progress: {
-      current: 3,
-      max: 5,
-    },
-  },
-];
 
-function DashboardSidebar() {
+export function DashboardSidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="fixed top-0 z-[60] h-screen w-full max-w-[250px] space-y-3 border-r pt-5">
+    <div className="bg-[#FFF] fixed top-0 z-[60] h-screen w-full max-w-[280px] space-y-3 border-r pt-5 pb-7 overflow-y-auto">
       <Image
         quality={100}
         src="/logo.svg"
@@ -84,29 +63,33 @@ function DashboardSidebar() {
         className="px-6 py-2"
       />
 
-      {pathname.startsWith("/dashboard/class") ? (
-        <div className="">
-          <h6 className="px-4 text-sm font-medium text-[#98A2B3]">
-            Materi kelas
-          </h6>
-          <ul className=" ">
-            {DasarUXResearchList.map((item, i) => {
-              return (
-                <Link href={item.path} className="flex gap-3 px-4 py-3" key={i}>
-                  <item.icon />
-                  <span className="">{item.name}</span>
-                  <span className="ml-auto h-fit rounded-full bg-[#F0F2F5] px-2 py-1 text-xs font-medium">
-                    {item.progress.current}/{item.progress.max}
-                  </span>
-                </Link>
-              );
-            })}
-          </ul>
-        </div>
-      ) : (
-        <div className="space-y-5 px-2">
-          <ul className="space-y-1">
-            {DashboardMenuList.map((item, i) => {
+      <div className="space-y-5 px-2">
+        <ul className="space-y-1">
+          {DashboardMenuList.map((item, i) => {
+            return (
+              <Link
+                href={item.path}
+                className={cn(
+                  "flex items-center gap-3 px-4 py-3 font-medium text-[#344054]",
+                  pathname === item.path
+                    ? "rounded-lg bg-[#f5f5ff] font-semibold "
+                    : "",
+                )}
+                key={i}
+              >
+                <item.icon
+                  stroke={pathname === item.path ? "#4B4EFC" : "#344054"}
+                />
+                <span className="text-sm">{item.name}</span>
+              </Link>
+            );
+          })}
+        </ul>
+        <hr className="border-gray-100" />
+        <div>
+          <h6 className="text-sm font-medium text-[#98A2B3]">Forum</h6>
+          <ul>
+            {ForumMenuList.map((item, i) => {
               return (
                 <Link
                   href={item.path}
@@ -118,47 +101,107 @@ function DashboardSidebar() {
                   )}
                   key={i}
                 >
-                  {/* TO-DO: ICONS */}
                   <item.icon
                     stroke={pathname === item.path ? "#4B4EFC" : "#344054"}
                   />
                   <span className="text-sm">{item.name}</span>
+                  <span className="ml-auto rounded-full bg-[#F0F2F5] px-2 py-1 text-xs font-medium">
+                    {item.notif}
+                  </span>
                 </Link>
               );
             })}
           </ul>
-          <hr className="border-[#F0F2F5]" />
-          <div className="">
-            <h6 className="px-4 text-sm font-medium text-[#98A2B3]">Forum</h6>
-            <ul>
-              {ForumMenuList.map((item, i) => {
-                return (
-                  <Link
-                    href={item.path}
-                    className={cn(
-                      "flex items-center gap-3 px-4 py-3 font-medium text-[#344054]",
-                      pathname === item.path
-                        ? "rounded-lg bg-[#f5f5ff] font-semibold "
-                        : "",
-                    )}
-                    key={i}
-                  >
-                    <item.icon
-                      stroke={pathname === item.path ? "#4B4EFC" : "#344054"}
-                    />
-                    <span className="text-sm">{item.name}</span>
-                    <span className="ml-auto rounded-full bg-[#F0F2F5] px-2 py-1 text-xs font-medium">
-                      {item.notif}
-                    </span>
-                  </Link>
-                );
-              })}
-            </ul>
-          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
 
-export default DashboardSidebar;
+export function ClassSidebar(){
+  return (
+    <div className="bg-[#FFF] fixed top-0 z-[60] h-screen w-full max-w-[280px] space-y-3 border-r pt-5 pb-7 overflow-y-auto">
+      <Image
+        quality={100}
+        src="/logo.svg"
+        alt="icon"
+        width={176}
+        height={32}
+        className="px-6 py-2"
+      />
+      <div className="grid gap-3 px-2">
+        <h6 className="text-sm font-medium text-[#98A2B3]">
+          Materi Kelas
+        </h6>
+        <ul className="grid gap-1">
+          {SubjectNavigation.map((item, i) => {
+            return (
+              <li key={i}>
+                <Link className="flex gap-3 px-2 py-3" href={item.path}>
+                  <span className="inline-block w-5 h-5">
+                    <item.icon />
+                  </span>
+                  <span className="text-sm">{item.title}</span>
+                  {item.progress && (
+                    <span className="ml-auto h-fit rounded-full bg-[#F0F2F5] px-2 py-1 text-xs font-medium">
+                      {item.progress?.current}/{item.progress.max}
+                    </span>
+                  )}
+                </Link>
+
+              </li>
+            );
+          })}
+        </ul>
+        <hr className="border-gray-100" />
+        <ul className="grid gap-1">
+          <li>
+            <Link href="#" className="text-sm flex gap-3 px-2 py-3">
+              <Trophy size={20} />
+              Grade
+            </Link>
+          </li>
+          <li>
+            <Link href="#" className="text-sm flex gap-3 px-2 py-3">
+              <SingleChatIcon stroke="black" />
+              Diskusi
+            </Link>
+          </li>
+        </ul>
+
+
+        <hr className="border-gray-100" />
+        <h6 className="text-sm font-medium text-gray-400">
+          Resources
+        </h6>
+        <ul className="grid gap-1">
+          <li>
+            <Link href="#" className="text-sm flex gap-3 px-2 py-3">
+              <span className="inline-block w-5 h-5">
+                <Chain size={20} />
+              </span>
+              Template pertanyaan interview
+            </Link>
+          </li>
+          <li>
+            <Link href="#" className="text-sm flex gap-3 px-2 py-3">
+              <span className="inline-block w-5 h-5">
+                <Chain size={20} />
+              </span>
+              Template persona
+            </Link>
+          </li>
+          <li>
+            <Link href="#" className="text-sm flex gap-3 px-2 py-3">
+              <span className="inline-block w-5 h-5">
+                <Chain size={20} />
+              </span>
+              Template pertanyaan usability testing
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  )
+}
+

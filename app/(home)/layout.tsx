@@ -12,10 +12,14 @@ export default function RootLayout({
   const pathname = usePathname();
   return (
     <>
-      {pathname === "/" && <PromotionFlyer />}
-      <Navbar />
-      <main>{children}</main>
-      <Footer />
+      <main className="font-PJS">
+        {pathname === "/" && <PromotionFlyer />}
+        <Navbar />
+        <div>
+          {children}
+        </div>
+        <Footer />
+      </main>
     </>
   );
 }

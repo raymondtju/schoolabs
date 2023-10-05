@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${pjs.style} ${inter.style} font-inter`}>
+      <body className={""}>
         {children}
       </body>
     </html>

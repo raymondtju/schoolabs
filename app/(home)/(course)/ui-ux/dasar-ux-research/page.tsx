@@ -1,9 +1,8 @@
 "use client";
 
-import { Footer } from "@/components/footer";
-import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { subjectLearnList } from "@/types/data";
 import React, { useState } from "react";
 
 const WhatYouGetSection = [
@@ -305,7 +304,7 @@ function DasarUxResearchPage() {
               Apa yang akan kamu pelajari?
             </h3>
             <div className="space-y-2">
-              {ClassListSection.map((item, index) => (
+              {subjectLearnList.map((item, index) => (
                 <div className={cn("rounded-lg border")} key={index}>
                   <div
                     className={cn(
