@@ -5,29 +5,27 @@ import React from "react";
 import { ClassSidebar } from "@/components/dashboard/sidebar";
 import DashbaordNav from "@/components/dashboard/nav";
 
-function ClassLayout(
-  {
-    children,
-    params
-  }: {
-    children: React.ReactNode,
-    params: { slug: string }
-  }) {
+function ClassLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: { slug: string };
+}) {
+
   return (
     <>
-      <main className="font-Inter grid grid-cols-[290px_1fr]">
+      <main className="grid grid-cols-[290px_1fr] font-Inter">
         <ClassSidebar />
         <div className="col-span-2 pl-[17.5rem]">
           <DashbaordNav />
           <div className="sticky top-0 z-[49] flex justify-between border-b bg-white px-8 py-5">
             <h4 className="text-xl font-semibold">Kelas</h4>
             <Link href={`${params.slug}/detail-course`}>
-              <Button>
-                Lanjutkan Belajar
-              </Button>
+              <Button>Lanjutkan Belajar</Button>
             </Link>
           </div>
-          <div className="bg-[#F9FAFB] px-8 py-8 flex">{children}</div>
+          <div className="flex bg-[#F9FAFB] px-8 py-8">{children}</div>
         </div>
       </main>
     </>
