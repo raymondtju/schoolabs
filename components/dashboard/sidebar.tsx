@@ -6,7 +6,12 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Trophy, Link as Chain } from "lucide-react";
-import { ClassIcon, GroupChatsIcon, HomeIcon, SingleChatIcon } from "../icon/dashboard-icon";
+import {
+  ClassIcon,
+  GroupChatsIcon,
+  HomeIcon,
+  SingleChatIcon,
+} from "../icon/dashboard-icon";
 import { SubjectNavigation } from "@/types/data";
 
 type DashboardMenuType = {
@@ -18,7 +23,7 @@ type DashboardMenuType = {
 type ForumMenuType = {
   icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   notif: number;
-} & DashboardMenuType
+} & DashboardMenuType;
 
 const DashboardMenuList: DashboardMenuType[] = [
   {
@@ -48,12 +53,11 @@ const ForumMenuList: ForumMenuType[] = [
   },
 ];
 
-
 export function DashboardSidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="bg-[#FFF] fixed top-0 z-[60] h-screen w-full max-w-[280px] space-y-3 border-r pt-5 pb-7 overflow-y-auto">
+    <div className="fixed top-0 z-[60] h-screen w-full max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5">
       <Image
         quality={100}
         src="/logo.svg"
@@ -118,9 +122,9 @@ export function DashboardSidebar() {
   );
 }
 
-export function ClassSidebar(){
+export function ClassSidebar() {
   return (
-    <div className="bg-[#FFF] fixed top-0 z-[60] h-screen w-full max-w-[280px] space-y-3 border-r pt-5 pb-7 overflow-y-auto">
+    <div className="fixed top-0 z-[60] h-screen w-full max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5">
       <Image
         quality={100}
         src="/logo.svg"
@@ -130,15 +134,13 @@ export function ClassSidebar(){
         className="px-6 py-2"
       />
       <div className="grid gap-3 px-2">
-        <h6 className="text-sm font-medium text-[#98A2B3]">
-          Materi Kelas
-        </h6>
+        <h6 className="text-sm font-medium text-[#98A2B3]">Materi Kelas</h6>
         <ul className="grid gap-1">
           {SubjectNavigation.map((item, i) => {
             return (
               <li key={i}>
                 <Link className="flex gap-3 px-2 py-3" href={item.path}>
-                  <span className="inline-block w-5 h-5">
+                  <span className="inline-block h-5 w-5">
                     <item.icon />
                   </span>
                   <span className="text-sm">{item.title}</span>
@@ -148,7 +150,6 @@ export function ClassSidebar(){
                     </span>
                   )}
                 </Link>
-
               </li>
             );
           })}
@@ -156,44 +157,44 @@ export function ClassSidebar(){
         <hr className="border-gray-100" />
         <ul className="grid gap-1">
           <li>
-            <Link href="#" className="text-sm flex gap-3 px-2 py-3">
+            <Link
+              href="/dashboard/class/dasar-ux-research/grade"
+              className="flex gap-3 px-2 py-3 text-sm"
+            >
               <Trophy size={20} />
               Grade
             </Link>
           </li>
           <li>
-            <Link href="#" className="text-sm flex gap-3 px-2 py-3">
+            <Link href="#" className="flex gap-3 px-2 py-3 text-sm">
               <SingleChatIcon stroke="black" />
               Diskusi
             </Link>
           </li>
         </ul>
 
-
         <hr className="border-gray-100" />
-        <h6 className="text-sm font-medium text-gray-400">
-          Resources
-        </h6>
+        <h6 className="text-sm font-medium text-gray-400">Resources</h6>
         <ul className="grid gap-1">
           <li>
-            <Link href="#" className="text-sm flex gap-3 px-2 py-3">
-              <span className="inline-block w-5 h-5">
+            <Link href="#" className="flex gap-3 px-2 py-3 text-sm">
+              <span className="inline-block h-5 w-5">
                 <Chain size={20} />
               </span>
               Template pertanyaan interview
             </Link>
           </li>
           <li>
-            <Link href="#" className="text-sm flex gap-3 px-2 py-3">
-              <span className="inline-block w-5 h-5">
+            <Link href="#" className="flex gap-3 px-2 py-3 text-sm">
+              <span className="inline-block h-5 w-5">
                 <Chain size={20} />
               </span>
               Template persona
             </Link>
           </li>
           <li>
-            <Link href="#" className="text-sm flex gap-3 px-2 py-3">
-              <span className="inline-block w-5 h-5">
+            <Link href="#" className="flex gap-3 px-2 py-3 text-sm">
+              <span className="inline-block h-5 w-5">
                 <Chain size={20} />
               </span>
               Template pertanyaan usability testing
@@ -202,6 +203,5 @@ export function ClassSidebar(){
         </ul>
       </div>
     </div>
-  )
+  );
 }
-
