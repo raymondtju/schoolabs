@@ -53,6 +53,7 @@ function Quiz({ params }: { params: { soal: string } }) {
                   setDataForm({
                     ...dataForm,
                     selected: index,
+                    isAnswerTrue: index === trueAns,
                   });
                   console.log(index);
                   console.log(dataForm);
@@ -62,15 +63,15 @@ function Quiz({ params }: { params: { soal: string } }) {
                 disabled={dataForm.selected !== null}
                 className={cn(
                   "flex items-center justify-between rounded-2xl border-[2px] border-[#E4E7EC] bg-[#FFF] p-4 text-base shadow-[0px_4px_0px_0px] shadow-[#E4E7EC]",
-                  dataForm.selected !== null &&
-                    index === dataForm.selected &&
+                  dataForm.selected !== null && // if user has already selected the button
+                    index === dataForm.selected && // if index of button is same as the user selected
                     (answerButton[index].isAnswer
-                      ? "border-[#0F973D] shadow-[#0F973D]"
-                      : "border-[#DB2323] shadow-[#DB2323]"),
-                  dataForm.selected !== null &&
-                    !dataForm.isAnswerTrue &&
-                    index === trueAns &&
-                    "border-[#0F973D] shadow-[#0F973D]",
+                      ? "border-[#0F973D] shadow-[#0F973D]" // if isAnswer from index of answerButton was true
+                      : "border-[#DB2323] shadow-[#DB2323]"), // if false
+                  dataForm.selected !== null && // if user has already select the button
+                    !dataForm.isAnswerTrue && // if answer hasn't turn to true
+                    index === trueAns && // and if index of button was same as actually true ans
+                    "border-[#0F973D] shadow-[#0F973D]", // then true
                 )}
               >
                 {item.label}

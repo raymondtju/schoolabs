@@ -19,13 +19,8 @@ function ClassLayout({
         <ClassSidebar />
         <div className="col-span-2 pl-[17.5rem]">
           <DashbaordNav />
-          <div className="sticky top-0 z-[49] flex justify-between border-b bg-white px-8 py-5">
-            <h4 className="text-xl font-semibold">Kelas</h4>
-            <Link href={`${params.slug}/detail-course`}>
-              <Button>Lanjutkan Belajar</Button>
-            </Link>
-          </div>
-          <div className="flex bg-[#F9FAFB] px-8 py-8">{children}</div>
+
+          {children}
         </div>
       </main>
     </>
