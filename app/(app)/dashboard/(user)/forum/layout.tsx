@@ -16,7 +16,13 @@ function ForumLayout({ children }: { children: React.ReactNode }) {
     <>
       <div className="sticky top-20 z-[49] flex justify-between border-b bg-white px-8 py-5">
         <h4 className="text-xl font-semibold">
-          {listPage[`${pathname.split("/dashboard/forum/")[1]}`]}
+          {
+            listPage[
+              `${
+                pathname.split("/dashboard/forum/")[1]
+              }` as keyof typeof listPage
+            ]
+          }
         </h4>
 
         {!pathname.includes("chat") && <Button>New Post</Button>}
