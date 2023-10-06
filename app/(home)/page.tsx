@@ -1,3 +1,4 @@
+import ClassCard from "@/components/class-card";
 import StarsIcon from "@/components/icon/stars-icon";
 import {
   BottomIcon,
@@ -12,13 +13,13 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { USPCards } from "@/types/data";
+import { CourseCards, USPCards } from "@/types/data";
 import Image from "next/image";
 import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <section className="">
+      <section className="font-Inter">
         <div className="container relative flex h-[42rem] max-h-full items-center lg:px-20">
           <div className="flex max-w-xl flex-col gap-4">
             <h1 className="text-5xl font-bold text-[#1D2739] md:text-[3.25rem] md:leading-[3.5rem]">
@@ -96,7 +97,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative my-28 bg-[#9B9DFD] overflow-hidden">
+      <section className="font-Inter relative my-28 bg-[#9B9DFD] overflow-hidden">
         <div className="container relative z-10 py-20 lg:px-20">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-1">
             <div className="flex flex-wrap gap-8 lg:justify-start">
@@ -216,58 +217,13 @@ export default function Home() {
               Eksplorasi Kelas Dasar Dulu Aja
             </span>
           </h1>
-          <div className="my-8 grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-4">
-            {Array.from({ length: 4 }).map((_, i) => (
-              <Card className="border-none shadow-md" key={i}>
-                <CardHeader className="p-0">
-                  <Image
-                    className="w-full"
-                    src="/cards-image/dasarux.webp"
-                    alt="Course dasar ux"
-                    width={350}
-                    height={350}
-                  />
-                </CardHeader>
-                <CardContent className="pt-4">
-                  <p className="text-xl font-bold">Dasar UX Research</p>
-                  <div className="flex gap-5">
-                    <p className="text-sm font-semibold text-muted-foreground">
-                      Rp - {"(Gratis)"}
-                    </p>
-                    <span className="inline-flex items-center gap-3">
-                      <StarsIcon />
-                      <p className="text-xs text-muted-foreground">
-                        4.9/5.0 {"(500)"}
-                      </p>
-                    </span>
-                  </div>
-                </CardContent>
-                <CardFooter className="flex gap-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="21"
-                    viewBox="0 0 20 21"
-                    fill="none"
-                  >
-                    <path
-                      d="M5.41667 10.5H3.75C3.05964 10.5 2.5 11.0596 2.5 11.75V16.75C2.5 17.4404 3.05964 18 3.75 18H5.41667C6.10702 18 6.66667 17.4404 6.66667 16.75V11.75C6.66667 11.0596 6.10702 10.5 5.41667 10.5Z"
-                      fill="#4B4EFC"
-                    />
-                    <path
-                      d="M16.25 3H14.5833C13.893 3 13.3333 3.55964 13.3333 4.25V16.75C13.3333 17.4404 13.893 18 14.5833 18H16.25C16.9404 18 17.5 17.4404 17.5 16.75V4.25C17.5 3.55964 16.9404 3 16.25 3Z"
-                      fill="#D0D5DD"
-                    />
-                    <path
-                      d="M10.8333 6.33333H9.16667C8.47631 6.33333 7.91667 6.89298 7.91667 7.58333V16.75C7.91667 17.4404 8.47631 18 9.16667 18H10.8333C11.5237 18 12.0833 17.4404 12.0833 16.75V7.58333C12.0833 6.89298 11.5237 6.33333 10.8333 6.33333Z"
-                      fill="#D0D5DD"
-                    />
-                  </svg>
-                  <p className="text-sm text-muted-foreground">
-                    Level Dasar - Pemula
-                  </p>
-                </CardFooter>
-              </Card>
+          <div className="my-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {CourseCards.map((card, index) => (
+              <ClassCard
+                className="shadow-md border-none"
+                key={index}
+                card={card}
+              />
             ))}
           </div>
           <Button

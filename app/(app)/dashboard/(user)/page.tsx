@@ -1,6 +1,6 @@
 "use client";
 
-import ClassCard from "@/components/dashboard/class-card";
+import ClassCard from "@/components/class-card";
 import ForumList from "@/components/dashboard/forum-list";
 import { DesignerButtonIcon, DevButtonIcon } from "@/components/icon/dashboard-icon";
 import { Button } from "@/components/ui/button";

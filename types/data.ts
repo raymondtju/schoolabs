@@ -1,5 +1,5 @@
 
-import { BenefitClassTypes, CourseCardTypes, CourseDetailSubject, SubjectClassTypes, SubjectLearnTypes, TestimoniCardTypes, USPCardTypes } from "./type";
+import { BenefitClassTypes, CourseCardTypes, CourseDetailSubject, NormalCourseCards, Passion, SubjectClassTypes, SubjectLearnTypes, TestimoniCardTypes, USPCardTypes } from "./type";
 import { BadgeIcon, ClockIcon, SuitcaseIcon, SupportIcon } from "@/components/icon/usp-icon";
 import { CheckGreenIcon, SubjectIcon } from "@/components/icon/dashboard-icon";
 import { Youtube, FileText, HelpCircle } from "lucide-react";
@@ -402,4 +402,58 @@ export const CourseSubject: CourseDetailSubject[] = [
          },
       ],
    },
+]
+
+export const CourseCards: NormalCourseCards[]  = [
+   {
+      title: "Dasar UX Research",
+      price: 0,
+      rating: "4.9/5.0",
+      people_rate: 500,
+      level: "Dasar - Pemula",
+      image: "/cards-image/dasarux.webp"
+   },
+   {
+      title: "Dasar Desain Visual",
+      price: 0,
+      rating: "4.9/5.0",
+      people_rate: 500,
+      level: "Dasar - Pemula",
+      image: "/cards-image/dasarux.webp"
+   },
+   {
+      title: "Programming 101",
+      price: 0,
+      rating: "4.9/5.0",
+      people_rate: 500,
+      level: "Dasar - Pemula",
+      image: "/cards-image/dasarux.webp"
+   },
+   {
+      title: "Dasar HTML",
+      price: 0,
+      rating: "4.9/5.0",
+      people_rate: 500,
+      level: "Dasar - Pemula",
+      image: "/cards-image/dasarux.webp"
+   },
+]
+
+export const PassionCards: Passion[] = [
+   {
+      title: "UI Research",
+      image: "/cards-image/ui-research.png"
+   },
+   {
+      title: "UI Design",
+      image: "/cards-image/ui-design.png"
+   },
+   {
+      title: "Front-End",
+      image: "/cards-image/frontend.png"
+   },
+   {
+      title: "Back-End",
+      image: "/cards-image/backend.png"
+   }
 ]

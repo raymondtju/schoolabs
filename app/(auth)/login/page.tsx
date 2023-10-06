@@ -13,20 +13,20 @@ import { useState } from "react";
 function InputEmail() {
    return (
       <>
-         <form className="grid gap-4" action="#">
+         <form className="flex flex-col space-y-4" action="#">
             <div className="flex flex-col space-y-1">
-               <label className="text-sm" htmlFor="email">
+               <label className="sr-only" htmlFor="email">
                   Email
                </label>
-               <Input className="h-12 placeholder:font-medium border-[#344054] text-base" id="email" type="text" placeholder="Masukkan alamat emailmu" />
+               <Input className="h-[3.25rem] placeholder:text-gray-400  border text-sm" id="email" type="text" placeholder="Alamat Email" />
             </div>
             <div className="flex flex-col space-y-1">
-               <label className="text-sm" htmlFor="password-email">
+               <label className="sr-only" htmlFor="password-email">
                   Password
                </label>
-               <Input className="h-12 placeholder:font-medium border-[#344054] text-base" id="password-email" type="text" placeholder="Rahasiakan dari orang lain" />
+               <Input className="h-[3.25rem] placeholder:text-gray-400  border text-sm" id="password-email" type="text" placeholder="Password" />
             </div>
-            <Button variant={"outline"} className="h-12 font-bold uppercase">
+            <Button variant={"outline"} className="text-gray-600 h-12 font-semibold uppercase">
                Login
             </Button>
             <Button variant={"link"} className="text-base text-primary">Forgot Password?</Button>
@@ -39,26 +39,26 @@ export default function Login() {
    const [showForm, setShowForm] = useState(false)
    return (
       <>
-         <div className="md:max-w-lg w-full border rounded-3xl bg-[#FFF] p-4">
+         <div className="md:max-w-md w-full border rounded-3xl bg-[#FFF] p-4">
             <div className="grid justify-items-center">
-               <div className="flex flex-col gap-2">
+               <div className="flex flex-col gap-2 text-gray-700">
                   <h3 className="text-3xl md:text-4xl font-bold text-center">Masuk akun</h3>
-                  <p className="text-base text-center">Lanjutkan proses belajar dan raih impianmu</p>
-               </div>
-               <div className="w-full grid">
-                  <p className="my-6 text-sm text-center">Belum punya akun?
+                  <p className=" text-center">Lanjutkan proses belajar dan raih impianmu</p>
+                  <p className="text-sm text-center">Belum punya akun?
                      <Link href="/login/sign-up" className="font-semibold">{""} Daftarkan akun baru.</Link>
                   </p>
+               </div>
+               <div className="mt-6 w-full grid">
                   <div className="grid gap-3">
-                     <Button className="h-12 gap-3 font-semibold uppercase bg-primary/40 hover:bg-primary">
+                     <Button className="rounded-md h-12 gap-3 font-semibold uppercase bg-primary">
                         <GoogleIcon />
                         Masuk dengan gmail
                      </Button>
-                     <Button  variant={"outline"} className="h-12 text-[#1D2739] gap-3 font-bold uppercase">
+                     <Button variant={"outline"} className="rounded-md h-12 text-gray-600 gap-3 font-semibold uppercase">
                         <FacebookIcon />
                         Masuk dengan facebook
                      </Button>
-                     <Button onClick={() => setShowForm(!showForm)} variant={"outline"} className={`${showForm ? "hidden" : "flex"} h-12 text-[#1D2739] gap-3 font-bold uppercase`}>
+                     <Button onClick={() => setShowForm(!showForm)} variant={"outline"} className={`${showForm ? "hidden" : "flex"} rounded-md h-12 text-gray-600 gap-3 font-semibold uppercase`}>
                         <EmailIcon />
                         Masuk dengan email
                      </Button>

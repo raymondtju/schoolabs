@@ -106,7 +106,10 @@ body {
   height: 0.3rem;
 }
 
-
+.overlay {
+  background: linear-gradient(0deg, rgba(0, 0, 121, 0.32) 0%, rgba(0, 0, 121, 0.32) 100%), lightgray 0px -0.046px / 100% 135.264% no-repeat;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
 
 .about-hero {
   background-size: cover;

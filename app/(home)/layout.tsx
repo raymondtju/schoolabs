@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <>
       <main className="font-PJS">
-        {pathname === "/" && <PromotionFlyer />}
+        {pathname !== "/about-us" && <PromotionFlyer />}
         <Navbar />
         <div>
           {children}

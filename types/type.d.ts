@@ -8,6 +8,8 @@ export type USPCardTypes = {
    description: string
 }
 
+
+
 export type TestimoniCardTypes = {
    image: string,
    name: string,
@@ -15,12 +17,24 @@ export type TestimoniCardTypes = {
    text: string
 }
 
-export type CourseCardTypes = {
-   title: string,
+type CommonCardsTypes = {
+   title: string
+}
+
+export type NormalCourseCards = CommonCardsTypes & {
+   image: string,
+   price: string | number,
+   rating: string,
+   level: string,
+   people_rate: number
+} 
+
+export type CourseCardTypes = CommonCardsTypes
+   & Partial<NormalCourseCards> & {
    description: string,
    status: "Complete" | number,
    image: string
-}
+} 
 
 export type SubjectClassTypes = {
    title: string,
@@ -51,10 +65,15 @@ export type CourseDetailSubject = Pick<SubjectLearnTypes, "title"> & {
    subClass: Array<{
       title: string,
       icon: undefined | LucideIcon | React.FunctionComponent<React.SVGProps<SVGSVGElement>>,
-      type?: string;
+      type?: string
    }>
 }
 
 export type CourseNav = Pick<BenefitClassTypes, "title" | "icon"> & {
    notif?: number;
+}
+
+export type Passion = {
+   title: string,
+   image: string
 }

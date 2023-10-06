@@ -1,4 +1,4 @@
-import ClassCard from "@/components/dashboard/class-card";
+import ClassCard from "@/components/class-card";
 import { Button } from "@/components/ui/button";
 import { ClassCards } from "@/types/data";
 import Link from "next/link";

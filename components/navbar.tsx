@@ -53,7 +53,7 @@ export function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 flex h-24 items-center justify-center bg-[#FFF] shadow">
+    <nav className="font-Inter sticky top-0 z-50 flex h-24 items-center justify-center bg-[#FFF] shadow">
       <div className="container flex items-center justify-between md:px-20">
         <div className="col-span-3 flex items-center space-x-12">
           <Link href="/">
@@ -72,17 +72,23 @@ export function Navbar() {
               placeholder="Search here..."
             />
           </div>
-         
+
         </div>
         <ul className="hidden lg:flex col-span-1 items-center justify-end gap-8">
-          <li className="text-base font-semibold">Kelas</li>
+          {/* <li className="text-base font-semibold">
+            <Link href="/course">
+              Kelas
+            </Link>
+          </li>
           <li className="text-base font-semibold">
             <Link href="/about-us">Tentang Kami</Link>
-          </li>
-          <li className="h-12 w-20">
-            <Link href="/login">
-              <Button className="h-full w-full">Login</Button>
-            </Link>
+          </li> */}
+          <li className="h-[3.25rem] w-20">
+            <Button asChild className="h-full w-full">
+              <Link href="/login">
+                Login
+              </Link>
+            </Button>
           </li>
         </ul>
         <button type="submit" className="relative block lg:hidden" onClick={onClick}>
@@ -128,9 +134,9 @@ export function PromotionFlyer() {
   return (
     <>
       {!close && (
-        <div className="bg-[#102333] py-6">
+        <div className="font-Inter bg-[#102333] py-4">
           <div className="container relative flex flex-col gap-2 lg:flex-row lg:items-center justify-between text-[#F5F5FF] lg:px-20">
-            <div className="flex max-w-3xl items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-4">
               <Image
                 className="hidden md:block"
                 src="/images/megaphone.webp"
@@ -138,9 +144,8 @@ export function PromotionFlyer() {
                 width={100}
                 height={100}
               />
-              <h1 className="text-base lg:text-3xl font-bold">
-                Dapatkan promo Rp 50.000 per kelas dengan menggunakan kode
-                “BARUJOIN”
+              <h1 className="text-base lg:text-2xl font-semibold">
+                Dapatkan promo Rp 50.000 dengan menggunakan kode “ BARUJOIN”
               </h1>
             </div>
             <div className="mr-4 flex flex-col gap-1">
