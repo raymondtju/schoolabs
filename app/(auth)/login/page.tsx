@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 function InputEmail() {
    return (
@@ -37,6 +39,37 @@ function InputEmail() {
 
 export default function Login() {
    const [showForm, setShowForm] = useState(false)
+   const router = useRouter();
+   const handleSignInGoogle = async () => {
+      
+      const res = await signIn("google", {
+         redirect: false,
+         callbackUrl: "/dashboard"
+      })
+
+      if (res?.ok) {
+         console.log("Berhasil login")
+         await router.replace(`${res.url ?? ""}`)
+      } else if(res?.error) {
+         console.log(res.error)
+      }
+
+   }
+
+   const handleSignInFacebook = async () => {
+      const res = await signIn("facebook", {
+         redirect: false,
+         callbackUrl: "/dashboard"
+      })
+
+      if (res?.ok) {
+         console.log("Berhasil login")
+         await router.replace(`${res.url ?? ""}`)
+      } else if (res?.error) {
+         console.log(res.error)
+      }
+   }
+
    return (
       <>
          <div className="md:max-w-md w-full border rounded-3xl bg-[#FFF] p-4">
@@ -50,11 +83,11 @@ export default function Login() {
                </div>
                <div className="mt-6 w-full grid">
                   <div className="grid gap-3">
-                     <Button className="rounded-md h-12 gap-3 font-semibold uppercase bg-primary">
+                     <Button onClick={handleSignInGoogle} className="rounded-md h-12 gap-3 font-semibold uppercase bg-primary">
                         <GoogleIcon />
                         Masuk dengan gmail
                      </Button>
-                     <Button variant={"outline"} className="rounded-md h-12 text-gray-600 gap-3 font-semibold uppercase">
+                     <Button onClick={handleSignInFacebook} variant={"outline"} className="rounded-md h-12 text-gray-600 gap-3 font-semibold uppercase">
                         <FacebookIcon />
                         Masuk dengan facebook
                      </Button>
