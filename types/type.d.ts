@@ -8,8 +8,6 @@ export type USPCardTypes = {
    description: string
 }
 
-
-
 export type TestimoniCardTypes = {
    image: string,
    name: string,
@@ -76,4 +74,9 @@ export type CourseNav = Pick<BenefitClassTypes, "title" | "icon"> & {
 export type Passion = {
    title: string,
    image: string
+}
+
+export type FAQ = {
+   title: string,
+   description: stirng
 }

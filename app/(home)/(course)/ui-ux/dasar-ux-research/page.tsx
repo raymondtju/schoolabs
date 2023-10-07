@@ -1,234 +1,49 @@
 "use client";
 
+import BarChart from "@/components/icon/bar-chart";
+import StarsIcon from "@/components/icon/stars-icon";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { subjectLearnList } from "@/types/data";
+import { BenefitClass, FAQClass, subjectLearnList } from "@/types/data";
+import { CalendarPlus, CheckCircle2, Users, Video } from "lucide-react";
+import Image from "next/image";
 import React, { useState } from "react";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionHeader,
+  AccordionPanel,
+  useAccordion,
+} from "@/components/ui/accordion";
+import Avatar from "@/components/dashboard/avatar";
+import Link from "next/link";
 
-const WhatYouGetSection = [
-  {
-    title: "Sertifikat",
-    description:
-      "Dapatkan sertifikat standar industri setelah menyelesaikan kelas ini.",
-    icon: undefined,
-  },
-  {
-    title: "Sertifikat",
-    description:
-      "Dapatkan sertifikat standar industri setelah menyelesaikan kelas ini.",
-    icon: undefined,
-  },
-  {
-    title: "Sertifikat",
-    description:
-      "Dapatkan sertifikat standar industri setelah menyelesaikan kelas ini.",
-    icon: undefined,
-  },
-  {
-    title: "Sertifikat",
-    description:
-      "Dapatkan sertifikat standar industri setelah menyelesaikan kelas ini.",
-    icon: undefined,
-  },
-  {
-    title: "Sertifikat",
-    description:
-      "Dapatkan sertifikat standar industri setelah menyelesaikan kelas ini.",
-    icon: undefined,
-  },
-  {
-    title: "Sertifikat",
-    description:
-      "Dapatkan sertifikat standar industri setelah menyelesaikan kelas ini.",
-    icon: undefined,
-  },
-];
 const JoinStorySection = [
   {
     name: "Ariel Patapon",
     role: "UX Designer",
     rate: 5,
-    comment: "Materi yang diberikan mudah dicerna serta ada prakteknya",
+    comment: `"Materi yang diberikan mudah dicerna serta ada prakteknya"`,
   },
   {
     name: "Ariel Patapon",
     role: "UX Designer",
     rate: 5,
-    comment: "Materi yang diberikan mudah dicerna serta ada prakteknya",
+    comment: `"Materi yang diberikan mudah dicerna serta ada prakteknya"`,
   },
   {
     name: "Ariel Patapon",
     role: "UX Designer",
     rate: 5,
-    comment: "Materi yang diberikan mudah dicerna serta ada prakteknya",
+    comment: `"Materi yang diberikan mudah dicerna serta ada prakteknya"`,
   },
   {
     name: "Ariel Patapon",
     role: "UX Designer",
     rate: 5,
-    comment: "Materi yang diberikan mudah dicerna serta ada prakteknya",
-  },
-];
-const ClassListSection = [
-  {
-    title: "Penegenalan UX Research",
-    subClass: [
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-    ],
-  },
-  {
-    title: "Penegenalan UX Research",
-    subClass: [
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-    ],
-  },
-  {
-    title: "Penegenalan UX Research",
-    subClass: [
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-    ],
-  },
-  {
-    title: "Penegenalan UX Research",
-    subClass: [
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-    ],
-  },
-  {
-    title: "Penegenalan UX Research",
-    subClass: [
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-      {
-        title:
-          "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-        icon: undefined,
-      },
-    ],
+    comment: `"Materi yang diberikan mudah dicerna serta ada prakteknya"`,
   },
 ];
 
-// function Dropdown<T extends Record<string, any>>({ data }: {data: T}) {
-//     const [classDropdownSelected, setClassDropdownSelected] = useState<number>(0);
-
-//   return (
-//     <>
-//       {data.map((item: any, index) => (
-//         <div
-//           className="rounded-lg border"
-//           key={index}
-//           onClick={() => setClassDropdownSelected(index)}
-//         >
-//           <div className="flex justify-between p-4">
-//             <h6 className="text-xl font-medium">
-//               Bagian {index + 1}. {item.title}
-//             </h6>
-//             {/* TO-DO: icon dropdown */}
-//           </div>
-//           {index === classDropdownSelected && (
-//             <div className="py-2">
-//               {item.subClass.map((subItem, index) => (
-//                 <div className="flex gap-[10px] px-6 py-2" key={index}>
-//                   {/* TO-DO: icon per sub-video */}
-//                   <p className="text-gray-700">{subItem.title}</p>
-//                 </div>
-//               ))}
-//             </div>
-//           )}
-//         </div>
-//       ))}
-//     </>
-//   );
-// }
 
 function DasarUxResearchPage() {
   const [classDropdownSelected, setClassDropdownSelected] = useState<number>(0);
@@ -239,7 +54,7 @@ function DasarUxResearchPage() {
         <div className="container py-14 md:px-20">
           <div className="max-w-2xl space-y-4">
             <h1 className="text-4xl font-semibold">Dasar UX Research</h1>
-            <p className="">
+            <p className="text-base">
               Kursus yang dirancang untuk memberikan pemahaman mendalam tentang
               metodologi penelitian pengalaman pengguna (UX). Dalam kelas ini,
               peserta akan mempelajari konsep-konsep dasar dalam UX Research,
@@ -247,21 +62,23 @@ function DasarUxResearchPage() {
               pengujian.{" "}
             </p>
             <div className="flex gap-6">
-              <div>
-                {/* TO-DO: add icon */}
-                <span>4.9/5.0</span>
+              <div className="text-sm flex items-center space-x-2">
+                <StarsIcon size={16} />
+                <p>
+                  4.9/5.0
+                </p>
               </div>
-              <div>
-                {/* TO-DO: add icon */}
-                <span>500 siswa</span>
+              <div className="text-sm flex items-center space-x-2">
+                <Users size={16} />
+                <p>500 siswa</p>
               </div>
-              <div>
-                {/* TO-DO: add icon */}
-                <span>Tingkat pemula</span>
+              <div className="text-sm flex items-center space-x-2">
+                <BarChart size={16} />
+                <p>Tingkat pemula</p>
               </div>
-              <div>
-                {/* TO-DO: add icon */}
-                <span>Last Update 23 Mei 2023</span>
+              <div className="text-sm flex items-center space-x-2">
+                <CalendarPlus size={16} />
+                <p>Last Update 23 Mei 2023</p>
               </div>
             </div>
           </div>
@@ -284,15 +101,17 @@ function DasarUxResearchPage() {
               Apa yang akan kamu dapatkan?
             </h3>
             <div className="grid w-full grid-cols-2 gap-4">
-              {WhatYouGetSection.map((item, index) => {
+              {BenefitClass.map((item, index) => {
                 return (
                   <div className="flex gap-6 rounded-lg border p-6" key={index}>
-                    <div>{/* TO-DO: add icon */}</div>
+                    <div className="w-7 h-7">
+                      {item.icon && <item.icon size={25} color="#344054" />}
+                    </div>
                     <div className="space-y-2">
                       <h4 className="font-medium text-gray-900">
                         {item.title}
                       </h4>
-                      <p className="text-gray-500">{item.description}</p>
+                      <p className="text-sm text-gray-500">{item.description}</p>
                     </div>
                   </div>
                 );
@@ -304,32 +123,39 @@ function DasarUxResearchPage() {
               Apa yang akan kamu pelajari?
             </h3>
             <div className="space-y-2">
-              {subjectLearnList.map((item, index) => (
-                <div className={cn("rounded-lg border")} key={index}>
-                  <div
-                    className={cn(
-                      "flex cursor-pointer justify-between p-4",
-                      classDropdownSelected === index && "bg-[#F0F2F5]",
-                    )}
-                    onClick={() => setClassDropdownSelected(index)}
+              <Accordion multiple defaultIndex={0}>
+                {subjectLearnList.map((item, index) => (
+                  <AccordionItem
+                    key={index}
+                    className="rounded-lg"
+                    activeAccordion="border-[#9B9DFD]"
                   >
-                    <h6 className="text-xl font-medium">
-                      Bagian {index + 1}. {item.title}
-                    </h6>
-                    {/* TO-DO: icon dropdown */}
-                  </div>
-                  {index === classDropdownSelected && (
-                    <div className="py-2">
-                      {item.subClass.map((subItem, index) => (
-                        <div className="flex gap-[10px] px-6 py-2" key={index}>
-                          {/* TO-DO: icon per sub-video */}
-                          <p className="text-gray-700">{subItem.title}</p>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+                    <AccordionHeader className="p-4" activeHeader="bg-[#F5F5FF]">
+                      <h5 className="text-lg font-medium">
+                        Bagian {index + 1}. {item.title}
+                      </h5>
+                    </AccordionHeader>
+                    <AccordionPanel>
+                      <div className="py-3">
+                        {item.subClass.map((subItem, index) => (
+                          <div key={index} className="px-6 py-2">
+                            <div className="flex items-center gap-4">
+                              {subItem.icon ? (
+                                <subItem.icon size={21} />
+                              ) : (
+                                <CheckCircle2 size={21} color="#0F973D" />
+                              )}
+                              <p className="text-sm text-gray-700">
+                                {subItem.title}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </AccordionPanel>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
           <div className="space-y-5">
@@ -339,18 +165,25 @@ function DasarUxResearchPage() {
             <div className="grid w-full grid-cols-2 gap-4">
               {JoinStorySection.map((item, index) => {
                 return (
-                  <div className="srounded-lg border px-8 py-6" key={index}>
+                  <div className="grid gap-4 rounded-lg border px-8 py-6" key={index}>
                     <div className="flex items-center gap-3">
-                      <div></div>
+                      <Avatar />
                       <div className="">
-                        <h4 className="font-medium text-gray-900">
+                        <h4 className="text-sm font-medium text-gray-900">
                           {item.name}
                         </h4>
-                        <p className="text-gray-500">{item.role}</p>
+                        <p className="text-xs  text-gray-500">{item.role}</p>
                       </div>
                     </div>
-                    <div>
-                      <p>{item.rate}/5</p>
+                    <div className="flex flex-col space-y-4 text-sm text-gray-700">
+                      <div className="flex items-center space-x-2">
+                        <div className="flex gap-1">
+                          {Array.from({ length: 5 }).map((_, i) => (
+                            <StarsIcon key={i} />
+                          ))}
+                        </div>
+                        <p>{item.rate}/5</p>
+                      </div>
                       <p>{item.comment}</p>
                     </div>
                   </div>
@@ -360,30 +193,82 @@ function DasarUxResearchPage() {
           </div>
           <div className="space-y-5">
             <h3 className="text-2xl font-semibold">Pertanyaan Umum</h3>
-            {/* TO-DO: pertanyaan umum dropdown */}
+            <div className="space-y-2">
+              <Accordion multiple defaultIndex={0}>
+                {FAQClass.map((item, index) => (
+                  <AccordionItem
+                    key={index}
+                    className="rounded-lg"
+                    activeAccordion="border-[#9B9DFD]"
+                  >
+                    <AccordionHeader className="p-4" activeHeader="bg-[#F5F5FF]">
+                      <h5 className="text-lg font-medium">
+                        {item.title}
+                      </h5>
+                    </AccordionHeader>
+                    <AccordionPanel>
+                        <div className="px-6 py-2">
+                          <p className="text-sm text-gray-700">
+                            {item.description}
+                          </p>
+                        </div>
+                      
+                    </AccordionPanel>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
         </div>
 
-        <div className="sticky top-28 -mt-72 block h-full max-h-[calc(100vh-9rem)]">
+        <div className="sticky top-28 -mt-80 block h-full max-h-[calc(100vh-9rem)]">
           <div className="max-w-sm space-y-4 rounded-[20px] border bg-white p-4">
-            <img
-              src="/cards-image/dasar-ux.png"
-              alt="dasar-ux thumbnail"
-              className="rounded-lg"
-            />
-            <h2 className="text-2xl font-semibold">Dasar UX Research</h2>
-            <div className="text-gray-700">
-              <p>
+            <div className="w-full max-h-[16rem] h-[16rem] rounded-t-lg relative overflow-hidden">
+              <Image
+                quality={100}
+                fill
+                objectFit="cover"
+                src="/cards-image/uxr.webp"
+                alt="dasar-ux thumbnail"
+              />
+            </div>
+            <h2 className="text-xl font-semibold">Dasar UX Research</h2>
+            <div className="flex flex-col space-y-2 text-gray-700">
+              <p >
                 Dengan mengikuti program kelas ini, kamu berkesempatan untuk:
               </p>
-              <ul>
-                <li>Belajar bagaimana riset UX dilakukan.</li>
-                <li>Memiliki portofolio berdasarkan pekerjaan nyata.</li>
-                <li>Belajar bagaimana riset UX dilakukan.</li>
+              <ul className="text-sm grid gap-2">
+                <li className="flex items-center gap-2">
+                  <span className="inline-block">
+                    <CheckCircle2 color="#0F973D" size={20} />
+                  </span>
+                  <p>
+                    Belajar bagaimana riset UX dilakukan.
+                  </p>
+                </li>
+                <li className="flex gap-2">
+                  <span className="inline-block">
+                    <CheckCircle2 color="#0F973D" size={20} />
+                  </span>
+                  <p>
+                    Memiliki portofolio berdasarkan pekerjaan nyata.
+
+                  </p>
+                </li>
+                <li className="flex gap-2">
+                  <span className="inline-block">
+                    <CheckCircle2 color="#0F973D" size={20} />
+                  </span>
+                  <p>
+                    Belajar bagaimana riset UX dilakukan.
+                  </p>
+                </li>
               </ul>
             </div>
-            <Button className="h-full w-full">
-              Beli Kelas • Rp 0 • (Gratis)
+            <Button asChild className="h-12 w-full">
+              <Link href="dasar-ux-research/checkout">
+                Beli Kelas • Rp 0 • (Gratis)
+              </Link>
             </Button>
           </div>
         </div>

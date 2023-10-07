@@ -1,8 +1,10 @@
 
-import { BenefitClassTypes, CourseCardTypes, CourseDetailSubject, NormalCourseCards, Passion, SubjectClassTypes, SubjectLearnTypes, TestimoniCardTypes, USPCardTypes } from "./type";
+import { BenefitClassTypes, CourseCardTypes, CourseDetailSubject, FAQ, NormalCourseCards, Passion, SubjectClassTypes, SubjectLearnTypes, TestimoniCardTypes, USPCardTypes } from "./type";
 import { BadgeIcon, ClockIcon, SuitcaseIcon, SupportIcon } from "@/components/icon/usp-icon";
-import { CheckGreenIcon, SubjectIcon } from "@/components/icon/dashboard-icon";
-import { Youtube, FileText, HelpCircle } from "lucide-react";
+import { CheckGreenIcon, SingleChatIcon, SubjectIcon } from "@/components/icon/dashboard-icon";
+import { Youtube, FileText, HelpCircle, Video, File, Pencil, MessagesSquare, Award, FolderUp } from "lucide-react";
+import FolderUpload from "@/components/icon/folder-upload";
+import SertificateBadgeIcon from "@/components/icon/badge-icon";
 
 export const USPCards: USPCardTypes[] = [
    {
@@ -170,43 +172,54 @@ export const SubjectNavigation: SubjectClassTypes[] = [
    },
 ]
 
-
 export const BenefitClass: BenefitClassTypes[] = [
    {
       title: "Sertifikat",
       description:
-         "Dapatkan sertifikat standar industri setelah menyelesaikan kelas ini.",
-      icon: undefined,
+      "Dapatkan sertifikat standar industri setelah menyelesaikan kelas ini.",
+      icon: Award ,
    },
    {
-      title: "Sertifikat",
+      title: "Forum Diskusi",
       description:
-         "Dapatkan sertifikat standar industri setelah menyelesaikan kelas ini.",
-      icon: undefined,
+         "Diskusikan materi belajar dengan siswa lainnya",
+      icon: MessagesSquare ,
    },
    {
-      title: "Sertifikat",
+      title: "Video Tutorial",
       description:
-         "Dapatkan sertifikat standar industri setelah menyelesaikan kelas ini.",
-      icon: undefined,
+         "Video Tutorial HD yang disajikan dengan langkah-langkah yang mudah diikuti",
+      icon: Video,
    },
    {
-      title: "Sertifikat",
+      title: "Modul Tutorial",
       description:
-         "Dapatkan sertifikat standar industri setelah menyelesaikan kelas ini.",
-      icon: undefined,
+         "Modul bacaan elektronik disajikan dengan bahasa yang mudah dipahami",
+      icon: File,
    },
    {
-      title: "Sertifikat",
+      title: "Downloadable Content",
       description:
-         "Dapatkan sertifikat standar industri setelah menyelesaikan kelas ini.",
-      icon: undefined,
+         "Resources file dan berbagai macam aset untuk mendukung kegiatan pembelajaran",
+      icon: File,
    },
    {
-      title: "Sertifikat",
+      title: "Submission",
       description:
-         "Dapatkan sertifikat standar industri setelah menyelesaikan kelas ini.",
-      icon: undefined,
+         "Uji kemampuan teknis Anda dengan mengerjakan tugas submission",
+      icon: FolderUp,
+   },
+   {
+      title: "Kuis",
+      description:
+         "Kuis pilihan ganda membantu Anda memahami materi yang dipelajari",
+      icon: Pencil,
+   },
+   {
+      title: "Ujian",
+      description:
+         "Validasi pengetahuan Anda dengan mengerjakan soal-soal ujian",
+      icon: FileText,
    },
 ];
 
@@ -217,22 +230,22 @@ export const subjectLearnList: SubjectLearnTypes[] = [
          {
             title:
                "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-            icon: undefined,
+            icon: Youtube,
          },
          {
             title:
                "Peran Utama Penelitian UX dalam Desain Produk",
-            icon: undefined,
+            icon: Youtube,
          },
          {
             title:
-               "Metode dan strategi UX Research",
-            icon: undefined,
+               "Peran Utama Penelitian UX dalam Desain Produk",
+            icon: FileText,
          },
          {
             title:
                "Kuis Pengenalan UX research",
-            icon: undefined,
+            icon: HelpCircle,
          },
       ],
    },
@@ -242,22 +255,22 @@ export const subjectLearnList: SubjectLearnTypes[] = [
          {
             title:
                "Pengenalan Pengalaman Pengguna (UX) dan Pentingnya Penelitian UX",
-            icon: undefined,
+            icon: Youtube,
          },
          {
             title:
                "Peran Utama Penelitian UX dalam Desain Produk",
-            icon: undefined,
+            icon: Youtube,
          },
          {
             title:
                "Peran Utama Penelitian UX dalam Desain Produk",
-            icon: undefined,
+            icon: FileText,
          },
          {
             title:
                "Kuis Pengenalan UX research",
-            icon: undefined,
+            icon: HelpCircle,
          },
       ],
    },
@@ -456,4 +469,23 @@ export const PassionCards: Passion[] = [
       title: "Back-End",
       image: "/cards-image/backend.png"
    }
+]
+
+export const FAQClass: FAQ[] = [
+   {
+      title: "Apakah kelas ini cocok untuk Beginners?",
+      description: "Tingkatan kelas Premium yang kami miliki dibangun untuk All Levels yang memberartikan bahwa cocok untuk seluruh tingkatan. Kami juga menyarankan calon member untuk mengikuti kelas Starter (gratis) terlebih dahulu sebagai permulaan."
+   },
+   {
+      title: "Cara mendapatkan sertifikat kelas?",
+      description: "Tingkatan kelas Premium yang kami miliki dibangun untuk All Levels yang memberartikan bahwa cocok untuk seluruh tingkatan. Kami juga menyarankan calon member untuk mengikuti kelas Starter (gratis) terlebih dahulu sebagai permulaan."
+   },
+   {
+      title: "Cara berkonsultasi dengan mentor?",
+      description: "Tingkatan kelas Premium yang kami miliki dibangun untuk All Levels yang memberartikan bahwa cocok untuk seluruh tingkatan. Kami juga menyarankan calon member untuk mengikuti kelas Starter (gratis) terlebih dahulu sebagai permulaan."
+   },
+   {
+      title: "Apakah Boleh dipelajari",
+      description: "Tingkatan kelas Premium yang kami miliki dibangun untuk All Levels yang memberartikan bahwa cocok untuk seluruh tingkatan. Kami juga menyarankan calon member untuk mengikuti kelas Starter (gratis) terlebih dahulu sebagai permulaan."
+   },
 ]

@@ -47,13 +47,20 @@ function GroupChatsIcon({ stroke }: { stroke?: string }) {
   );
 }
 
-function SingleChatIcon({ stroke }: { stroke?: string }) {
+function SingleChatIcon(
+  {
+    stroke = "#344054",
+    size = "20"
+  }: {
+  size?: string | number
+  stroke?: string
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
+      width={size}
+      height={size}
+      viewBox="0 0 28 28"
       fill="none"
     >
       <path

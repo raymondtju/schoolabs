@@ -19,7 +19,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <section className="font-Inter">
+      <section className="">
         <div className="container relative flex h-[42rem] max-h-full items-center lg:px-20">
           <div className="flex max-w-xl flex-col gap-4">
             <h1 className="text-5xl font-bold text-[#1D2739] md:text-[3.25rem] md:leading-[3.5rem]">
@@ -97,7 +97,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="font-Inter relative my-28 bg-[#9B9DFD] overflow-hidden">
+      <section className="relative my-28 bg-[#9B9DFD] overflow-hidden">
         <div className="container relative z-10 py-20 lg:px-20">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-1">
             <div className="flex flex-wrap gap-8 lg:justify-start">

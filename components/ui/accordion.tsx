@@ -4,7 +4,8 @@ import { createContext, useContext, useState, Children } from 'react';
 import { AnimatePresence, MotionProps, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 type AccordionType = unknown & MotionProps & React.ComponentPropsWithoutRef<"div"> & {
-   activeClassName?: string
+   activeHeader?: string,
+   activeAccordion?: string
 }
 
 type AccordionContextType = {
@@ -27,13 +28,14 @@ const Accordion = ({ children, multiple, defaultIndex }: AccordionWrapper) => {
    const [activeIndex, setActiveIndex] = useState<number | number[]>(
       multiple
          ? defaultIndex !== undefined
-            ? [...defaultIndex as number[]]
+            ? Array.isArray(defaultIndex)
+               ? [...defaultIndex as number[]] 
+               : [defaultIndex]   
             : []
          : defaultIndex !== undefined
             ? defaultIndex
             : -1
    )
-
 
    const handleOnChangeIndex = (index: number) => {
       setActiveIndex((currentActiveIndex) => {
@@ -66,19 +68,20 @@ const Accordion = ({ children, multiple, defaultIndex }: AccordionWrapper) => {
 }
 
 
-const AccordionItem = ({ className, children, ...props }: AccordionType) => {
-   return <div className={cn("border", className)} {...props} >{children}</div>
+const AccordionItem = ({ className, children, activeAccordion, ...props }: AccordionType) => {
+   const { isActive } = useAccordion()
+   return <div className={cn("border", isActive && activeAccordion, className)} {...props} >{children}</div>
 }
 
-const AccordionHeader = ({ children, className, activeClassName, ...props }: AccordionType) => {
+const AccordionHeader = ({ children, className, activeHeader, ...props }: AccordionType) => {
    const { isActive, index, handleOnChangeIndex } = useAccordion()
 
    return (
       <motion.div
          onClick={() => handleOnChangeIndex(index)}
-         className={cn("flex flex-1 items-center justify-between font-medium cursor-pointer", isActive && activeClassName, className)} {...props}>
+         className={cn("flex flex-1 items-center justify-between font-medium cursor-pointer", isActive && activeHeader, className)} {...props}>
          {children}
-         <ChevronDown className={`shrink-0 ${!isActive ? "rotate-180" : "-rotate-0"} transition-transform`} />
+         <ChevronDown className={`shrink-0 ${!isActive ? "rotate-0" : "-rotate-180"} transition-transform`} />
       </motion.div>
    )
 }

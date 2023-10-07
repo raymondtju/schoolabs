@@ -17,7 +17,7 @@ function DashboardPage() {
           <h2 className="text-2xl font-semibold">Lanjutkan proses belajarmu</h2>
           <div className="p-3 scroll-px-3 relative flex w-full snap-x gap-8 overflow-x-auto">
             {ClassCards.map((card, i) => (
-              <ClassCard className="snap-start" card={card} key={i}/>
+              <ClassCard className="shrink-0 max-w-[19rem] snap-start" card={card} key={i}/>
             ))}
           </div>
         </div>
@@ -44,7 +44,7 @@ function DashboardPage() {
           </div>
           <div className="p-3 scroll-px-4 relative flex w-full snap-x gap-8 overflow-x-auto">
             {ClassCards.map((card, i) => (
-              <ClassCard className="snap-start" card={card} key={i} />
+              <ClassCard className="shrink-0 max-w-[19rem] snap-start" card={card} key={i} />
             ))}
           </div>
         </div>

@@ -15,7 +15,7 @@ function ClassLayout({
 
   return (
     <>
-      <main className="grid grid-cols-[290px_1fr] font-Inter">
+      <main className="grid grid-cols-[290px_1fr] ">
         <ClassSidebar />
         <div className="col-span-2 pl-[17.5rem]">
           <DashbaordNav />

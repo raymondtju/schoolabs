@@ -12,7 +12,7 @@ export default function RootLayout({
   const pathname = usePathname();
   return (
     <>
-      <main className="font-PJS">
+      <main>
         {pathname !== "/about-us" && <PromotionFlyer />}
         <Navbar />
         <div>

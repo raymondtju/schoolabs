@@ -45,12 +45,12 @@ function ClassCard({ key, card, className, title }: CourseCardProps) {
                 </>
               )}
             </p>
-            <span className="inline-flex items-center gap-3">
+            <div className="inline-flex items-center gap-3">
               <StarsIcon />
               <p className="text-xs text-muted-foreground">
                 {card.rating} {`(${card.people_rate})`}
               </p>
-            </span>
+            </div>
           </div>
         </CardContent>
       ) : (

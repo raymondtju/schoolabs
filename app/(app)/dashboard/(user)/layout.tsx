@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 function DashboardLayout({ children }: { children: React.ReactNode }) {
 
   return (
-    <main className="font-Inter grid grid-cols-[290px_1fr]">
+    <main className=" grid grid-cols-[290px_1fr]">
       <DashboardSidebar />
       <div className="col-span-2 pl-[17.5rem]">
         <DashboardNav />
