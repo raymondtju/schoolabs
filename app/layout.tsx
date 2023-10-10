@@ -34,9 +34,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-declare global {
-  interface Window {
-    snap: any;
-  }
-}

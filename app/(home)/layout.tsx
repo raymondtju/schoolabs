@@ -4,12 +4,6 @@ import { Footer } from "@/components/footer";
 import { Navbar, PromotionFlyer } from "@/components/navbar";
 import { usePathname } from "next/navigation";
 
-declare global {
-  interface Window {
-    snap: any;
-  }
-}
-
 export default function RootLayout({
   children,
 }: {
