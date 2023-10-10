@@ -52,7 +52,7 @@ export default function Home() {
                   variant={"outline"}
                   className="h-10 w-fit border-[#4B4EFC] px-6 py-4 font-semibold text-[#4B4EFC] hover:text-[#4B4EFC]/90"
                 >
-                  <Link href="#">Lihat Kelas</Link>
+                  <Link href="/course">Lihat Kelas</Link>
                 </Button>
                 <Button
                   asChild
