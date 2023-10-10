@@ -93,7 +93,7 @@ function ClassCard({ key, card, className, title }: CourseCardProps) {
           <p className="text-sm text-muted-foreground">Level Dasar - Pemula</p>
         </CardFooter>
       ) : (
-        <CardFooter className="mt-auto gap-3 px-4 pt-0">
+        <CardFooter className="mt-auto gap-1 px-4 pt-0">
           {typeof card.status === "number" ? (
             <>
               <Progress className="bg-[#F0F2F5]" value={card.status} />

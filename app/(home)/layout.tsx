@@ -4,6 +4,12 @@ import { Footer } from "@/components/footer";
 import { Navbar, PromotionFlyer } from "@/components/navbar";
 import { usePathname } from "next/navigation";
 
+declare global {
+  interface Window {
+    snap: any;
+  }
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -15,9 +21,7 @@ export default function RootLayout({
       <main>
         {pathname !== "/about-us" && <PromotionFlyer />}
         <Navbar />
-        <div>
-          {children}
-        </div>
+        <div>{children}</div>
         <Footer />
       </main>
     </>
