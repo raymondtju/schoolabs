@@ -14,6 +14,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Schoolabs",
   description: "Melangkah Menuju Karir Barumu Bersama",
+  openGraph: {
+    title: "Schoolabs",
+    description: "Melangkah Menuju Karir Barumu Bersama",
+    images: "/og.png",
+  },
 };
 
 export default function RootLayout({
