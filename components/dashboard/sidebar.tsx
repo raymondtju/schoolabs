@@ -58,7 +58,7 @@ export function DashboardSidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="fixed top-0 z-[60] hidden h-screen w-full max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5 lg:block">
+    <div className="fixed top-0 z-[60] h-screen w-full max-w-[295px] md:max-w-[360px] lg:max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5">
       <Image
         quality={100}
         src="/logo.png"
@@ -126,7 +126,7 @@ export function DashboardSidebar() {
 
 export function ClassSidebar() {
   return (
-    <div className="fixed top-0 z-[60] h-screen w-full max-w-[295px] md:max-w-[360px] lg:max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5 lg:block">
+    <div className="fixed top-0 z-[60] h-screen w-full max-w-[295px] md:max-w-[360px] lg:max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5">
       <Image
         quality={100}
         src="/logo.svg"

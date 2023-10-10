@@ -89,8 +89,26 @@ function DasarUxResearchPage() {
               Belajar bersama mentor berpengalaman
             </h3>
             <div className="flex gap-24">
-              <div>Robi Orlando</div>
-              <div>Robi Orlando</div>
+              <div className="flex gap-3">
+                <Avatar image="/avatar/avatar2.webp"/>
+                <div className="grid gap-2">
+                  <p className="font-bold text-sm">Robi Orlando</p>
+                  <p>
+                    Sr.UX Researcher 
+                    <span className="font-semibold">@Gopay</span>
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <Avatar image="/avatar/avatar3.webp" />
+                <div className="grid gap-1">
+                  <p className="font-bold text-sm">Santi Pratiwi</p>
+                  <p>
+                    UX Researcher
+                    <span className="font-semibold">@Jago</span>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <div className="space-y-5">
@@ -174,8 +192,8 @@ function DasarUxResearchPage() {
                     key={index}
                   >
                     <div className="flex items-center gap-3">
-                      <Avatar />
-                      <div className="">
+                      <Avatar image="/avatar/avatar.webp"/>
+                      <div>
                         <h4 className="text-sm font-medium text-gray-900">
                           {item.name}
                         </h4>
@@ -228,7 +246,7 @@ function DasarUxResearchPage() {
           </div>
         </div>
 
-        <div className="sticky top-28 -mt-80 hidden h-full max-h-[calc(100vh-9rem)] md:block">
+        <div className="hidden lg:block sticky top-28 -mt-80  h-full max-h-[calc(100vh-9rem)]">
           <div className="max-w-sm space-y-4 rounded-[20px] border bg-white p-4">
             <div className="relative h-[16rem] max-h-[16rem] w-full overflow-hidden rounded-t-lg">
               <Image
@@ -266,7 +284,7 @@ function DasarUxResearchPage() {
               </ul>
             </div>
             <Button asChild className="h-12 w-full">
-              <Link href="dasar-ux-research/checkout">
+              <Link href="/dasar-ux-research/checkout">
                 Beli Kelas • Rp 0 • (Gratis)
               </Link>
             </Button>

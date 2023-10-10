@@ -23,13 +23,13 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import CourseSidebar from "../course/course-sidebar";
-import { ClassSidebar } from "./sidebar";
+import { ClassSidebar, DashboardSidebar } from "./sidebar";
 import Link from "next/link";
 
 function getCurrentDimension() {
   return {
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: typeof window !== "undefined" ? window.innerWidth : 0,
+    height: typeof window !== "undefined" ? window.innerHeight : 0,
   };
 }
 
@@ -42,15 +42,17 @@ function DashbaordNav() {
 
 
   useEffect(() => {
-    const updateDimension = () => {
-      setScreenSize(getCurrentDimension());
-    };
-    window.addEventListener("resize", updateDimension);
+    if (typeof window !== "undefined") {
+      const updateDimension = () => {
+        setScreenSize(getCurrentDimension());
+      };
+      window.addEventListener("resize", updateDimension);
 
-    return () => {
-      window.removeEventListener("resize", updateDimension);
-    };
-  }, [screenSize]);
+      return () => {
+        window.removeEventListener("resize", updateDimension);
+      };
+    }
+  }, []);
 
   const handleSignOut = async () => {
     const res = await signOut({
@@ -68,9 +70,11 @@ function DashbaordNav() {
             <Menu className="block lg:hidden" />
           </SheetTrigger>
           <SheetContent className="block lg:hidden" side="left">
-            {pathname !== "/dashboard/class/dasar-ux-research" ? (
+            {pathname === "/dashboard/class/dasar-ux-research" ? (
               <ClassSidebar />
-            ) : ""}
+            ) : (
+                <DashboardSidebar/>
+            )}
           </SheetContent>
         </Sheet>
 
@@ -82,15 +86,17 @@ function DashbaordNav() {
           />
         </div>
         <div className="flex items-center gap-3">
-          <div className="grid h-10 w-10 place-content-center rounded-full bg-gray-100">
+          <div className="cursor-pointer grid h-10 w-10 place-content-center rounded-full bg-gray-100">
             <BellIcon />
           </div>
           <DropdownMenu>
             <DropdownMenuTrigger>
-              {session ? (
-                <Avatar image={session.user?.image ?? ""} alt="avatar" />
-              ) : (
-                  <Avatar />
+              {session?.user?.image && (
+                <Avatar
+                  className="border"
+                  image={session.user.image}
+                  alt="avatar"
+                />
               )}
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-[211px] font-Inter" align="end">
@@ -105,35 +111,16 @@ function DashbaordNav() {
                 Profile
               </DropdownMenuItem>
               <DropdownMenuSeparator className="bg-gray-200"></DropdownMenuSeparator>
-              <DropdownMenuItem onClick={handleSignOut} className="gap-3 text-gray-700">
+              <DropdownMenuItem
+                onClick={handleSignOut}
+                className="gap-3 text-gray-700"
+              >
                 <LogOut size={21} />
                 Logout
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        {/* <DropdownMenu>
-          <DropdownMenuTrigger>
-            {session && (
-              <Avatar image={session.user?.image ?? ""} alt="avatar"/>
-            )}
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-[211px]" align="end">
-            <DropdownMenuItem className="gap-3 text-gray-700">
-              <LayoutGrid size={21}/>
-              Dashboard
-            </DropdownMenuItem>
-            <DropdownMenuItem className="gap-3 text-gray-700">
-              <UserCircle2 size={21}/>
-              Profile
-            </DropdownMenuItem>
-            <DropdownMenuSeparator className="bg-gray-200"></DropdownMenuSeparator>
-            <DropdownMenuItem onClick={handleSignOut} className="gap-3 text-gray-700">
-              <LogOut size={21} />
-              Logout
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu> */}
       </div>
     </div>
   );

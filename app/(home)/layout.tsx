@@ -15,9 +15,7 @@ export default function RootLayout({
       <main>
         {pathname !== "/about-us" && <PromotionFlyer />}
         <Navbar />
-        <div>
-          {children}
-        </div>
+        <div>{children}</div>
         <Footer />
       </main>
     </>

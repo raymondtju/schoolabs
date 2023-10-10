@@ -1,9 +1,12 @@
+"use client"
 import Avatar from "@/components/dashboard/avatar";
 import { Separator } from "@/components/ui/separator";
 import { Image, Paperclip, Play, Send, Smile } from "lucide-react";
+import { useSession } from "next-auth/react";
 import React from "react";
 
 function ChatPage() {
+  const { data: session } = useSession();
   return (
     <section>
       <div className="container pb-[10rem] w-full space-y-4 bg-white py-8 md:px-8">
@@ -81,7 +84,9 @@ function ChatPage() {
       </div>
 
       <div className="fixed bottom-0 flex w-full gap-3 bg-white px-6 py-4">
-        <Avatar image="/avatar/avatar.webp" alt="Avatar"/>
+        {session?.user?.image && (
+          <Avatar image={session.user.image} alt="Avatar"/>
+        )}
         <div className="w-full lg:w-[calc(100%-320px)] rounded-lg border p-3">
           <textarea
             placeholder="Tulis Pesan.."

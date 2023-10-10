@@ -102,7 +102,7 @@ export const ClassCards: CourseCardTypes[] = [
     description:
       "Supporting or descriptive text for the card goes here like a pro.",
     status: 70,
-    image: "/cards-image/dasarux.webp",
+    image: "/cards-image/uxr.webp",
     href: "/dashboard/class/dasar-ux-research",
   },
   {
@@ -110,7 +110,7 @@ export const ClassCards: CourseCardTypes[] = [
     description:
       "Supporting or descriptive text for the card goes here like a pro.",
     status: 20,
-    image: "/cards-image/dasarux.webp",
+    image: "/cards-image/prototype.webp",
     href: "",
   },
   {
@@ -118,15 +118,15 @@ export const ClassCards: CourseCardTypes[] = [
     description:
       "Supporting or descriptive text for the card goes here like a pro.",
     status: "Complete",
-    image: "/cards-image/dasarux.webp",
+    image: "/cards-image/wireframe.webp",
     href: "",
   },
   {
-    title: "Dasar UX Research",
+    title: "Programming 101",
     description:
       "Supporting or descriptive text for the card goes here like a pro.",
     status: "Complete",
-    image: "/cards-image/dasarux.webp",
+    image: "/cards-image/pro.webp",
     href: "",
   },
 ];
@@ -450,7 +450,7 @@ export const CourseCards: NormalCourseCards[] = [
     rating: "4.9/5.0",
     people_rate: 500,
     level: "Dasar - Pemula",
-    image: "/cards-image/dasarux.webp",
+    image: "/cards-image/uxr.webp",
     href: "/dasar-ux-research",
   },
   {
@@ -459,7 +459,7 @@ export const CourseCards: NormalCourseCards[] = [
     rating: "4.9/5.0",
     people_rate: 500,
     level: "Dasar - Pemula",
-    image: "/cards-image/dasarux.webp",
+    image: "/cards-image/vd.webp",
     href: "#",
   },
   {
@@ -468,7 +468,7 @@ export const CourseCards: NormalCourseCards[] = [
     rating: "4.9/5.0",
     people_rate: 500,
     level: "Dasar - Pemula",
-    image: "/cards-image/dasarux.webp",
+    image: "/cards-image/pro.webp",
     href: "#",
   },
   {
@@ -477,7 +477,7 @@ export const CourseCards: NormalCourseCards[] = [
     rating: "4.9/5.0",
     people_rate: 500,
     level: "Dasar - Pemula",
-    image: "/cards-image/dasarux.webp",
+    image: "/cards-image/html.webp",
     href: "#",
   },
 ];

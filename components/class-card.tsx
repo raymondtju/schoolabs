@@ -25,7 +25,7 @@ function ClassCard({ key, card, className, title }: CourseCardProps) {
       className={cn("w-full cursor-pointer border-none shadow-md", className)}
       onClick={() => router.push(card.href || "#")}
     >
-      <CardHeader className="p-0">
+      <CardHeader className="rounded-xl p-0">
         {card.image && (
           <Image
             className="w-full"
@@ -42,7 +42,7 @@ function ClassCard({ key, card, className, title }: CourseCardProps) {
           <h5 className={cn("truncate text-2xl font-bold", title)}>
             {card.title}
           </h5>
-          <div className="flex gap-5">
+          <div className="flex justify-between">
             <p className="text-sm font-semibold text-muted-foreground">
               {card.price === 0 ? (
                 <>Rp - {"(Gratis)"}</>
@@ -69,7 +69,7 @@ function ClassCard({ key, card, className, title }: CourseCardProps) {
       )}
 
       {card.level ? (
-        <CardFooter className="flex gap-4">
+        <CardFooter className="flex gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -93,7 +93,7 @@ function ClassCard({ key, card, className, title }: CourseCardProps) {
           <p className="text-sm text-muted-foreground">Level Dasar - Pemula</p>
         </CardFooter>
       ) : (
-        <CardFooter className="mt-auto gap-3 px-4 pt-0">
+        <CardFooter className="mt-auto gap-1 px-4 pt-0">
           {typeof card.status === "number" ? (
             <>
               <Progress className="bg-[#F0F2F5]" value={card.status} />

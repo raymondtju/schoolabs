@@ -89,7 +89,7 @@ export default function TestimoniCards() {
                               quality={100}
                               width={350}
                               height={350}
-                              className="w-full rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none"
+                              className="lg:h-[30rem] w-full rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none"
                            src={`${card.image}.webp`}
                            alt={`testimoni ${card.name}`}
                         />

@@ -14,12 +14,16 @@ import { subjectLearnList } from "@/types/data";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-function ClassPage() {
+function ClassPage({
+  params
+}: {
+  params: {slug: string}
+}) {
   return (
     <>
       <div className="sticky top-0 z-[49] flex justify-between border-b bg-white px-8 py-5">
         <h4 className="text-xl font-semibold">Kelas</h4>
-        <Link href={`/detail-course`}>
+        <Link href={`/dashboard/class/${params.slug}/detail-course`}>
           <Button>Lanjutkan Belajar</Button>
         </Link>
       </div>
