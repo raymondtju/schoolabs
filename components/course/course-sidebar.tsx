@@ -70,7 +70,7 @@ function CourseSidebar() {
               {CourseSubject.map((item, index) => (
                 <AccordionItem className="border-none" key={index}>
                   <AccordionHeader
-                    activeClassName="bg-[#F5F5FF] border-transparent"
+                    activeAccordion="bg-[#F5F5FF] border-transparent"
                     className="border-y px-4 py-2"
                   >
                     <h5 className="font-semibold text-gray-900">

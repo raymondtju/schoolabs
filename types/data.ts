@@ -1,10 +1,11 @@
 
-import { BenefitClassTypes, CourseCardTypes, CourseDetailSubject, FAQ, NormalCourseCards, Passion, SubjectClassTypes, SubjectLearnTypes, TestimoniCardTypes, USPCardTypes } from "./type";
+import { BenefitClassTypes, CheckoutBenefit, CourseCardTypes, CourseDetailSubject, FAQ, NormalCourseCards, Passion, SubjectClassTypes, SubjectLearnTypes, TestimoniCardTypes, USPCardTypes } from "./type";
 import { BadgeIcon, ClockIcon, SuitcaseIcon, SupportIcon } from "@/components/icon/usp-icon";
 import { CheckGreenIcon, SingleChatIcon, SubjectIcon } from "@/components/icon/dashboard-icon";
 import { Youtube, FileText, HelpCircle, Video, File, Pencil, MessagesSquare, Award, FolderUp } from "lucide-react";
 import FolderUpload from "@/components/icon/folder-upload";
 import SertificateBadgeIcon from "@/components/icon/badge-icon";
+import { CertificateIcon, ForumAndGroup, MentoringIcon, PortofolioIcon } from "@/components/icon/checkout-icon";
 
 export const USPCards: USPCardTypes[] = [
    {
@@ -487,5 +488,28 @@ export const FAQClass: FAQ[] = [
    {
       title: "Apakah Boleh dipelajari",
       description: "Tingkatan kelas Premium yang kami miliki dibangun untuk All Levels yang memberartikan bahwa cocok untuk seluruh tingkatan. Kami juga menyarankan calon member untuk mengikuti kelas Starter (gratis) terlebih dahulu sebagai permulaan."
+   },
+]
+
+export const BenefitJoinClass: CheckoutBenefit[] = [
+   {
+      title: "Forum dan Grup Privat",
+      description: "Forum memungkinkan pertukaran informasi dan pengalaman antara anggota komunitas dengan fokus pada topik-topik dikelas yang kalian pilih, sementara grup privat menawarkan keamanan tinggi untuk diskusi atau kolaborasi yang lebih rahasia 1-on-1 bersama mentor berpengalaman.",
+      icon: ForumAndGroup
+   },
+   {
+      title: "Sertifikat Standar Industri",
+      description: "Forum memungkinkan pertukaran informasi dan pengalaman antara anggota komunitas dengan fokus pada topik-topik dikelas yang kalian pilih, sementara grup privat menawarkan keamanan tinggi untuk diskusi atau kolaborasi yang lebih rahasia 1-on-1 bersama mentor berpengalaman.",
+      icon: CertificateIcon
+   },
+   {
+      title: "Portofolio",
+      description: "Forum memungkinkan pertukaran informasi dan pengalaman antara anggota komunitas dengan fokus pada topik-topik dikelas yang kalian pilih, sementara grup privat menawarkan keamanan tinggi untuk diskusi atau kolaborasi yang lebih rahasia 1-on-1 bersama mentor berpengalaman.",
+      icon: PortofolioIcon
+   },
+   {
+      title: "Mentoring 1 on 1",
+      description: "Forum memungkinkan pertukaran informasi dan pengalaman antara anggota komunitas dengan fokus pada topik-topik dikelas yang kalian pilih, sementara grup privat menawarkan keamanan tinggi untuk diskusi atau kolaborasi yang lebih rahasia 1-on-1 bersama mentor berpengalaman.",
+      icon: MentoringIcon
    },
 ]

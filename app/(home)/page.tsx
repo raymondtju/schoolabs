@@ -7,13 +7,8 @@ import {
 import { EllipseIcon } from "@/components/icon/usp-icon";
 import TestimoniCards from "@/components/testimoni-cards";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
 import { CourseCards, USPCards } from "@/types/data";
+import { Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 export default function Home() {
@@ -22,6 +17,10 @@ export default function Home() {
       <section className="">
         <div className="container relative flex h-[42rem] max-h-full items-center lg:px-20">
           <div className="flex max-w-xl flex-col gap-4">
+            <div className="w-fit flex items-center gap-3 border rounded-lg px-3 py-1">
+              <Zap size={15} fill="#F7C164" color="#F7C164"/>
+              <p className="text-gray-500 text-sm font-medium">Schoolabs terbaik</p>
+            </div>
             <h1 className="text-5xl font-bold text-[#1D2739] md:text-[3.25rem] md:leading-[3.5rem]">
               Melangkah Menuju Karir Barumu Bersama
               <span className="text-primary"> SCHOOLABS</span>
@@ -46,13 +45,13 @@ export default function Home() {
               </div>
               <div className="flex gap-3">
 
-              <Button asChild variant={"outline"} className="font-semibold text-[#4B4EFC] hover:text-[#4B4EFC]/90 border-[#4B4EFC] h-10 w-fit px-6 py-4 shadow-current">
+              <Button asChild variant={"outline"} className="font-semibold text-[#4B4EFC] hover:text-[#4B4EFC]/90 border-[#4B4EFC] h-10 w-fit px-6 py-4">
                 <Link href="#">
                   Lihat Kelas
                 </Link>
 
               </Button>
-              <Button asChild className="font-semibold h-10 w-fit px-6 py-4 shadow-current hover:bg-primary/90">
+              <Button asChild className="font-semibold h-10 w-fit px-6 py-4 hover:bg-primary/90">
               <Link href="/login">
                   Daftar Sekarang
               </Link>
@@ -217,7 +216,7 @@ export default function Home() {
               Eksplorasi Kelas Dasar Dulu Aja
             </span>
           </h1>
-          <div className="my-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {CourseCards.map((card, index) => (
               <ClassCard
                 className="shadow-md border-none"

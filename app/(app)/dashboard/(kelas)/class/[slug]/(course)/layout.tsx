@@ -15,9 +15,9 @@ function ClassLayout({
 
   return (
     <>
-      <main className="grid grid-cols-[290px_1fr] ">
+      <main className="lg:grid lg:grid-cols-[290px_1fr] ">
         <ClassSidebar />
-        <div className="col-span-2 pl-[17.5rem]">
+        <div className="lg:col-span-2 lg:pl-[17.5rem]">
           <DashbaordNav />
 
           {children}

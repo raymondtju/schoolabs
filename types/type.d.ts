@@ -80,3 +80,10 @@ export type FAQ = {
    title: string,
    description: stirng
 }
+
+export type CheckoutBenefit = {
+   title: string,
+   description: string,
+   icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>> 
+}
+

@@ -46,14 +46,13 @@ const JoinStorySection = [
 
 
 function DasarUxResearchPage() {
-  const [classDropdownSelected, setClassDropdownSelected] = useState<number>(0);
 
   return (
     <main className="relative">
       <section className="bg-gradient-to-b from-[#3571A7] to-[#4A8CC8] text-white">
         <div className="container py-14 md:px-20">
           <div className="max-w-2xl space-y-4">
-            <h1 className="text-4xl font-semibold">Dasar UX Research</h1>
+            <h1 className="text-3xl md:text-4xl font-semibold">Dasar UX Research</h1>
             <p className="text-base">
               Kursus yang dirancang untuk memberikan pemahaman mendalam tentang
               metodologi penelitian pengalaman pengguna (UX). Dalam kelas ini,
@@ -61,7 +60,7 @@ function DasarUxResearchPage() {
               termasuk pengumpulan data, analisis pengguna, dan teknik
               pengujian.{" "}
             </p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap item-scenter justify-between">
               <div className="text-sm flex items-center space-x-2">
                 <StarsIcon size={16} />
                 <p>
@@ -76,7 +75,7 @@ function DasarUxResearchPage() {
                 <BarChart size={16} />
                 <p>Tingkat pemula</p>
               </div>
-              <div className="text-sm flex items-center space-x-2">
+              <div className="mt-4 sm:mt-0 text-sm flex items-center space-x-2">
                 <CalendarPlus size={16} />
                 <p>Last Update 23 Mei 2023</p>
               </div>
@@ -88,7 +87,7 @@ function DasarUxResearchPage() {
       <section className="container relative flex w-full flex-1 justify-between py-14 md:px-20">
         <div className="w-full max-w-2xl space-y-8">
           <div className="space-y-5">
-            <h3 className="text-2xl font-semibold">
+            <h3 className="text-xl sm:text-2xl font-semibold">
               Belajar bersama mentor berpengalaman
             </h3>
             <div className="flex gap-24">
@@ -100,7 +99,7 @@ function DasarUxResearchPage() {
             <h3 className="text-2xl font-semibold">
               Apa yang akan kamu dapatkan?
             </h3>
-            <div className="grid w-full grid-cols-2 gap-4">
+            <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-4">
               {BenefitClass.map((item, index) => {
                 return (
                   <div className="flex gap-6 rounded-lg border p-6" key={index}>
@@ -119,7 +118,7 @@ function DasarUxResearchPage() {
             </div>
           </div>
           <div className="space-y-5">
-            <h3 className="text-2xl font-semibold">
+            <h3 className="text-xl sm:text-2xl font-semibold">
               Apa yang akan kamu pelajari?
             </h3>
             <div className="space-y-2">
@@ -140,11 +139,13 @@ function DasarUxResearchPage() {
                         {item.subClass.map((subItem, index) => (
                           <div key={index} className="px-6 py-2">
                             <div className="flex items-center gap-4">
-                              {subItem.icon ? (
-                                <subItem.icon size={21} />
-                              ) : (
-                                <CheckCircle2 size={21} color="#0F973D" />
-                              )}
+                              <span className="inline-block">
+                                {subItem.icon ? (
+                                  <subItem.icon size={21} />
+                                ) : (
+                                  <CheckCircle2 size={21} color="#0F973D" />
+                                )}
+                              </span>
                               <p className="text-sm text-gray-700">
                                 {subItem.title}
                               </p>
@@ -159,10 +160,10 @@ function DasarUxResearchPage() {
             </div>
           </div>
           <div className="space-y-5">
-            <h3 className="text-2xl font-semibold">
+            <h3 className="text-xl sm:text-2xl font-semibold">
               Cerita yang sudah bergabung
             </h3>
-            <div className="grid w-full grid-cols-2 gap-4">
+            <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-4">
               {JoinStorySection.map((item, index) => {
                 return (
                   <div className="grid gap-4 rounded-lg border px-8 py-6" key={index}>
@@ -221,7 +222,7 @@ function DasarUxResearchPage() {
           </div>
         </div>
 
-        <div className="sticky top-28 -mt-80 block h-full max-h-[calc(100vh-9rem)]">
+        <div className="hidden md:block sticky top-28 -mt-80 h-full max-h-[calc(100vh-9rem)]">
           <div className="max-w-sm space-y-4 rounded-[20px] border bg-white p-4">
             <div className="w-full max-h-[16rem] h-[16rem] rounded-t-lg relative overflow-hidden">
               <Image

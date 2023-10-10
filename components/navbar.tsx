@@ -58,8 +58,9 @@ export function Navbar() {
         <div className="col-span-3 flex items-center space-x-12">
           <Link href="/">
             <Image
+            
               quality={100}
-              src="/logo.svg"
+              src="/logo.png"
               alt="icon"
               width={176}
               height={32}

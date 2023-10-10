@@ -18,24 +18,23 @@ type AccordionWrapper = {
    children: React.ReactNode;
    multiple?: boolean;
    defaultIndex?: number | number[];
-   collapseAll?: () => void;
 }
-
 const AccordionContext = createContext({})
 export const useAccordion = () => useContext(AccordionContext) as AccordionContextType
 
 const Accordion = ({ children, multiple, defaultIndex }: AccordionWrapper) => {
    const [activeIndex, setActiveIndex] = useState<number | number[]>(
       multiple
-         ? defaultIndex !== undefined
+         ? defaultIndex !== undefined && defaultIndex !== null
             ? Array.isArray(defaultIndex)
-               ? [...defaultIndex as number[]] 
-               : [defaultIndex]   
+               ? [...defaultIndex as number[]]
+               : [defaultIndex]
             : []
-         : defaultIndex !== undefined
+         : defaultIndex !== undefined && defaultIndex !== null
             ? defaultIndex
             : -1
    )
+
 
    const handleOnChangeIndex = (index: number) => {
       setActiveIndex((currentActiveIndex) => {

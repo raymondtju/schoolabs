@@ -14,7 +14,7 @@ function ForumLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <div className="sticky top-20 z-[49] flex justify-between border-b bg-white px-8 py-5">
+      <div className="sticky top-20 z-[49] flex items-center justify-between border-b bg-white px-8 py-5">
         <h4 className="text-xl font-semibold">
           {
             listPage[

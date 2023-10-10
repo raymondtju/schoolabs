@@ -19,7 +19,7 @@ function ClassCard({ key, card, className, title }: CourseCardProps) {
   console.log(card.rating)
   return (
     <Card key={key} className={cn("w-full border-none shadow-md", className)}>
-      <CardHeader className="overflow-hidden p-0">
+      <CardHeader className="p-0">
         {card.image && (
           <Image
             className="w-full"

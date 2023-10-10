@@ -11,15 +11,15 @@ function KelasSayaPage() {
       <div className="grid space-y-5 text-[#101928]">
         <h1 className="text-2xl font-bold">Kelas Saya</h1>
         <div className="flex gap-3">
-          <Button>Semua Kelas</Button>
-          <Button variant={"outline"} className="text-muted">
+          <Button className="text-xs px-2 md:px-4">Semua Kelas</Button>
+          <Button variant={"outline"} className="text-xs px-2 md:px-4 text-muted">
             Sedang Dipelajari
           </Button>
-          <Button variant={"outline"} className="text-muted">
+          <Button variant={"outline"} className="text-xs px-2 md:px-4 text-muted">
             Selesai
           </Button>
         </div>
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {ClassCards.map((card, i) => (
             <>
               <Link href={`class/${card.title.toLowerCase().replace(/ /g, "-")}`} key={i}>

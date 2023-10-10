@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Trophy, Link as Chain } from "lucide-react";
+import { Trophy, Link as Chain, Menu } from "lucide-react";
 import {
   ClassIcon,
   GroupChatsIcon,
@@ -57,16 +57,16 @@ export function DashboardSidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="fixed top-0 z-[60] h-screen w-full max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5">
+    <div className="hidden lg:block fixed top-0 z-[60] h-screen w-full max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5">
       <Image
         quality={100}
-        src="/logo.svg"
+        src="/logo.png"
         alt="icon"
         width={176}
         height={32}
         className="px-6 py-2"
       />
-
+      {/* <Menu /> */}
       <div className="space-y-5 px-2">
         <ul className="space-y-1">
           {DashboardMenuList.map((item, i) => {
@@ -124,7 +124,7 @@ export function DashboardSidebar() {
 
 export function ClassSidebar() {
   return (
-    <div className="fixed top-0 z-[60] h-screen w-full max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5">
+    <div className="hidden lg:block fixed top-0 z-[60] h-screen w-full max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5">
       <Image
         quality={100}
         src="/logo.svg"
