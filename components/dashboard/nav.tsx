@@ -13,7 +13,7 @@ import { LayoutGrid, LogOut, Menu, Search, UserCircle2 } from "lucide-react";
 import Avatar from "./avatar";
 import { BellIcon } from "../icon/dashboard-icon";
 import { useSession, signOut } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   Sheet,
   SheetContent,
@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/sheet";
 import CourseSidebar from "../course/course-sidebar";
 import { ClassSidebar } from "./sidebar";
+import Link from "next/link";
 
 function getCurrentDimension() {
   return {
@@ -34,9 +35,11 @@ function getCurrentDimension() {
 
 function DashbaordNav() {
   const { data: session } = useSession();
-  const router = useRouter();
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+
 
   useEffect(() => {
     const updateDimension = () => {
@@ -64,8 +67,10 @@ function DashbaordNav() {
           <SheetTrigger onClick={() => setIsOpen(!isOpen)}>
             <Menu className="block lg:hidden" />
           </SheetTrigger>
-          <SheetContent className="w-fit lg:hidden" side="left">
-            <ClassSidebar />
+          <SheetContent className="block lg:hidden" side="left">
+            {pathname !== "/dashboard/class/dasar-ux-research" ? (
+              <ClassSidebar />
+            ) : ""}
           </SheetContent>
         </Sheet>
 
@@ -82,21 +87,25 @@ function DashbaordNav() {
           </div>
           <DropdownMenu>
             <DropdownMenuTrigger>
-              {session && (
+              {session ? (
                 <Avatar image={session.user?.image ?? ""} alt="avatar" />
+              ) : (
+                  <Avatar />
               )}
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-[211px] font-Inter" align="end">
-              <DropdownMenuItem className="gap-3 text-gray-700">
-                <LayoutGrid size={21} />
-                Dashboard
+              <DropdownMenuItem asChild className="gap-3 text-gray-700">
+                <Link href="/dashboard">
+                  <LayoutGrid size={21} />
+                  Dashboard
+                </Link>
               </DropdownMenuItem>
               <DropdownMenuItem className="gap-3 text-gray-700">
                 <UserCircle2 size={21} />
                 Profile
               </DropdownMenuItem>
               <DropdownMenuSeparator className="bg-gray-200"></DropdownMenuSeparator>
-              <DropdownMenuItem className="gap-3 text-gray-700">
+              <DropdownMenuItem onClick={handleSignOut} className="gap-3 text-gray-700">
                 <LogOut size={21} />
                 Logout
               </DropdownMenuItem>

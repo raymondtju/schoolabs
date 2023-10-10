@@ -126,7 +126,7 @@ export function DashboardSidebar() {
 
 export function ClassSidebar() {
   return (
-    <div className="fixed top-0 z-[60] h-screen w-full max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5 lg:block">
+    <div className="fixed top-0 z-[60] h-screen w-full max-w-[295px] md:max-w-[360px] lg:max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5 lg:block">
       <Image
         quality={100}
         src="/logo.svg"
@@ -168,7 +168,7 @@ export function ClassSidebar() {
             </Link>
           </li>
           <li>
-            <Link href="#" className="flex gap-3 px-2 py-3 text-sm">
+            <Link href="/dashboard/class/dasar-ux-research/forum" className="flex gap-3 px-2 py-3 text-sm">
               <SingleChatIcon stroke="black" />
               Diskusi
             </Link>
