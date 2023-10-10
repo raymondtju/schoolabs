@@ -86,28 +86,6 @@ export function Navbar() {
             </Button>
           )}
         </div>
-
-        <button
-          type="submit"
-          className="relative block lg:hidden"
-          onClick={onClick}
-        >
-          <motion.span
-            animate={animation}
-            variants={topBorderVariants}
-            className="my-1 block h-[4px] w-[30px] rounded bg-black"
-          />
-          <motion.span
-            animate={animation}
-            variants={midBorderVariants}
-            className="my-1 block h-[4px] w-[30px] rounded bg-black"
-          />
-          <motion.span
-            animate={animation}
-            variants={bottomBorderVariants}
-            className="my-1 block h-[4px] w-[30px] rounded bg-black"
-          />
-        </button>
       </div>
     </nav>
   );
