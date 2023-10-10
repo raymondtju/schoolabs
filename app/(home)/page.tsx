@@ -1,9 +1,6 @@
 import ClassCard from "@/components/class-card";
 import StarsIcon from "@/components/icon/stars-icon";
-import {
-  BottomIcon,
-  RightIcon,
-} from "@/components/icon/testimoni-icon";
+import { BottomIcon, RightIcon } from "@/components/icon/testimoni-icon";
 import { EllipseIcon } from "@/components/icon/usp-icon";
 import TestimoniCards from "@/components/testimoni-cards";
 import { Button } from "@/components/ui/button";
@@ -11,26 +8,29 @@ import { CourseCards, USPCards } from "@/types/data";
 import { Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+
 export default function Home() {
   return (
     <>
       <section className="">
         <div className="container relative flex h-[42rem] max-h-full items-center lg:px-20">
           <div className="flex max-w-xl flex-col gap-4">
-            <div className="w-fit flex items-center gap-3 border rounded-lg px-3 py-1">
-              <Zap size={15} fill="#F7C164" color="#F7C164"/>
-              <p className="text-gray-500 text-sm font-medium">Schoolabs terbaik</p>
+            <div className="flex w-fit items-center gap-3 rounded-lg border px-3 py-1">
+              <Zap size={15} fill="#F7C164" color="#F7C164" />
+              <p className="text-sm font-medium text-gray-500">
+                Schoolabs terbaik
+              </p>
             </div>
             <h1 className="text-5xl font-bold text-[#1D2739] md:text-[3.25rem] md:leading-[3.5rem]">
               Melangkah Menuju Karir Barumu Bersama
               <span className="text-primary"> SCHOOLABS</span>
             </h1>
-            <p className="max-w-xl text-base md:text-lg text-[#475367]">
+            <p className="max-w-xl text-base text-[#475367] md:text-lg">
               Schoolabs membantu kamu meraih karir yang kamu inginkan di
               industri teknologi sebagai UI//UX Designer dan Developer.
             </p>
             <div className="grid space-y-8">
-              <div className="flex flex-col md:flex-row gap-4">
+              <div className="flex flex-col gap-4 md:flex-row">
                 <Image
                   className="object-contain"
                   width={200}
@@ -40,21 +40,24 @@ export default function Home() {
                 />
                 <span className="inline-flex items-center gap-3">
                   <StarsIcon />
-                  <p className="text-sm font-medium">4.9/5.0 dari 500+ reviews</p>
+                  <p className="text-sm font-medium">
+                    4.9/5.0 dari 500+ reviews
+                  </p>
                 </span>
               </div>
               <div className="flex gap-3">
-
-              <Button asChild variant={"outline"} className="font-semibold text-[#4B4EFC] hover:text-[#4B4EFC]/90 border-[#4B4EFC] h-10 w-fit px-6 py-4">
-                <Link href="#">
-                  Lihat Kelas
-                </Link>
-
-              </Button>
-              <Button asChild className="font-semibold h-10 w-fit px-6 py-4 hover:bg-primary/90">
-              <Link href="/login">
-                  Daftar Sekarang
-              </Link>
+                <Button
+                  asChild
+                  variant={"outline"}
+                  className="h-10 w-fit border-[#4B4EFC] px-6 py-4 font-semibold text-[#4B4EFC] hover:text-[#4B4EFC]/90"
+                >
+                  <Link href="#">Lihat Kelas</Link>
+                </Button>
+                <Button
+                  asChild
+                  className="h-10 w-fit px-6 py-4 font-semibold hover:bg-primary/90"
+                >
+                  <Link href="/login">Daftar Sekarang</Link>
                 </Button>
               </div>
             </div>
@@ -69,6 +72,7 @@ export default function Home() {
           />
         </div>
       </section>
+
       <section className="my-28">
         <div className="container lg:px-20">
           <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-primary px-6 py-9 text-white md:h-40 md:flex-row">
@@ -96,7 +100,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative my-28 bg-[#9B9DFD] overflow-hidden">
+
+      <section className="relative my-28 overflow-hidden bg-[#9B9DFD]">
         <div className="container relative z-10 py-20 lg:px-20">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-1">
             <div className="flex flex-wrap gap-8 lg:justify-start">
@@ -104,7 +109,7 @@ export default function Home() {
                 <>
                   <div
                     key={index}
-                    className="flex lg:max-w-[26rem] flex-col gap-4 rounded-3xl bg-[#F3FBFF] px-8 py-6 shadow-lg lg:flex-row"
+                    className="flex flex-col gap-4 rounded-3xl bg-[#F3FBFF] px-8 py-6 shadow-lg lg:max-w-[26rem] lg:flex-row"
                   >
                     <div className="h-fit w-fit rounded-md bg-primary p-2">
                       <card.icon />
@@ -126,7 +131,7 @@ export default function Home() {
                 <>
                   <div
                     key={index}
-                    className="flex lg:max-w-[26rem] flex-col gap-4  rounded-3xl bg-[#F3FBFF] px-8 py-6 shadow-lg lg:flex-row"
+                    className="flex flex-col gap-4 rounded-3xl  bg-[#F3FBFF] px-8 py-6 shadow-lg lg:max-w-[26rem] lg:flex-row"
                   >
                     <div className="h-fit w-fit rounded-md bg-primary p-2">
                       <card.icon />
@@ -150,7 +155,7 @@ export default function Home() {
       </section>
       <section className="my-28">
         <div className="container lg:px-20">
-          <h1 className="text-center text-3xl md:text-4xl font-bold">
+          <h1 className="text-center text-3xl font-bold md:text-4xl">
             Pilih Jalur Karirmu!
           </h1>
           <div className="mt-8 flex flex-col items-center justify-around gap-4 md:flex-row">
@@ -207,19 +212,20 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="my-28">
         <div className="container grid lg:px-20">
-          <h1 className="text-center text-3xl md:text-4xl font-bold">
+          <h1 className="text-center font-PJS text-3xl font-bold md:text-4xl">
             Bingung Mau Belajar yang Mana?
             <span className="text-primary">
               {" "}
               Eksplorasi Kelas Dasar Dulu Aja
             </span>
           </h1>
-          <div className="my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="my-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {CourseCards.map((card, index) => (
               <ClassCard
-                className="shadow-md border-none"
+                className="border-none shadow-md"
                 key={index}
                 card={card}
               />
@@ -248,14 +254,14 @@ export default function Home() {
           </Button>
         </div>
       </section>
-      <section className="relative overflow-hidden my-28 bg-[#9B9DFD]">
+      <section className="relative my-28 overflow-hidden bg-[#9B9DFD]">
         <BottomIcon className="absolute bottom-0 left-20" />
         <div className="container relative z-10  py-32 lg:px-20">
-          <h1 className="text-center text-3xl md:text-4xl font-bold text-[#FFF]">
+          <h1 className="text-center text-3xl font-bold text-[#FFF] md:text-4xl">
             Kesan Peserta yang Belajar Bersama Kami
           </h1>
           <div className="mt-6 py-6">
-            <TestimoniCards/>
+            <TestimoniCards />
           </div>
         </div>
         <RightIcon className="absolute right-0 top-0" />
@@ -316,7 +322,7 @@ export default function Home() {
               height={450}
             />
             <div className="flex flex-col justify-center gap-4">
-              <h1 className="mt-4 text-3xl md:text-4xl font-bold">
+              <h1 className="mt-4 text-3xl font-bold md:text-4xl">
                 Masih Belum Tahu Apa Minat Karirmu?
               </h1>
               <p className="text-base text-muted">

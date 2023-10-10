@@ -15,8 +15,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 function ClassPage() {
-
-
   return (
     <>
       <div className="sticky top-0 z-[49] flex justify-between border-b bg-white px-8 py-5">
@@ -64,38 +62,38 @@ function ClassPage() {
                 <span>•</span>
                 24 Materi
               </p>
-              <button  className="font-semibold text-muted">
+              <button className="font-semibold text-muted">
                 Collapse all sections
               </button>
             </div>
             <div className="mt-3 grid gap-2">
-              <Accordion multiple defaultIndex={[0,1]}>
+              <Accordion multiple defaultIndex={[0, 1]}>
                 {subjectLearnList.map((item, index) => (
                   <AccordionItem
                     key={index}
                     className="rounded-lg border-[#9B9DFD]"
                   >
                     <AccordionHeader className="p-4">
-                      <h5 className="text-base md:text-xl font-semibold leading-6 tracking-tight">
+                      <h5 className="text-base font-semibold leading-6 tracking-tight md:text-xl">
                         Bagian {index + 1}. {item.title}
                       </h5>
                     </AccordionHeader>
                     <AccordionPanel>
                       {item.subClass.map((subItem, index) => (
                         <div key={index} className="px-6 py-2">
-                            <div className="flex items-center gap-4">
-                              <span className="inline-block">
-                                {subItem.icon ? (
-                                  <subItem.icon size={21} />
-                                ) : (
-                                  <CheckCircle2 size={21} color="#0F973D" />
-                                )}
-                              </span>
-                              <p className="text-sm text-gray-700">
-                                {subItem.title}
-                              </p>
-                            </div>
+                          <div className="flex items-center gap-4">
+                            <span className="inline-block">
+                              {subItem.icon ? (
+                                <subItem.icon size={21} />
+                              ) : (
+                                <CheckCircle2 size={21} color="#0F973D" />
+                              )}
+                            </span>
+                            <p className="text-sm text-gray-700">
+                              {subItem.title}
+                            </p>
                           </div>
+                        </div>
                       ))}
                     </AccordionPanel>
                   </AccordionItem>

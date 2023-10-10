@@ -7,18 +7,24 @@ import { CheckCircle2 } from "lucide-react";
 import { CourseCardTypes, NormalCourseCards } from "@/types/type";
 import { cn } from "@/lib/utils";
 import StarsIcon from "./icon/stars-icon";
+import { useRouter } from "next/navigation";
 
 interface CourseCardProps {
-  key?: number | string,
-  card: Partial<CourseCardTypes>,
-  className?: string,
-  title?: string
+  key?: number | string;
+  card: Partial<CourseCardTypes>;
+  className?: string;
+  title?: string;
 }
 
 function ClassCard({ key, card, className, title }: CourseCardProps) {
-  console.log(card.rating)
+  const router = useRouter();
+
   return (
-    <Card key={key} className={cn("w-full border-none shadow-md", className)}>
+    <Card
+      key={key}
+      className={cn("w-full cursor-pointer border-none shadow-md", className)}
+      onClick={() => router.push(card.href || "#")}
+    >
       <CardHeader className="p-0">
         {card.image && (
           <Image
@@ -30,22 +36,22 @@ function ClassCard({ key, card, className, title }: CourseCardProps) {
           />
         )}
       </CardHeader>
+
       {card.rating ? (
-        <CardContent className="flex flex-col space-y-2 pt-4">
-          <h5 className={cn("text-2xl font-bold truncate", title)}>{card.title}</h5>
+        <CardContent className="flex flex-col space-y-2 pt-6">
+          <h5 className={cn("truncate text-2xl font-bold", title)}>
+            {card.title}
+          </h5>
           <div className="flex gap-5">
             <p className="text-sm font-semibold text-muted-foreground">
               {card.price === 0 ? (
-                <>
-                  Rp - {"(Gratis)"}
-                </>
+                <>Rp - {"(Gratis)"}</>
               ) : (
-                <>
-                  Rp - {card.price}
-                </>
+                <>Rp - {card.price}</>
               )}
             </p>
-            <div className="inline-flex items-center gap-3">
+
+            <div className="inline-flex items-center gap-1">
               <StarsIcon />
               <p className="text-xs text-muted-foreground">
                 {card.rating} {`(${card.people_rate})`}
@@ -55,7 +61,9 @@ function ClassCard({ key, card, className, title }: CourseCardProps) {
         </CardContent>
       ) : (
         <CardContent className="flex flex-col gap-4 px-4 py-6">
-          <h5 className={cn("text-2xl font-bold truncate", title)}>{card.title}</h5>
+          <h5 className={cn("truncate text-2xl font-bold", title)}>
+            {card.title}
+          </h5>
           <p className="text-sm text-muted">{card.description}</p>
         </CardContent>
       )}
@@ -82,9 +90,7 @@ function ClassCard({ key, card, className, title }: CourseCardProps) {
               fill="#D0D5DD"
             />
           </svg>
-          <p className="text-sm text-muted-foreground">
-            Level Dasar - Pemula
-          </p>
+          <p className="text-sm text-muted-foreground">Level Dasar - Pemula</p>
         </CardFooter>
       ) : (
         <CardFooter className="mt-auto gap-3 px-4 pt-0">
@@ -98,15 +104,13 @@ function ClassCard({ key, card, className, title }: CourseCardProps) {
           ) : (
             <>
               <CheckCircle2 stroke="#475367" />
-              <p className="text-base font-semibold text-[#475367]">
-                Complete
-              </p>
+              <p className="text-base font-semibold text-[#475367]">Complete</p>
             </>
           )}
         </CardFooter>
       )}
     </Card>
-  )
+  );
 }
 
 export default ClassCard;

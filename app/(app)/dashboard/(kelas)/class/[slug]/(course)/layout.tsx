@@ -12,11 +12,12 @@ function ClassLayout({
   children: React.ReactNode;
   params: { slug: string };
 }) {
-
   return (
     <>
       <main className="lg:grid lg:grid-cols-[290px_1fr] ">
-        <ClassSidebar />
+        <div className="hidden lg:block">
+          <ClassSidebar />
+        </div>
         <div className="lg:col-span-2 lg:pl-[17.5rem]">
           <DashbaordNav />
 

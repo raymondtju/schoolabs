@@ -44,15 +44,15 @@ const JoinStorySection = [
   },
 ];
 
-
 function DasarUxResearchPage() {
-
   return (
     <main className="relative">
       <section className="bg-gradient-to-b from-[#3571A7] to-[#4A8CC8] text-white">
         <div className="container py-14 md:px-20">
           <div className="max-w-2xl space-y-4">
-            <h1 className="text-3xl md:text-4xl font-semibold">Dasar UX Research</h1>
+            <h1 className="text-3xl font-semibold md:text-4xl">
+              Dasar UX Research
+            </h1>
             <p className="text-base">
               Kursus yang dirancang untuk memberikan pemahaman mendalam tentang
               metodologi penelitian pengalaman pengguna (UX). Dalam kelas ini,
@@ -60,22 +60,20 @@ function DasarUxResearchPage() {
               termasuk pengumpulan data, analisis pengguna, dan teknik
               pengujian.{" "}
             </p>
-            <div className="flex flex-wrap item-scenter justify-between">
-              <div className="text-sm flex items-center space-x-2">
+            <div className="item-scenter flex flex-wrap justify-between">
+              <div className="flex items-center space-x-2 text-sm">
                 <StarsIcon size={16} />
-                <p>
-                  4.9/5.0
-                </p>
+                <p>4.9/5.0</p>
               </div>
-              <div className="text-sm flex items-center space-x-2">
+              <div className="flex items-center space-x-2 text-sm">
                 <Users size={16} />
                 <p>500 siswa</p>
               </div>
-              <div className="text-sm flex items-center space-x-2">
+              <div className="flex items-center space-x-2 text-sm">
                 <BarChart size={16} />
                 <p>Tingkat pemula</p>
               </div>
-              <div className="mt-4 sm:mt-0 text-sm flex items-center space-x-2">
+              <div className="mt-4 flex items-center space-x-2 text-sm sm:mt-0">
                 <CalendarPlus size={16} />
                 <p>Last Update 23 Mei 2023</p>
               </div>
@@ -87,7 +85,7 @@ function DasarUxResearchPage() {
       <section className="container relative flex w-full flex-1 justify-between py-14 md:px-20">
         <div className="w-full max-w-2xl space-y-8">
           <div className="space-y-5">
-            <h3 className="text-xl sm:text-2xl font-semibold">
+            <h3 className="text-xl font-semibold sm:text-2xl">
               Belajar bersama mentor berpengalaman
             </h3>
             <div className="flex gap-24">
@@ -99,18 +97,20 @@ function DasarUxResearchPage() {
             <h3 className="text-2xl font-semibold">
               Apa yang akan kamu dapatkan?
             </h3>
-            <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
               {BenefitClass.map((item, index) => {
                 return (
                   <div className="flex gap-6 rounded-lg border p-6" key={index}>
-                    <div className="w-7 h-7">
+                    <div className="h-7 w-7">
                       {item.icon && <item.icon size={25} color="#344054" />}
                     </div>
                     <div className="space-y-2">
                       <h4 className="font-medium text-gray-900">
                         {item.title}
                       </h4>
-                      <p className="text-sm text-gray-500">{item.description}</p>
+                      <p className="text-sm text-gray-500">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 );
@@ -118,7 +118,7 @@ function DasarUxResearchPage() {
             </div>
           </div>
           <div className="space-y-5">
-            <h3 className="text-xl sm:text-2xl font-semibold">
+            <h3 className="text-xl font-semibold sm:text-2xl">
               Apa yang akan kamu pelajari?
             </h3>
             <div className="space-y-2">
@@ -129,7 +129,10 @@ function DasarUxResearchPage() {
                     className="rounded-lg"
                     activeAccordion="border-[#9B9DFD]"
                   >
-                    <AccordionHeader className="p-4" activeHeader="bg-[#F5F5FF]">
+                    <AccordionHeader
+                      className="p-4"
+                      activeHeader="bg-[#F5F5FF]"
+                    >
                       <h5 className="text-lg font-medium">
                         Bagian {index + 1}. {item.title}
                       </h5>
@@ -160,13 +163,16 @@ function DasarUxResearchPage() {
             </div>
           </div>
           <div className="space-y-5">
-            <h3 className="text-xl sm:text-2xl font-semibold">
+            <h3 className="text-xl font-semibold sm:text-2xl">
               Cerita yang sudah bergabung
             </h3>
-            <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
               {JoinStorySection.map((item, index) => {
                 return (
-                  <div className="grid gap-4 rounded-lg border px-8 py-6" key={index}>
+                  <div
+                    className="grid gap-4 rounded-lg border px-8 py-6"
+                    key={index}
+                  >
                     <div className="flex items-center gap-3">
                       <Avatar />
                       <div className="">
@@ -202,18 +208,18 @@ function DasarUxResearchPage() {
                     className="rounded-lg"
                     activeAccordion="border-[#9B9DFD]"
                   >
-                    <AccordionHeader className="p-4" activeHeader="bg-[#F5F5FF]">
-                      <h5 className="text-lg font-medium">
-                        {item.title}
-                      </h5>
+                    <AccordionHeader
+                      className="p-4"
+                      activeHeader="bg-[#F5F5FF]"
+                    >
+                      <h5 className="text-lg font-medium">{item.title}</h5>
                     </AccordionHeader>
                     <AccordionPanel>
-                        <div className="px-6 py-2">
-                          <p className="text-sm text-gray-700">
-                            {item.description}
-                          </p>
-                        </div>
-                      
+                      <div className="px-6 py-2">
+                        <p className="text-sm text-gray-700">
+                          {item.description}
+                        </p>
+                      </div>
                     </AccordionPanel>
                   </AccordionItem>
                 ))}
@@ -222,9 +228,9 @@ function DasarUxResearchPage() {
           </div>
         </div>
 
-        <div className="hidden md:block sticky top-28 -mt-80 h-full max-h-[calc(100vh-9rem)]">
+        <div className="sticky top-28 -mt-80 hidden h-full max-h-[calc(100vh-9rem)] md:block">
           <div className="max-w-sm space-y-4 rounded-[20px] border bg-white p-4">
-            <div className="w-full max-h-[16rem] h-[16rem] rounded-t-lg relative overflow-hidden">
+            <div className="relative h-[16rem] max-h-[16rem] w-full overflow-hidden rounded-t-lg">
               <Image
                 quality={100}
                 fill
@@ -235,34 +241,27 @@ function DasarUxResearchPage() {
             </div>
             <h2 className="text-xl font-semibold">Dasar UX Research</h2>
             <div className="flex flex-col space-y-2 text-gray-700">
-              <p >
+              <p>
                 Dengan mengikuti program kelas ini, kamu berkesempatan untuk:
               </p>
-              <ul className="text-sm grid gap-2">
+              <ul className="grid gap-2 text-sm">
                 <li className="flex items-center gap-2">
                   <span className="inline-block">
                     <CheckCircle2 color="#0F973D" size={20} />
                   </span>
-                  <p>
-                    Belajar bagaimana riset UX dilakukan.
-                  </p>
+                  <p>Belajar bagaimana riset UX dilakukan.</p>
                 </li>
                 <li className="flex gap-2">
                   <span className="inline-block">
                     <CheckCircle2 color="#0F973D" size={20} />
                   </span>
-                  <p>
-                    Memiliki portofolio berdasarkan pekerjaan nyata.
-
-                  </p>
+                  <p>Memiliki portofolio berdasarkan pekerjaan nyata.</p>
                 </li>
                 <li className="flex gap-2">
                   <span className="inline-block">
                     <CheckCircle2 color="#0F973D" size={20} />
                   </span>
-                  <p>
-                    Belajar bagaimana riset UX dilakukan.
-                  </p>
+                  <p>Belajar bagaimana riset UX dilakukan.</p>
                 </li>
               </ul>
             </div>

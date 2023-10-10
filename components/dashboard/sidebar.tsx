@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Trophy, Link as Chain, Menu } from "lucide-react";
 import {
@@ -54,17 +54,19 @@ const ForumMenuList: ForumMenuType[] = [
 ];
 
 export function DashboardSidebar() {
+  const router = useRouter();
   const pathname = usePathname();
 
   return (
-    <div className="hidden lg:block fixed top-0 z-[60] h-screen w-full max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5">
+    <div className="fixed top-0 z-[60] hidden h-screen w-full max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5 lg:block">
       <Image
         quality={100}
         src="/logo.png"
         alt="icon"
         width={176}
         height={32}
-        className="px-6 py-2"
+        className="cursor-pointer px-6 py-2"
+        onClick={() => router.push("/")}
       />
       {/* <Menu /> */}
       <div className="space-y-5 px-2">
@@ -124,7 +126,7 @@ export function DashboardSidebar() {
 
 export function ClassSidebar() {
   return (
-    <div className="hidden lg:block fixed top-0 z-[60] h-screen w-full max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5">
+    <div className="fixed top-0 z-[60] h-screen w-full max-w-[280px] space-y-3 overflow-y-auto border-r bg-[#FFF] pb-7 pt-5 lg:block">
       <Image
         quality={100}
         src="/logo.svg"
