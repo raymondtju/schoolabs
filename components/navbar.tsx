@@ -1,66 +1,181 @@
 "use client";
 
-import { MagnifyingGlassIcon, Cross1Icon } from "@radix-ui/react-icons";
-import React, { useState } from "react";
+import { Cross1Icon } from "@radix-ui/react-icons";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import { Button } from "./ui/button";
+import { CountDown } from "@/lib/countdown";
+import Link from "next/link";
+import { Search } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
+import { useSession } from "next-auth/react";
+export function Navbar() {
+  const [animation, setAnimation] = useState("closed");
 
-export function LandingPageNavbar() {
+  const onClick = () => {
+    setAnimation("moving");
+    setTimeout(() => {
+      setAnimation(animation === "closed" ? "open" : "closed");
+    }, 200);
+  };
+
+  const topBorderVariants: Variants = {
+    open: {
+      translateY: 5,
+      rotate: 45,
+    },
+    closed: {
+      translateY: 0,
+      rotate: 0,
+    },
+  };
+
+  const midBorderVariants: Variants = {
+    open: {
+      translateX: 45,
+      opacity: 0,
+    },
+    closed: {
+      translateX: 0,
+      opacity: 1,
+    },
+  };
+
+  const bottomBorderVariants: Variants = {
+    open: {
+      translateY: -11,
+      rotate: -45,
+    },
+    closed: {
+      translateY: 0,
+      rotate: 0,
+    },
+  };
+
+  const session = useSession();
+
   return (
-    <nav className="flex gap-4 bg-white py-6 max-w-7xl mx-auto">
-      {/* logo */}
-      <img src="./logo.svg" alt="logo" />
-
-      {/* searchbar and navitems */}
-      <div className="flex justify-between flex-1 items-center">
-        <div className="flex flex-row gap-2 items-center px-3 py-2 bg-gray-100 border border-gray-300 rounded-md w-5/12">
-          <MagnifyingGlassIcon className="scale-125" />
-          <input
-            type="text"
-            className="outline-none focus:outline-none bg-transparent w-full"
-            placeholder="Search here..."
-          />
+    <nav className=" sticky top-0 z-50 flex h-24 items-center justify-center bg-[#FFF] shadow">
+      <div className="container flex items-center justify-between md:px-20">
+        <div className="col-span-3 flex items-center space-x-12">
+          <Link href="/">
+            <Image
+              quality={100}
+              src="/logo.png"
+              alt="icon"
+              width={176}
+              height={32}
+            />
+          </Link>
+          <div className="hidden w-[28rem] items-center space-x-2 rounded-md border border-gray-300 bg-[#F0F2F5] px-3 py-1 transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring lg:flex ">
+            <Search size={18} />
+            <input
+              className="h-7 w-full border-none bg-transparent text-sm shadow-none focus:outline-none"
+              placeholder="Search here..."
+            />
+          </div>
         </div>
-        <ul className="flex flex-row gap-8">
-          <li>Kelas</li>
-          <li>Tentang Kami</li>
-          <li>Login</li>
+        <ul className="col-span-1 hidden items-center justify-end gap-8 lg:flex">
+          {/* <li className="text-base font-semibold">
+            <Link href="/course">
+              Kelas
+            </Link>
+          </li>
+          <li className="text-base font-semibold">
+            <Link href="/about-us">Tentang Kami</Link>
+          </li> */}
+          <li className="h-[3.25rem] w-20">
+            {session.data ? (
+              <Button asChild className="h-full w-full">
+                <Link href="/dashboard">Dashboard</Link>
+              </Button>
+            ) : (
+              <Button asChild className="h-full w-full">
+                <Link href="/login">Login</Link>
+              </Button>
+            )}
+          </li>
         </ul>
+        <button
+          type="submit"
+          className="relative block lg:hidden"
+          onClick={onClick}
+        >
+          <motion.span
+            animate={animation}
+            variants={topBorderVariants}
+            className="my-1 block h-[4px] w-[30px] rounded bg-black"
+          />
+          <motion.span
+            animate={animation}
+            variants={midBorderVariants}
+            className="my-1 block h-[4px] w-[30px] rounded bg-black"
+          />
+          <motion.span
+            animate={animation}
+            variants={bottomBorderVariants}
+            className="my-1 block h-[4px] w-[30px] rounded bg-black"
+          />
+        </button>
       </div>
     </nav>
   );
 }
 
 export function PromotionFlyer() {
+  const [mounted, setMounted] = useState(false);
   const [close, setClose] = useState<boolean>(false);
+  const [timeLeft, setTimeLeft] = useState(
+    CountDown("2023-09-23T19:23:01.000Z"),
+  );
+
+  useEffect(() => {
+    setMounted(true);
+    const timer = setInterval(() => {
+      setTimeLeft(CountDown("2023-09-23T19:23:01.000Z"));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <>
       {!close && (
-        <div className="bg-blue-950 text-white relative">
-          <div className="absolute right-4 top-4">
-            <Cross1Icon
-              className="scale-125 cursor-pointer"
-              onClick={() => setClose(true)}
-            />
-          </div>
-          <div className="flex justify-between max-w-7xl mx-auto py-8">
-            <div className="flex gap-8 items-center">
-              <img src="./images/megaphone.svg" alt="megaphone" />
-
-              <p className="text-2xl font-semibold max-w-xl">
-                Dapatkan promo Rp 50.000 per kelas dengan menggunakan kode{" "}
-                <span className="font-bold">“ BARUJOIN”</span>
-              </p>
+        <div className="bg-[#102333] py-4">
+          <div className="container relative flex flex-col justify-between gap-2 text-[#F5F5FF] lg:flex-row lg:items-center lg:px-20">
+            <div className="flex items-center justify-center gap-4">
+              <Image
+                className="hidden md:block"
+                src="/images/megaphone.webp"
+                alt="Megaphone"
+                width={100}
+                height={100}
+              />
+              <h1 className="text-base font-semibold lg:text-2xl">
+                Dapatkan promo Rp 50.000 dengan menggunakan kode “ BARUJOIN”
+              </h1>
             </div>
-
-            <div>
-              <p>Waktu tersisa</p>
-
-              <div className="bg-sky-500 px-6 py-1 rounded-lg mt-px">
-                <span className="text-3xl font-semibold tracking-widest">
-                  19:23:01
-                </span>
+            <div className="mr-4 flex flex-col gap-1">
+              <p className="text-base font-medium">Waktu tersisa</p>
+              <div
+                className="flex h-12 items-center gap-1 rounded-lg bg-[#4490D4] px-4 text-base font-semibold tracking-widest md:text-3xl"
+                suppressHydrationWarning
+              >
+                <span>{timeLeft.hours}</span>
+                <span>:</span>
+                <span>{timeLeft.minutes}</span>
+                <span>:</span>
+                <span>{timeLeft.seconds}</span>
               </div>
             </div>
+            <Cross1Icon
+              onClick={() => setClose(true)}
+              className="absolute right-10 top-0 scale-125 cursor-pointer"
+            />
           </div>
         </div>
       )}
