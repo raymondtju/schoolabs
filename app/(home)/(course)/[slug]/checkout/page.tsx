@@ -19,9 +19,10 @@ import { BenefitJoinClass } from "@/types/data";
 import { VercelLogoIcon } from "@radix-ui/react-icons";
 import { Ticket, Users } from "lucide-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { getSnapToken } from "./action";
+import { useSession } from "next-auth/react";
 
 declare global {
   interface Window {
@@ -51,6 +52,9 @@ const PaymentMethod = [
 function CheckoutPage() {
   const router = useRouter();
   const [snapToken, setSnapToken] = useState("");
+
+  const session = useSession();
+  if (!session.data) return router.replace("/login");
 
   return (
     <main className="container mt-20 flex flex-col items-start gap-6 md:flex-row md:px-20">

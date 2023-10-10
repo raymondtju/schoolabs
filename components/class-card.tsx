@@ -42,7 +42,7 @@ function ClassCard({ key, card, className, title }: CourseCardProps) {
           <h5 className={cn("truncate text-2xl font-bold", title)}>
             {card.title}
           </h5>
-          <div className="flex gap-5">
+          <div className="flex justify-between">
             <p className="text-sm font-semibold text-muted-foreground">
               {card.price === 0 ? (
                 <>Rp - {"(Gratis)"}</>
@@ -69,7 +69,7 @@ function ClassCard({ key, card, className, title }: CourseCardProps) {
       )}
 
       {card.level ? (
-        <CardFooter className="flex gap-4">
+        <CardFooter className="flex gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"

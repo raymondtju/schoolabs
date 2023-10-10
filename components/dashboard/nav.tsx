@@ -97,7 +97,10 @@ function DashbaordNav() {
                 Profile
               </DropdownMenuItem>
               <DropdownMenuSeparator className="bg-gray-200"></DropdownMenuSeparator>
-              <DropdownMenuItem className="gap-3 text-gray-700">
+              <DropdownMenuItem
+                onClick={handleSignOut}
+                className="gap-3 text-gray-700"
+              >
                 <LogOut size={21} />
                 Logout
               </DropdownMenuItem>

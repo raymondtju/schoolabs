@@ -3,7 +3,8 @@ import StarsIcon from "@/components/icon/stars-icon";
 import { BottomIcon, RightIcon } from "@/components/icon/testimoni-icon";
 import { EllipseIcon } from "@/components/icon/usp-icon";
 import TestimoniCards from "@/components/testimoni-cards";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { CourseCards, USPCards } from "@/types/data";
 import { Zap } from "lucide-react";
 import Image from "next/image";
@@ -231,10 +232,12 @@ export default function Home() {
               />
             ))}
           </div>
-          <Button
-            size={"icon"}
-            className="mx-auto w-fit border-2 border-[#4B4EFC] px-2 font-semibold text-primary hover:bg-[#4B4EFC]/5 hover:text-[#4B4EFC]/90"
-            variant={"outline"}
+          <Link
+            href="/course"
+            className={cn(
+              buttonVariants({ variant: "outline", size: "icon" }),
+              "mx-auto w-fit border-2 border-[#4B4EFC] px-2 font-semibold text-primary hover:bg-[#4B4EFC]/5 hover:text-[#4B4EFC]/90",
+            )}
           >
             Lihat Semua Kelas{""}
             <svg
@@ -251,7 +254,7 @@ export default function Home() {
                 d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
               />
             </svg>
-          </Button>
+          </Link>
         </div>
       </section>
       <section className="relative my-28 overflow-hidden bg-[#9B9DFD]">
