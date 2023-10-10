@@ -1,3 +1,5 @@
+import Avatar from "@/components/dashboard/avatar";
+import { ForumChatIcon, ForumLikeIcon } from "@/components/icon/forum-icon";
 import React from "react";
 
 function HotDiscussionPage() {
@@ -14,7 +16,7 @@ function HotDiscussionPage() {
                 <h2 className="truncate w-12 md:w-full text-base md:text-xl font-semibold text-gray-900">
                   Sharing berita & pendapat kamu soal berbagai topik
                 </h2>
-                <div className="h-10 w-10 rounded-full bg-slate-100"></div>
+                <Avatar image="/avatar/avatar.webp" />
               </div>
 
               <div className="pb-2">
@@ -41,13 +43,13 @@ function HotDiscussionPage() {
               </div>
             </div>
 
-            <div className="text-sm md:text-base flex gap-2 px-6 pt-2">
-              <div className="flex gap-2">
-                {/* TO-DO: icon like */}
+            <div className="text-sm flex gap-2 px-6 pt-2">
+              <div className="flex items-center gap-2">
+                <ForumLikeIcon/>
                 <p>6 Menyukai</p>
               </div>
-              <div className="flex gap-2">
-                {/* TO-DO: icon like */}
+              <div className="flex items-center gap-2">
+                <ForumChatIcon/>
                 <p>1 Komentar</p>
               </div>
             </div>

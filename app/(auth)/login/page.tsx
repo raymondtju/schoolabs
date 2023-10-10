@@ -11,6 +11,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useToast } from "@/components/ui/use-toast";
+import { Loader2 } from "lucide-react";
 
 function InputEmail() {
    return (
@@ -39,35 +41,50 @@ function InputEmail() {
 
 export default function Login() {
    const [showForm, setShowForm] = useState(false)
+   const [loading, isLoading] = useState(false)
+   const { toast } = useToast();
    const router = useRouter();
    const handleSignInGoogle = async () => {
-      
+      isLoading(true)
       const res = await signIn("google", {
          redirect: false,
          callbackUrl: "/dashboard"
       })
 
       if (res?.ok) {
-         console.log("Berhasil login")
-         await router.replace(`${res.url ?? ""}`)
-      } else if(res?.error) {
-         console.log(res.error)
+         toast({
+            title: "Login Success"
+         })
+         router.replace(`${res.url ?? ""}`)
+      } else if (res?.error) {
+         toast({
+            title: "Uh oh! Something went wrong.",
+            description: "There was a problem"
+         })
       }
+      isLoading(false)
 
    }
 
    const handleSignInFacebook = async () => {
+      isLoading(true)
       const res = await signIn("facebook", {
          redirect: false,
          callbackUrl: "/dashboard"
       })
 
       if (res?.ok) {
-         console.log("Berhasil login")
-         await router.replace(`${res.url ?? ""}`)
+         toast({
+            title: "Login Success"
+         })
+         router.replace(`${res.url}`)
       } else if (res?.error) {
-         console.log(res.error)
+         toast({
+            title: "Uh oh! Something went wrong.",
+            description: "There was a problem"
+         })
       }
+      isLoading(false)
    }
 
    return (
@@ -83,17 +100,53 @@ export default function Login() {
                </div>
                <div className="mt-6 w-full grid">
                   <div className="grid gap-3">
-                     <Button onClick={handleSignInGoogle} className="rounded-md h-12 gap-3 font-semibold uppercase bg-primary">
-                        <GoogleIcon />
-                        Masuk dengan gmail
+                     <Button
+                        disabled={loading}
+                        onClick={handleSignInGoogle}
+                        className={`relative rounded-md h-12 gap-3 font-semibold uppercase bg-primary`}
+                     >
+                        {loading ? (
+                           <div className='absolute flex items-center justify-center text-white'>
+                              <Loader2 className='animate-spin' />
+                           </div>
+                        ) : (
+                           <>
+                              <GoogleIcon />
+                              Masuk dengan gmail
+                           </>
+
+                        )}
                      </Button>
-                     <Button onClick={handleSignInFacebook} variant={"outline"} className="rounded-md h-12 text-gray-600 gap-3 font-semibold uppercase">
-                        <FacebookIcon />
-                        Masuk dengan facebook
+                     <Button
+                        disabled={loading}
+                        onClick={handleSignInFacebook}
+                        variant={"outline"}
+                        className="rounded-md h-12 text-gray-600 gap-3 font-semibold uppercase">
+                        {loading ? (
+                           <div className='absolute flex items-center justify-center'>
+                              <Loader2 className='animate-spin' />
+                           </div>
+                        ) : (
+                           <>
+                              <FacebookIcon />
+                              Masuk dengan facebook
+                           </>
+
+                        )}
                      </Button>
-                     <Button onClick={() => setShowForm(!showForm)} variant={"outline"} className={`${showForm ? "hidden" : "flex"} rounded-md h-12 text-gray-600 gap-3 font-semibold uppercase`}>
-                        <EmailIcon />
-                        Masuk dengan email
+                     <Button disabled={loading} onClick={() => setShowForm(!showForm)} variant={"outline"} className={`${showForm ? "hidden" : "flex"} rounded-md h-12 text-gray-600 gap-3 font-semibold uppercase`}>
+                        {loading ? (
+                           <div className='absolute flex items-center justify-center'>
+                              <Loader2 className='animate-spin' />
+                           </div>
+                        ) : (
+                           <>
+                                 <EmailIcon />
+                                 Masuk dengan email
+                           </>
+
+                        )}
+                       
                      </Button>
                   </div>
                   {showForm && (

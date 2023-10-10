@@ -17,7 +17,7 @@ function Avatar({
         className,
       )}
     >
-      {image && alt && <Image width={40} height={40} src={image} alt={alt} />}
+      {image && alt && <Image quality={100} width={40} height={40} src={image} alt={alt} />}
     </div>
   );
 }

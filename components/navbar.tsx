@@ -75,27 +75,18 @@ export function Navbar() {
             />
           </div>
         </div>
-        <ul className="col-span-1 hidden items-center justify-end gap-8 lg:flex">
-          {/* <li className="text-base font-semibold">
-            <Link href="/course">
-              Kelas
-            </Link>
-          </li>
-          <li className="text-base font-semibold">
-            <Link href="/about-us">Tentang Kami</Link>
-          </li> */}
-          <li className="h-[3.25rem] w-20">
-            {session.data ? (
-              <Button asChild className="h-full w-full">
-                <Link href="/dashboard">Dashboard</Link>
-              </Button>
-            ) : (
-              <Button asChild className="h-full w-full">
-                <Link href="/login">Login</Link>
-              </Button>
-            )}
-          </li>
-        </ul>
+        <div>
+          {session.data ? (
+            <Button asChild className="h-full w-full">
+              <Link href="/dashboard">Dashboard</Link>
+            </Button>
+          ) : (
+              <Button asChild className="h-[3.25rem] w-20">
+              <Link href="/login">Login</Link>
+            </Button>
+          )}
+        </div>
+
         <button
           type="submit"
           className="relative block lg:hidden"
@@ -132,7 +123,7 @@ export function PromotionFlyer() {
   useEffect(() => {
     setMounted(true);
     const timer = setInterval(() => {
-      setTimeLeft(CountDown("2023-09-23T19:23:01.000Z"));
+      setTimeLeft(CountDown("2023-10-12T19:23:01.000Z"));
     }, 1000);
 
     return () => clearInterval(timer);
@@ -145,11 +136,10 @@ export function PromotionFlyer() {
   return (
     <>
       {!close && (
-        <div className="bg-[#102333] py-4">
-          <div className="container relative flex flex-col justify-between gap-2 text-[#F5F5FF] lg:flex-row lg:items-center lg:px-20">
+        <div className="bg-[#102333] py-4 relative">
+          <div className="max-w-[25rem] md:max-w-none container flex flex-col justify-between gap-2 text-[#F5F5FF] lg:flex-row lg:items-center lg:px-20">
             <div className="flex items-center justify-center gap-4">
               <Image
-                className="hidden md:block"
                 src="/images/megaphone.webp"
                 alt="Megaphone"
                 width={100}
@@ -160,9 +150,9 @@ export function PromotionFlyer() {
               </h1>
             </div>
             <div className="mr-4 flex flex-col gap-1">
-              <p className="text-base font-medium">Waktu tersisa</p>
+              <p className="hidden md:block text-base font-medium">Waktu tersisa</p>
               <div
-                className="flex h-12 items-center gap-1 rounded-lg bg-[#4490D4] px-4 text-base font-semibold tracking-widest md:text-3xl"
+                className="flex h-12 items-center justify-center md:justify-start gap-1 rounded-lg bg-[#4490D4] px-4 text-xl font-semibold tracking-widest md:text-3xl"
                 suppressHydrationWarning
               >
                 <span>{timeLeft.hours}</span>
@@ -172,11 +162,11 @@ export function PromotionFlyer() {
                 <span>{timeLeft.seconds}</span>
               </div>
             </div>
+          </div>
             <Cross1Icon
               onClick={() => setClose(true)}
-              className="absolute right-10 top-0 scale-125 cursor-pointer"
+              className="absolute text-white right-[1.5rem] top-[16px] scale-125 cursor-pointer"
             />
-          </div>
         </div>
       )}
     </>

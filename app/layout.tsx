@@ -1,15 +1,9 @@
 import Provider from "@/components/provider";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import Script from "next/script";
+import { Toaster } from "@/components/ui/toaster"
 
-const pjs = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-});
-const inter = Inter({
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Schoolabs",
@@ -34,7 +28,10 @@ export default function RootLayout({
         data-client-key={process.env.NEXT_PUBLIC_MIDTRANS_CLIENT_KEY}
       />
       <body className="font-Inter">
-        <Provider>{children}</Provider>
+        <Provider>
+          {children}
+          <Toaster/>
+        </Provider>
       </body>
     </html>
   );

@@ -54,17 +54,17 @@ function CheckoutPage() {
   const [snapToken, setSnapToken] = useState("");
 
   const session = useSession();
-  if (!session.data) return router.replace("/login");
+  if (!session.data) return router.push("/login");
 
   return (
-    <main className="container mt-20 flex flex-col items-start gap-6 md:flex-row md:px-20">
+    <main className="container mt-20 flex flex-col items-start gap-6 lg:flex-row lg:px-20">
       <button onClick={() => router.back()}>
         {/* TO-DO: back icon */}
         back
       </button>
 
-      <Card className="w-full max-w-[30rem] overflow-hidden rounded-2xl border md:sticky md:top-[6.5rem] md:z-10 md:shadow-md">
-        <CardHeader className="relative h-[21rem] overflow-hidden">
+      <Card className="w-full lg:max-w-[30rem] overflow-hidden rounded-2xl border lg:sticky lg:top-[6.5rem] lg:z-10 lg:shadow-md">
+        <CardHeader className="relative h-[21rem] md:h-[30rem] lg:h-[21rem] overflow-hidden">
           <Image
             fill
             objectFit="cover"
@@ -73,18 +73,18 @@ function CheckoutPage() {
           />
         </CardHeader>
         <CardContent className="px-4 py-6">
-          <h1 className="text-2xl font-semibold">Dasar UX Research</h1>
+          <h1 className="text-2xl md:text-3xl lg:text-2xl font-semibold">Dasar UX Research</h1>
         </CardContent>
         <CardFooter className="flex flex-col items-start gap-2 md:flex-row md:items-center md:justify-between md:gap-0">
-          <div className="flex items-center space-x-2 text-sm">
+          <div className="flex items-center space-x-2 text-sm md:text-lg lg:text-sm">
             <StarsIcon size={16} />
             <p className="font-medium">4.9/5.0</p>
           </div>
-          <div className="flex items-center space-x-2 text-sm">
+          <div className="flex items-center space-x-2 text-sm md:text-lg lg:text-sm">
             <Users size={16} />
             <p className="font-semibold">50 siswa</p>
           </div>
-          <div className="flex items-center space-x-2 text-sm">
+          <div className="flex items-center space-x-2 text-sm md:text-lg lg:text-sm">
             <BarChart size={16} />
             <p className="font-semibold">Level Dasar-Pemula</p>
           </div>

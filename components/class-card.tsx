@@ -25,7 +25,7 @@ function ClassCard({ key, card, className, title }: CourseCardProps) {
       className={cn("w-full cursor-pointer border-none shadow-md", className)}
       onClick={() => router.push(card.href || "#")}
     >
-      <CardHeader className="p-0">
+      <CardHeader className="rounded-xl p-0">
         {card.image && (
           <Image
             className="w-full"
