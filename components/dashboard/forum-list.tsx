@@ -10,7 +10,11 @@ function ForumList() {
       {Array.from({ length: 5 }).map((item, i) => (
         <div key={i} className="flex items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
-            <Avatar className="bg-transparent" image="/images/forumAvatar.png" alt="Avatar"/>
+            <Avatar
+              className="bg-transparent"
+              image="/images/forumAvatar.png"
+              alt="Avatar"
+            />
             <div className="w-32 md:w-full">
               <h6 className="truncate font-medium text-gray-900">
                 Interaksi dalam UX Research
@@ -21,11 +25,11 @@ function ForumList() {
             </div>
           </div>
           <div className="flex items-center gap-2 text-sm">
-            <div className="flex gap-2 items-center">
+            <div className="flex items-center gap-2">
               <ForumLikeIcon />
               <span>6</span>
             </div>
-            <div className="flex gap-2 items-center">
+            <div className="flex items-center gap-2">
               <ForumChatIcon />
               <span>4</span>
             </div>

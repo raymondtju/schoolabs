@@ -82,9 +82,10 @@ function DashbaordNav() {
           </div>
           <DropdownMenu>
             <DropdownMenuTrigger>
-              {session && (
-                <Avatar image={session.user?.image ?? ""} alt="avatar" />
-              )}
+              <Avatar
+                image={session?.user?.image ?? "/avatar/avatar.webp"}
+                alt="avatar"
+              />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-[211px] font-Inter" align="end">
               <DropdownMenuItem className="gap-3 text-gray-700">
