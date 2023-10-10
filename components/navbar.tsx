@@ -53,13 +53,14 @@ export function Navbar() {
   }
 
   return (
-    <nav className="font-Inter sticky top-0 z-50 flex h-24 items-center justify-center bg-[#FFF] shadow">
+    <nav className=" sticky top-0 z-50 flex h-24 items-center justify-center bg-[#FFF] shadow">
       <div className="container flex items-center justify-between md:px-20">
         <div className="col-span-3 flex items-center space-x-12">
           <Link href="/">
             <Image
+            
               quality={100}
-              src="/logo.svg"
+              src="/logo.png"
               alt="icon"
               width={176}
               height={32}
@@ -134,7 +135,7 @@ export function PromotionFlyer() {
   return (
     <>
       {!close && (
-        <div className="font-Inter bg-[#102333] py-4">
+        <div className="bg-[#102333] py-4">
           <div className="container relative flex flex-col gap-2 lg:flex-row lg:items-center justify-between text-[#F5F5FF] lg:px-20">
             <div className="flex items-center justify-center gap-4">
               <Image

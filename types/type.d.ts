@@ -8,8 +8,6 @@ export type USPCardTypes = {
    description: string
 }
 
-
-
 export type TestimoniCardTypes = {
    image: string,
    name: string,
@@ -77,3 +75,15 @@ export type Passion = {
    title: string,
    image: string
 }
+
+export type FAQ = {
+   title: string,
+   description: stirng
+}
+
+export type CheckoutBenefit = {
+   title: string,
+   description: string,
+   icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>> 
+}
+

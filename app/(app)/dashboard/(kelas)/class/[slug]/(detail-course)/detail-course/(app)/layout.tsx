@@ -3,7 +3,7 @@ import CourseNav from "@/components/course/course-nav";
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <main className="font-Inter">
+      <main className="">
         <CourseNav />
         {children}
       </main>

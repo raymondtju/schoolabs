@@ -83,20 +83,20 @@ export default function TestimoniCards() {
                   <div key={i} className="snap-center flex-[0_0_100%] min-w-0 ">
                      <div className="bg-[#F3FBFF] rounded-3xl h-full flex flex-col lg:flex-row ">
 
-                     <div className="contents lg:max-w-7xl w-full">
+                        <div className="basis-2/5 lg:max-w-7xl w-full">
                         <Image
-                           objectFit="cover"
-                           quality={100}
-                           width={350}
-                           height={350}
-                           className="w-full rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none"
+                              objectFit="cover"
+                              quality={100}
+                              width={350}
+                              height={350}
+                              className="w-full rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none"
                            src={`${card.image}.webp`}
                            alt={`testimoni ${card.name}`}
                         />
                      </div>
-                     <div className="grid px-6 py-8">
+                     <div className="basis-3/5 grid px-6 py-8">
                         <svg
-                           className="w-12 md:w-20 h-full ml-auto"
+                           className="w-8 md:w-16 h-full ml-auto"
                            xmlns="http://www.w3.org/2000/svg"
                            width="64"
                            height="49"
@@ -109,10 +109,10 @@ export default function TestimoniCards() {
                            />
                         </svg>
                         <div className="grid items-center pb-4">
-                           <h1 className="text-2xl font-bold">{card.name}</h1>
-                           <p className="text-xl">{card.role}</p>
+                           <h1 className="text-xl sm:text-2xl font-bold">{card.name}</h1>
+                           <p className="text-lg sm:text-xl">{card.role}</p>
                         </div>
-                        <p className="text-base text-muted">
+                        <p className="text-sm sm:text-base text-muted">
                            {card.text}
                         </p>
                         <Separator className="hidden lg:block mt-2" orientation="horizontal" />

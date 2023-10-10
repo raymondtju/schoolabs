@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
    title: "Schoolabs | Auth",
@@ -13,9 +14,11 @@ export default function AuthLayout({
 }) {
    return (
       <>
-         <main className="font-Inter bg-[#F0F2F5] py-9 min-h-screen">
+         <main className=" bg-[#F0F2F5] py-9 min-h-screen">
             <div className="container flex flex-col items-center">
-               <Image className="py-12 mix-blend-darken" src="/logo.svg" alt="icon" width={200} height={200} />
+               <Link href="/">
+                  <Image className="py-12" src="/logo.png" alt="icon" width={200} height={200} />
+               </Link>
                {children}
             </div>
          </main>

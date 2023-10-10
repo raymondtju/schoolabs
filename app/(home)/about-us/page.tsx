@@ -7,11 +7,11 @@ export default function AboutUs() {
    return (
       <>
          <section className="-mb-8 md:-mb-14 md:pb-4 about-hero h-[30rem] overflow-hidden rounded-b-3xl md:rounded-b-[2.5rem] flex flex-col justify-center items-center">
-            <div className="md:mb-20 py-8 container lg:px-20 text-white gap-4 flex flex-col space-y-4">
+            <div className="md:mb-20 py-4 md:py-8 container lg:px-20 text-white gap-4 flex flex-col space-y-4">
                <h1 className="text-base font-semibold text-center md:text-left">Tentang SchooLabs</h1>
-               <div className="flex flex-col md:flex-row gap-4 justify-between">
-                  <h1 className="max-w-lg text-4xl md:text-5xl font-bold">Kami memiliki misi memberdayakan siswa di dunia IT</h1>
-                  <p className="md:ml-auto max-w-[25rem] text-base font-medium">Kami adalah tim yang berdedikasi untuk membantu Anda mencapai potensi terbaik Anda dalam dunia pengembangan dan desain. Dengan pengalaman bertahun-tahun dalam industri ini, kami telah menyadari pentingnya pendidikan yang berkualitas dan berfokus pada praktik terbaik.</p>
+               <div className="flex flex-col items-center lg:items-start md:flex-row gap-4 justify-between">
+                  <h1 className="text-center md:text-left max-w-lg text-4xl lg:text-5xl font-bold">Kami memiliki misi memberdayakan siswa di dunia IT</h1>
+                  <p className="text-center md:text-left lg:ml-auto md:max-w-[20rem] lg:max-w-[25rem] text-sm sm:text-base font-medium">Kami adalah tim yang berdedikasi untuk membantu Anda mencapai potensi terbaik Anda dalam dunia pengembangan dan desain. Dengan pengalaman bertahun-tahun dalam industri ini, kami telah menyadari pentingnya pendidikan yang berkualitas dan berfokus pada praktik terbaik.</p>
                </div>
             </div>
          </section>
@@ -20,32 +20,32 @@ export default function AboutUs() {
                <div className="bg-[#FFF] grid mb-7 rounded-3xl shadow-2xl px-4 pb-4 md:px-20 pt-8 md:pt-10  md:pb-20">
                   <hr className="mx-auto h-[8px] w-56 rounded-full bg-primary"/>
                   <div className="my-10 flex flex-col items-center justify-center space-y-4">
-                     <h1 className="text-3xl md:text-4xl font-bold text-center">Mengapa Memilih Kami?</h1>
+                     <h1 className="text-4xl md:text-5xl font-bold text-center">Mengapa Memilih Kami?</h1>
                      <p className="text-base md:text-lg text-center">Kami tahu ada banyak pilihan kursus di luar sana, tetapi kami unggul dalam beberapa hal:</p>
                   </div>
-                  <div className="grid gap-10 grid-cols-1 md:grid-cols-2">
-                     <div className="rounded-2xl bg-[#F5F5FF] flex flex-col space-y-6 px-8 py-10">
+                  <div className="grid gap-10 grid-cols-1 lg:grid-cols-2">
+                     <div className="rounded-2xl bg-[#F5F5FF] flex flex-col space-y-6 px-4 md:px-8 py-10">
                         <BadgeCheckIcon />
                         <div className="grid gap-4">
                            <h3 className="text-2xl md:text-3xl font-semibold">Kualitas Terbaik</h3>
                            <p className="text-base">Kualitas adalah prioritas kami. Kami memastikan bahwa Anda mendapatkan pendidikan terbaik yang mungkin.</p>
                         </div>
                      </div>
-                     <div className="rounded-2xl bg-[#FBEAE9] flex flex-col space-y-6 px-8 py-10">
+                     <div className="rounded-2xl bg-[#FBEAE9] flex flex-col space-y-6 px-4 md:px-8 py-10">
                         <BriefcaseIcon />
                         <div className="grid gap-4">
                            <h3 className="text-2xl md:text-3xl font-semibold">Kesempatan Kerja</h3>
                            <p className="text-base">Bekerja sama dengan perusahaan terkemuka, kami membantu siswa kami mengejar karier yang sukses.</p>
                         </div>
                      </div>
-                     <div className="rounded-2xl bg-[#E7F6EC] flex flex-col space-y-6 px-8 py-10">
+                     <div className="rounded-2xl bg-[#E7F6EC] flex flex-col space-y-6 px-4 md:px-8 py-10">
                         <GraduatingCapIcon />
                         <div className="grid gap-4">
                            <h3 className="text-2xl md:text-3xl font-semibold">Kurikulum yang Relevan</h3>
                            <p className="text-base">Kurikulum yang selalu diperbarui sesuai standar industri, agar peserta didik siap untuk dunia IT yang terus berubah.</p>
                         </div>
                      </div>
-                     <div className="rounded-2xl bg-[#F3FBFF] flex flex-col space-y-6 px-8 py-10">
+                     <div className="rounded-2xl bg-[#F3FBFF] flex flex-col space-y-6 px-4 md:px-8 py-10">
                         <ShuffleIcon />
                         <div className="grid gap-4">
                            <h3 className="text-2xl md:text-3xl font-semibold">Fleksibelitas Belajar</h3>
@@ -62,15 +62,24 @@ export default function AboutUs() {
             <div className="container lg:px-20">
                <h1 className="text-center text-3xl md:text-4xl font-bold">Apa yang Kami Tawarkan</h1>
                <div className="mt-10 grid gap-8">
-                  <div className="p-8 lg:p-14 shadow-xl rounded-2xl flex flex-col md:flex-row gap-8">
-                     <Image quality={100} src="/about-image/hero-UIX.svg" alt="UI/UX Designer" width={500} height={500} />
+                  <div className="p-8 lg:p-14 shadow-xl rounded-2xl flex flex-col lg:flex-row gap-8">
+                     <Image
+                        quality={100}
+                        src="/about-image/hero-UIX.svg" alt="UI/UX Designer"
+                        className="w-full"
+                        width={500}
+                        height={500} />
                      <div className="flex flex-col gap-4">
                         <h3 className="text-3xl md:text-4xl font-semibold">UI/UX Designer</h3>
                         <p className="text-base md:text-lg">Tertarik untuk menjadi UI/UX designer? Gabunglah dengan kursus UI/UX design kami untuk mengasah keterampilan desain antarmuka pengguna (UI) dan pengalaman pengguna (UX) Anda. Instruktur berpengalaman kami akan membimbing Anda melalui proyek digital praktis dan membantu Anda mempersiapkan portofolio yang memikat untuk karir di dunia desain.</p>
                      </div>
                   </div>
-                  <div className="p-8 lg:p-14 shadow-xl rounded-2xl flex flex-col md:flex-row-reverse gap-8">
-                     <Image quality={100} src="/about-image/hero-dev.svg" alt="Developer" width={500} height={500} />
+                  <div className="p-8 lg:p-14 shadow-xl rounded-2xl flex flex-col lg:flex-row-reverse gap-8">
+                     <Image
+                        quality={100}
+                        src="/about-image/hero-dev.svg" 
+                        className="w-full"
+                        alt="Developer" width={500} height={500} />
                      <div className="flex flex-col gap-4">
                         <h3 className="text-3xl md:text-4xl font-semibold">Developer</h3>
                         <p className="text-base md:text-lg">Dalam rangka mendukung pemula hingga tingkat lanjut, kami menawarkan beragam kursus pengembangan web, aplikasi, dan perangkat lunak yang dipandu oleh para mentor yang ahli dan berpengalaman diindustri. Anda ingin memulai karir baru atau meningkatkan keterampilan, kursus-kursus kami membuka peluang untuk kesuksesan Anda di dunia teknologi yang selalu berubah.</p>

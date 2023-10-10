@@ -72,7 +72,7 @@ export default function Login() {
 
    return (
       <>
-         <div className="md:max-w-md w-full border rounded-3xl bg-[#FFF] p-4">
+         <div className="sm:max-w-md w-full border rounded-3xl bg-[#FFF] p-4 sm:p-8">
             <div className="grid justify-items-center">
                <div className="flex flex-col gap-2 text-gray-700">
                   <h3 className="text-3xl md:text-4xl font-bold text-center">Masuk akun</h3>

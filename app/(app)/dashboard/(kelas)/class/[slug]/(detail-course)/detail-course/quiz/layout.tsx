@@ -13,7 +13,7 @@ function QuizLayout(
 
    return (
       <>
-         <main className="font-Inter">
+         <main className="">
             <QuizNav />
             <div className="bg-[#F9FAFB]">
                {children}
