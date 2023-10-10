@@ -19,9 +19,11 @@ import {
 import Avatar from "../dashboard/avatar";
 import { BellIcon } from "../icon/dashboard-icon";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 function CourseNav() {
   const router = useRouter();
+  const { data: session } = useSession();
   return (
     <>
       <div className="sticky top-0 z-50 flex justify-between border-b bg-white px-8 py-5 shadow-sm">
@@ -37,7 +39,10 @@ function CourseNav() {
           </div>
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <Avatar image="/images/forumAvatar.png" alt="avatar" />
+              {session?.user?.image && (
+                <Avatar image={session.user.image} alt="avatar" />
+                
+              ) }
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-[211px]" align="end">
               <DropdownMenuItem className="gap-3 text-gray-700">
