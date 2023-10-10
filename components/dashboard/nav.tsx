@@ -27,8 +27,8 @@ import { ClassSidebar } from "./sidebar";
 
 function getCurrentDimension() {
   return {
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: typeof window !== "undefined" ? window.innerWidth : 0,
+    height: typeof window !== "undefined" ? window.innerHeight : 0,
   };
 }
 
@@ -39,15 +39,17 @@ function DashbaordNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const updateDimension = () => {
-      setScreenSize(getCurrentDimension());
-    };
-    window.addEventListener("resize", updateDimension);
+    if (typeof window !== "undefined") {
+      const updateDimension = () => {
+        setScreenSize(getCurrentDimension());
+      };
+      window.addEventListener("resize", updateDimension);
 
-    return () => {
-      window.removeEventListener("resize", updateDimension);
-    };
-  }, [screenSize]);
+      return () => {
+        window.removeEventListener("resize", updateDimension);
+      };
+    }
+  }, []);
 
   const handleSignOut = async () => {
     const res = await signOut({
