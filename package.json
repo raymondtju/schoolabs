@@ -25,6 +25,8 @@
     "framer-motion": "^10.12.22",
     "lucide-react": "^0.279.0",
     "next": "13.5.2",
+    "next-auth": "^4.23.2",
+    "next13-progressbar": "^1.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwind-merge": "^1.14.0",

@@ -12,8 +12,22 @@ import {
 import { LayoutGrid, LogOut, Menu, Search, UserCircle2 } from "lucide-react";
 import Avatar from "./avatar";
 import { BellIcon } from "../icon/dashboard-icon";
+import { useSession, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
+
 
 function DashbaordNav() {
+  const { data: session } = useSession();
+  const router = useRouter();
+
+  const handleSignOut = async () => {
+    const res = await signOut({
+      redirect: false,
+      callbackUrl: "/login"
+    })
+    router.replace(`${res.url ?? ""}`)
+  }
+
   return (
     <div className="sticky top-0 z-50 border-b bg-white ">
       <div className=" flex items-center justify-between container py-5">
@@ -50,6 +64,28 @@ function DashbaordNav() {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            {session && (
+              <Avatar image={session.user?.image ?? ""} alt="avatar"/>
+            )}
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-[211px]" align="end">
+            <DropdownMenuItem className="gap-3 text-gray-700">
+              <LayoutGrid size={21}/>
+              Dashboard
+            </DropdownMenuItem>
+            <DropdownMenuItem className="gap-3 text-gray-700">
+              <UserCircle2 size={21}/>
+              Profile
+            </DropdownMenuItem>
+            <DropdownMenuSeparator className="bg-gray-200"></DropdownMenuSeparator>
+            <DropdownMenuItem onClick={handleSignOut} className="gap-3 text-gray-700">
+              <LogOut size={21} />
+              Logout
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </div>
   );

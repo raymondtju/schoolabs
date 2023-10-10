@@ -1,3 +1,4 @@
+import Provider from "@/components/provider";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-Inter">
-        {children}
+        <Provider>
+          {children}
+        </Provider>
       </body>
     </html>
   );
