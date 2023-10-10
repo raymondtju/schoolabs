@@ -36,7 +36,7 @@ export default function Home() {
                   className="object-contain"
                   width={200}
                   height={5}
-                  src="/images/avatar-group.png"
+                  src="/images/avatarGroup.webp"
                   alt="avatar-group"
                 />
                 <span className="inline-flex items-center gap-3">
